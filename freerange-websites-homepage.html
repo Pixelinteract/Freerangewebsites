@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affordable Websites for Australian Small Businesses | FreeRange Websites</title>
+<meta name="description" content="Professional, hosted websites for Australian tradies and small businesses. From $79/mo — includes hosting, unlimited content updates, and local SEO. Live in 3 business days.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500;600;700;800;900&family=Encode+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS ──────────────────────────────────────────────── */
+:root {
+  --bg:        #f9f7f4;
+  --bg-white:  #ffffff;
+  --teal:      #2a4e53;
+  --teal-dark: #1d383c;
+  --teal-mid:  #3a6268;
+  --orange:    #fe9b24;
+  --orange-dk: #e5861a;
+  --green:     #90b766;
+  --green-dk:  #5a8a35;
+  --cream:     #f0ece4;
+  --text:      #1a2c2e;
+  --text-mid:  #3d5558;
+  --text-soft: #6b8285;
+  --border:    #ddd9d3;
+
+  --font-head: 'Encode Sans Condensed', sans-serif;
+  --font-body: 'Encode Sans', sans-serif;
+
+  --radius:    10px;
+  --radius-lg: 16px;
+  --shadow:    0 4px 24px rgba(42,78,83,.10);
+  --shadow-lg: 0 12px 48px rgba(42,78,83,.16);
+}
+
+/* ─── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ─── UTILITIES ───────────────────────────────────────────── */
+.container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.section-sm { padding: 64px 0; }
+.tag-label {
+  display: inline-block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.05;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-mid);
+  max-width: 560px;
+  line-height: 1.6;
+}
+.text-center { text-align: center; }
+.text-center .section-sub { margin: 0 auto; }
+
+/* ─── BUTTONS ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: .02em;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  border: none;
+  transition: all .2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--orange-dk); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(254,155,36,.35); }
+.btn-outline {
+  background: transparent;
+  color: var(--teal);
+  border: 2px solid var(--teal);
+}
+.btn-outline:hover { background: var(--teal); color: #fff; }
+.btn-ghost-white {
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.3);
+}
+.btn-ghost-white:hover { background: rgba(255,255,255,.22); }
+.btn-lg { padding: 18px 36px; font-size: 18px; }
+.btn-sm { padding: 10px 20px; font-size: 14px; }
+
+/* ─── NAV ─────────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow .2s;
+}
+.nav.scrolled { box-shadow: 0 2px 20px rgba(42,78,83,.10); }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 24px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.logo-text {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: -.01em;
+  line-height: 1;
+}
+.logo-free { color: var(--teal); }
+.logo-range { color: var(--orange); }
+.logo-tag {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 10px;
+  color: var(--text-soft);
+  letter-spacing: .05em;
+  display: block;
+  margin-top: 1px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--text-mid);
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--teal); }
+.nav-links a.active { color: var(--teal); font-weight: 600; }
+.nav-cta { margin-left: 8px; }
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--teal);
+  border-radius: 2px;
+  transition: all .2s;
+}
+
+/* ─── HERO ─────────────────────────────────────────────────── */
+.hero {
+  background: var(--teal);
+  padding: 100px 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(254,155,36,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -60px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(144,183,102,.10) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(254,155,36,.18);
+  border: 1px solid rgba(254,155,36,.3);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--orange);
+  margin-bottom: 28px;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.8); }
+}
+.hero-heading {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(44px, 6.5vw, 78px);
+  line-height: 1.0;
+  letter-spacing: -.01em;
+  color: #fff;
+  margin-bottom: 28px;
+}
+.hero-heading em {
+  font-style: normal;
+  color: var(--orange);
+}
+.hero-usps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.hero-usp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 17px;
+  color: rgba(255,255,255,.82);
+}
+.hero-usp-icon {
+  width: 20px;
+  height: 20px;
+  background: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 700;
+}
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hero-footnote {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  font-weight: 400;
+}
+
+/* ─── SOCIAL PROOF BAR ────────────────────────────────────── */
+.proof-bar {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.proof-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.proof-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+.proof-trades {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.trade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--teal);
+}
+.trade-badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+
+/* ─── PROBLEM ─────────────────────────────────────────────── */
+.problem { background: var(--bg); }
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.problem-pains {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 28px;
+}
+.pain-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.pain-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.pain-text strong {
+  display: block;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--teal);
+  margin-bottom: 3px;
+}
+.pain-text span {
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+.problem-solution {
+  background: var(--teal);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  color: #fff;
+}
+.solution-title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.solution-title em { font-style: normal; color: var(--orange); }
+.solution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.solution-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: rgba(255,255,255,.85);
+}
+.solution-check {
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ─── FEATURES ────────────────────────────────────────────── */
+.features { background: var(--bg-white); }
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.feature-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: all .2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--teal);
+}
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--teal);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.feature-icon svg { width: 24px; height: 24px; }
+.feature-name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+.feature-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ─── HOW IT WORKS ────────────────────────────────────────── */
+.hiw { background: var(--bg); }
+.hiw-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  position: relative;
+}
+.hiw-steps::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: calc(16.66% + 20px);
+  right: calc(16.66% + 20px);
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--border) 0, var(--border) 8px, transparent 8px, transparent 16px);
+}
+.hiw-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 24px;
+  position: relative;
+}
+.step-num {
+  width: 72px;
+  height: 72px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  border: 4px solid var(--bg);
+}
+.step-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.step-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+.hiw-cta { margin-top: 56px; text-align: center; }
+
+/* ─── BEFORE / AFTER ──────────────────────────────────────── */
+.before-after { background: var(--teal-dark); padding: 96px 0; }
+.before-after .section-title { color: #fff; }
+.before-after .section-sub { color: rgba(255,255,255,.65); }
+.ba-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.ba-card { border-radius: var(--radius-lg); overflow: hidden; }
+.ba-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.ba-label.before { background: #c0392b; color: #fff; }
+.ba-label.after { background: var(--green-dk); color: #fff; }
+.ba-label-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .7;
+}
+.ba-image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  display: block;
+}
+.ba-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #1a2c2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: rgba(255,255,255,.3);
+  font-size: 14px;
+}
+.ba-mock {
+  background: #2a3d40;
+  width: 100%;
+  aspect-ratio: 16/10;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ba-mock-nav { display: flex; gap: 6px; align-items: center; margin-bottom: 4px; }
+.ba-mock-dot { width: 8px; height: 8px; border-radius: 50%; }
+.ba-mock-hero { flex: 1; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+.ba-mock-text { display: flex; flex-direction: column; gap: 6px; }
+.ba-mock-line { border-radius: 3px; }
+.ba-caption {
+  padding: 14px 16px;
+  background: rgba(255,255,255,.06);
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  text-align: center;
+}
+
+/* before mock (ugly) */
+.ba-mock-old {
+  background: #e8e4de;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 16/10;
+}
+.ba-old-header {
+  background: #1a5276;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ba-old-logo {
+  width: 80px; height: 14px;
+  background: rgba(255,255,255,.4);
+  border-radius: 2px;
+}
+.ba-old-nav-links { display: flex; gap: 8px; }
+.ba-old-nav-link {
+  width: 36px; height: 10px;
+  background: rgba(255,255,255,.3);
+  border-radius: 2px;
+}
+.ba-old-hero {
+  background: repeating-linear-gradient(
+    45deg,
+    #d4cfc8 0px, #d4cfc8 2px,
+    #e8e4de 2px, #e8e4de 12px
+  );
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+}
+.ba-old-title { width: 65%; height: 16px; background: #1a5276; border-radius: 2px; }
+.ba-old-sub { width: 50%; height: 10px; background: rgba(26,82,118,.4); border-radius: 2px; }
+.ba-old-btn { width: 80px; height: 26px; background: #e74c3c; border-radius: 2px; margin-top: 6px; }
+.ba-old-body {
+  background: #fff;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  flex: 0 0 36%;
+}
+.ba-old-col { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+.ba-old-line { height: 7px; background: #ddd; border-radius: 2px; }
+.ba-old-line.short { width: 60%; }
+.ba-old-line.med { width: 80%; }
+.ba-old-img-block { width: 80px; background: #c8c0b5; border-radius: 2px; }
+
+/* after mock (clean) */
+.ba-new-wrap {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: var(--teal);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ba-new-nav {
+  background: rgba(255,255,255,.08);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ba-new-logo-box {
+  width: 90px; height: 12px;
+  background: rgba(255,255,255,.5);
+  border-radius: 3px;
+}
+.ba-new-links { display: flex; gap: 10px; }
+.ba-new-link { width: 40px; height: 8px; background: rgba(255,255,255,.25); border-radius: 2px; }
+.ba-new-cta-sm { width: 54px; height: 18px; background: var(--orange); border-radius: 4px; }
+.ba-new-hero-area {
+  flex: 1;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+.ba-new-h1 { width: 80%; height: 18px; background: rgba(255,255,255,.9); border-radius: 3px; }
+.ba-new-h1-2 { width: 60%; height: 18px; background: rgba(255,255,255,.9); border-radius: 3px; }
+.ba-new-sub1 { width: 72%; height: 9px; background: rgba(255,255,255,.4); border-radius: 2px; margin-top: 4px; }
+.ba-new-sub2 { width: 55%; height: 9px; background: rgba(255,255,255,.4); border-radius: 2px; }
+.ba-new-btns { display: flex; gap: 8px; margin-top: 10px; }
+.ba-new-btn1 { width: 80px; height: 24px; background: var(--orange); border-radius: 5px; }
+.ba-new-btn2 { width: 70px; height: 24px; background: rgba(255,255,255,.15); border-radius: 5px; border: 1px solid rgba(255,255,255,.25); }
+
+/* ─── PRICING ─────────────────────────────────────────────── */
+.pricing { background: var(--bg-white); }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+  align-items: start;
+}
+.pricing-card {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  background: var(--bg);
+  transition: all .2s ease;
+  position: relative;
+}
+.pricing-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.pricing-card.featured {
+  border-color: var(--teal);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.02);
+}
+.pricing-card.featured:hover { transform: scale(1.02) translateY(-3px); }
+.pricing-badge {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--orange);
+  color: #fff;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.pricing-tier {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.pricing-tagline {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.price-dollar {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--teal);
+}
+.price-amount {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--teal);
+}
+.price-period {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+.pricing-note {
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-bottom: 24px;
+  margin-top: 2px;
+}
+.pricing-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 24px 0;
+}
+.pricing-includes {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+}
+.pricing-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.pricing-feature {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+.pf-check { color: var(--green-dk); font-weight: 700; flex-shrink: 0; font-size: 15px; }
+.pricing-excludes {
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+  line-height: 1.5;
+}
+.pricing-footer {
+  margin-top: 48px;
+  text-align: center;
+  padding: 28px;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+.pricing-footer p {
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-bottom: 4px;
+}
+
+/* ─── WHO IT'S FOR ────────────────────────────────────────── */
+.who { background: var(--bg); }
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.who-card {
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  border: 1.5px solid var(--border);
+}
+.who-card.yes { background: var(--bg-white); border-color: var(--green); }
+.who-card.no { background: var(--bg-white); border-color: var(--border); }
+.who-card-title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.who-card.yes .who-card-title { color: var(--green-dk); }
+.who-card.no .who-card-title { color: var(--text-mid); }
+.who-list { display: flex; flex-direction: column; gap: 12px; }
+.who-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.4;
+}
+.who-icon { flex-shrink: 0; font-size: 16px; margin-top: 1px; }
+
+/* ─── FAQ ─────────────────────────────────────────────────── */
+.faq { background: var(--bg-white); }
+.faq-list {
+  max-width: 720px;
+  margin: 48px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg);
+  transition: border-color .2s;
+}
+.faq-item.open { border-color: var(--teal); }
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 22px;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-q-text {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--teal);
+  line-height: 1.3;
+}
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: transform .2s;
+  font-weight: 700;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  display: none;
+  padding: 0 22px 20px;
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.faq-item.open .faq-answer { display: block; }
+.faq-cta {
+  text-align: center;
+  margin-top: 36px;
+}
+.faq-cta a {
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid var(--teal);
+  padding-bottom: 1px;
+}
+
+/* ─── FINAL CTA ───────────────────────────────────────────── */
+.final-cta {
+  background: var(--teal);
+  padding: 96px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(254,155,36,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.final-cta-inner { position: relative; z-index: 1; }
+.final-cta-title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.final-cta-title em { font-style: normal; color: var(--orange); }
+.final-cta-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,.65);
+  margin-bottom: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.final-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.final-guarantees {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+}
+.guarantee-check {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+.footer {
+  background: var(--teal-dark);
+  padding: 40px 0;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer-logo { font-family: var(--font-head); font-weight: 900; font-size: 18px; }
+.footer-logo .fr { color: rgba(255,255,255,.9); }
+.footer-logo .fo { color: var(--orange); }
+.footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  transition: color .15s;
+}
+.footer-links a:hover { color: rgba(255,255,255,.8); }
+.footer-legal {
+  font-size: 12px;
+  color: rgba(255,255,255,.3);
+  line-height: 1.5;
+}
+
+/* ─── ANIMATIONS ──────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ─── MOBILE NAV ──────────────────────────────────────────── */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: 16px 24px 20px;
+  gap: 16px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-mid);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.mobile-nav a:last-child { border-bottom: none; }
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .problem-grid,
+  .ba-grid,
+  .who-grid,
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card.featured { transform: scale(1); }
+  .pricing-card.featured:hover { transform: translateY(-3px); }
+  .hiw-steps { grid-template-columns: 1fr; gap: 32px; }
+  .hiw-steps::before { display: none; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .hero { padding: 72px 0 64px; }
+  .section { padding: 72px 0; }
+}
+@media (max-width: 580px) {
+  .features-grid { grid-template-columns: 1fr; }
+  .proof-inner { flex-direction: column; gap: 16px; }
+  .final-cta-btns { flex-direction: column; align-items: center; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <div>
+          <div class="logo-text">
+            <span class="logo-free">FREE</span><span class="logo-range">RANGE</span>
+          </div>
+          <span class="logo-tag">WEBSITES.COM.AU</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/electricians">Electricians</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <a href="#pricing" class="btn btn-primary btn-sm nav-cta">Get started</a>
+
+      <div class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#how-it-works" onclick="toggleMobileNav()">How it works</a>
+    <a href="#pricing" onclick="toggleMobileNav()">Pricing</a>
+    <a href="/electricians" onclick="toggleMobileNav()">Electricians</a>
+    <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
+    <a href="#pricing" class="btn btn-primary" style="text-align:center;justify-content:center" onclick="toggleMobileNav()">Get started</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Now taking new clients — limited spots
+      </div>
+
+      <h1 class="hero-heading">
+        Affordable <em>cage-free</em><br>websites for local<br>small businesses.
+      </h1>
+
+      <div class="hero-usps">
+        <div class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          Professional 5-page website built in 3 business days
+        </div>
+        <div class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          Hosting included. Unlimited content updates.
+        </div>
+        <div class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          Local SEO built in — get found when customers search for you
+        </div>
+        <div class="hero-usp">
+          <span class="hero-usp-icon">✓</span>
+          No lock-in after 6 months. Cancel anytime.
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
+        <a href="#how-it-works" class="btn btn-ghost-white btn-lg">How it works</a>
+      </div>
+
+      <p class="hero-footnote">No upfront costs. No tech headaches. Just a website that works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOCIAL PROOF BAR ──────────────────────────────── -->
+<div class="proof-bar">
+  <div class="container">
+    <div class="proof-inner">
+      <span class="proof-label">Trusted by Aussie tradies and small businesses:</span>
+      <div class="proof-trades">
+        <span class="trade-badge"><span class="trade-badge-dot" style="background:#fe9b24"></span>Electricians</span>
+        <span class="trade-badge"><span class="trade-badge-dot" style="background:#2a4e53"></span>Plumbers</span>
+        <span class="trade-badge"><span class="trade-badge-dot" style="background:#90b766"></span>Landscapers</span>
+        <span class="trade-badge"><span class="trade-badge-dot" style="background:#e67e22"></span>Builders</span>
+        <span class="trade-badge"><span class="trade-badge-dot" style="background:#8e44ad"></span>Cleaners</span>
+        <span class="trade-badge"><span class="trade-badge-dot" style="background:#2980b9"></span>Bookkeepers</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PROBLEM ───────────────────────────────────────── -->
+<section class="section problem" id="problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div>
+        <span class="tag-label">Sound familiar?</span>
+        <h2 class="section-title">Most tradie websites are a liability, not an asset.</h2>
+        <p class="section-sub" style="margin-bottom:0">If your website is embarrassingly outdated — or you don't have one at all — you're handing jobs to your competitors every single day.</p>
+
+        <div class="problem-pains">
+          <div class="pain-item">
+            <span class="pain-icon">💸</span>
+            <div class="pain-text">
+              <strong>Web agencies charge $3,000–$8,000 upfront</strong>
+              <span>And then another $150/hr every time you need a word changed. For a tradie just getting started, that's not a website — that's a tax.</span>
+            </div>
+          </div>
+          <div class="pain-item">
+            <span class="pain-icon">🕸️</span>
+            <div class="pain-text">
+              <strong>DIY builders like Wix look amateurish and don't rank</strong>
+              <span>Generic templates weren't built for local search. And who's updating it when you're on the tools all day?</span>
+            </div>
+          </div>
+          <div class="pain-item">
+            <span class="pain-icon">📵</span>
+            <div class="pain-text">
+              <strong>No website means no phone calls from Google</strong>
+              <span>When someone searches "electrician near me", your competitor's site answers. Yours doesn't even show up.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="problem-solution">
+          <div class="solution-title">There's a better way.<br><em>Cage-free.</em></div>
+          <div class="solution-list">
+            <div class="solution-item">
+              <span class="solution-check">✓</span>
+              Professional website live in 3 business days — not 3 months
+            </div>
+            <div class="solution-item">
+              <span class="solution-check">✓</span>
+              Built to rank on Google for local searches in your suburb
+            </div>
+            <div class="solution-item">
+              <span class="solution-check">✓</span>
+              Send us a text, we'll update your site — no extra charges
+            </div>
+            <div class="solution-item">
+              <span class="solution-check">✓</span>
+              Everything included: hosting, SSL, updates, local SEO setup
+            </div>
+            <div class="solution-item">
+              <span class="solution-check">✓</span>
+              Flat monthly fee. No lock-in after 6 months. No surprises.
+            </div>
+          </div>
+          <a href="#pricing" class="btn btn-primary">See how much it costs →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURES ──────────────────────────────────────── -->
+<section class="section features" id="features">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag-label">Everything included</span>
+      <h2 class="section-title">What you get with every plan</h2>
+      <p class="section-sub">No hidden extras. No "that's a separate package." Everything you need to get found online and start generating enquiries.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div class="feature-name">5-page website</div>
+        <div class="feature-desc">Home, Services, About, Contact, and a suburb-targeted landing page. Built around your business, your branding, and your trade.</div>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="feature-name">Hosting included</div>
+        <div class="feature-desc">Fast, secure, Australian-optimised hosting. SSL certificate included. No hosting bills, no Cpanel headaches.</div>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div class="feature-name">Unlimited content updates</div>
+        <div class="feature-desc">New service? Changed your rates? Got fresh photos? Send us a message and it's updated within 3 business days. No extra charges, ever.</div>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="feature-name">Google Business Profile setup</div>
+        <div class="feature-desc">We set up and optimise your GBP so you show up in Google Maps when locals search for your trade in your area.</div>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="feature-name">Local SEO built in</div>
+        <div class="feature-desc">Every site is built with local keyword targeting, structured data markup, and suburb-specific pages so Google knows exactly who to show you to.</div>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="feature-name">Live in 3 business days</div>
+        <div class="feature-desc">Fill in our 5-minute form, we do the rest. Your site goes live in 3 business days — or we'll tell you in advance if anything needs more time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── HOW IT WORKS ──────────────────────────────────── -->
+<section class="section hiw" id="how-it-works">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag-label">Simple as</span>
+      <h2 class="section-title">Up and running in 3 steps</h2>
+      <p class="section-sub">No technical knowledge required. No back-and-forth for weeks. Just fill in a form and let us handle the rest.</p>
+    </div>
+
+    <div class="hiw-steps">
+      <div class="hiw-step reveal">
+        <div class="step-num">1</div>
+        <div class="step-title">Fill in our 5-min form</div>
+        <div class="step-desc">Tell us your business name, services, suburb, and upload your logo and a few photos. That's all we need to get started.</div>
+      </div>
+
+      <div class="hiw-step reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <div class="step-title">We build your site</div>
+        <div class="step-desc">We get to work straight away. Your professional, SEO-ready website is built and ready to review within 3 business days.</div>
+      </div>
+
+      <div class="hiw-step reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <div class="step-title">You go live</div>
+        <div class="step-desc">We point your domain, launch your site, and set up your Google Business Profile. Your phone starts ringing. We stay on to manage everything.</div>
+      </div>
+    </div>
+
+    <div class="hiw-cta reveal">
+      <p style="color:var(--text-soft);font-size:15px;margin-bottom:20px">Ready to get your business online properly?</p>
+      <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BEFORE / AFTER ────────────────────────────────── -->
+<section class="before-after" id="results">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag-label" style="color:var(--orange)">Real results</span>
+      <h2 class="section-title" style="color:#fff">The difference a proper website makes.</h2>
+      <p class="section-sub" style="margin:0 auto">This is the gap between being invisible online and generating real enquiries every week.</p>
+    </div>
+
+    <div class="ba-grid" style="margin-top:52px">
+      <!-- Before -->
+      <div class="ba-card reveal">
+        <div class="ba-label before">
+          <span class="ba-label-dot"></span>
+          Before — Typical tradie "website"
+        </div>
+        <div class="ba-mock-old">
+          <div class="ba-old-header">
+            <div class="ba-old-logo"></div>
+            <div class="ba-old-nav-links">
+              <div class="ba-old-nav-link"></div>
+              <div class="ba-old-nav-link"></div>
+              <div class="ba-old-nav-link"></div>
+            </div>
+          </div>
+          <div class="ba-old-hero">
+            <div class="ba-old-title"></div>
+            <div class="ba-old-sub"></div>
+            <div class="ba-old-btn"></div>
+          </div>
+          <div class="ba-old-body">
+            <div class="ba-old-img-block"></div>
+            <div class="ba-old-col">
+              <div class="ba-old-line"></div>
+              <div class="ba-old-line short"></div>
+              <div class="ba-old-line med"></div>
+              <div class="ba-old-line short"></div>
+              <div class="ba-old-line"></div>
+            </div>
+            <div class="ba-old-col">
+              <div class="ba-old-line med"></div>
+              <div class="ba-old-line"></div>
+              <div class="ba-old-line short"></div>
+              <div class="ba-old-line"></div>
+              <div class="ba-old-line med"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-caption">Built in 2014 on WordPress. Last updated 2018. Not mobile-friendly. Invisible in Google.</div>
+      </div>
+
+      <!-- After -->
+      <div class="ba-card reveal reveal-delay-1">
+        <div class="ba-label after">
+          <span class="ba-label-dot"></span>
+          After — FreeRange Website
+        </div>
+        <div class="ba-new-wrap">
+          <div class="ba-new-nav">
+            <div class="ba-new-logo-box"></div>
+            <div class="ba-new-links">
+              <div class="ba-new-link"></div>
+              <div class="ba-new-link"></div>
+              <div class="ba-new-link"></div>
+            </div>
+            <div class="ba-new-cta-sm"></div>
+          </div>
+          <div class="ba-new-hero-area">
+            <div class="ba-new-h1"></div>
+            <div class="ba-new-h1-2"></div>
+            <div class="ba-new-sub1"></div>
+            <div class="ba-new-sub2"></div>
+            <div class="ba-new-btns">
+              <div class="ba-new-btn1"></div>
+              <div class="ba-new-btn2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-caption" style="background:rgba(144,183,102,.15);color:rgba(255,255,255,.75)">Live in 3 days. Mobile-optimised. Ranking on page 1 for "electrician [suburb]" within 8 weeks.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px">
+      <a href="#pricing" class="btn btn-primary btn-lg">Get your business online properly →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ────────────────────────────────────────── -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag-label">Honest pricing</span>
+      <h2 class="section-title">No agency rates. No surprises.</h2>
+      <p class="section-sub">Pick the plan that suits your business. All plans include hosting, updates, and local SEO setup. Cancel anytime after 6 months.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Pasture -->
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Pasture</div>
+        <div class="pricing-tagline">Great for brand-new businesses getting their first website sorted.</div>
+        <div class="pricing-price">
+          <span class="price-dollar">$</span>
+          <span class="price-amount">49</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <div class="pricing-note">6-month minimum, then month-to-month</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-includes">Includes</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="pf-check">✓</span>3-page website (Home, Services, Contact)</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Fast, secure hosting</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>SSL certificate</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Mobile-optimised design</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Basic local SEO setup</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>2 content updates per month</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Live in 3 business days</div>
+        </div>
+        <a href="https://tally.so" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center">Get started</a>
+        <div class="pricing-excludes">Domain purchase not included. Business email not included. Can be added for a small extra cost.</div>
+      </div>
+
+      <!-- Free Range (featured) -->
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="pricing-badge">⭐ Most popular</div>
+        <div class="pricing-tier">Free Range</div>
+        <div class="pricing-tagline">The full setup for established tradies wanting to dominate local search.</div>
+        <div class="pricing-price">
+          <span class="price-dollar">$</span>
+          <span class="price-amount">79</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <div class="pricing-note">6-month minimum, then month-to-month</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-includes">Everything in Pasture, plus</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="pf-check">✓</span>5-page website (full setup)</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Unlimited content updates</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Google Business Profile setup</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Full local SEO — suburb targeting, schema markup</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Contact form + click-to-call</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Google Analytics setup</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Monthly performance check-in</div>
+        </div>
+        <a href="https://tally.so" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Get started</a>
+        <div class="pricing-excludes">Domain purchase not included. Business email not included. Can be added for a small extra cost.</div>
+      </div>
+
+      <!-- Organic -->
+      <div class="pricing-card reveal reveal-delay-2">
+        <div class="pricing-tier">Organic</div>
+        <div class="pricing-tagline">For businesses ready to seriously invest in growing their online presence.</div>
+        <div class="pricing-price">
+          <span class="price-dollar">$</span>
+          <span class="price-amount">109</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <div class="pricing-note">6-month minimum, then month-to-month</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-includes">Everything in Free Range, plus</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><span class="pf-check">✓</span>Monthly Google Business Profile management</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Review generation system (templated follow-ups)</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Monthly keyword ranking report</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>2 additional suburb landing pages</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Priority 1-business-day update turnaround</div>
+          <div class="pricing-feature"><span class="pf-check">✓</span>Quarterly website review call</div>
+        </div>
+        <a href="https://tally.so" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center">Get started</a>
+        <div class="pricing-excludes">Domain purchase not included. Business email not included. Can be added for a small extra cost.</div>
+      </div>
+    </div>
+
+    <div class="pricing-footer reveal">
+      <p><strong>Thinking about buying your site outright?</strong> After 12 months you can purchase the code and host it yourself. <a href="#faq" style="color:var(--teal);font-weight:600">Learn more in the FAQ →</a></p>
+      <p style="margin-top:6px">Add-ons available: Domain registration ($35/yr) · Business email hosting ($15/mo per mailbox)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHO IT'S FOR ──────────────────────────────────── -->
+<section class="section who" id="who">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag-label">Right fit?</span>
+      <h2 class="section-title">We're honest about who this suits</h2>
+      <p class="section-sub">FreeRange Websites works brilliantly for the right businesses — and we'd rather be upfront than waste your time.</p>
+    </div>
+
+    <div class="who-grid">
+      <div class="who-card yes reveal">
+        <div class="who-card-title">✅ Perfect if you're a…</div>
+        <div class="who-list">
+          <div class="who-item">
+            <span class="who-icon">⚡</span>
+            Tradie or sole trader who wants to get found online without the agency price tag
+          </div>
+          <div class="who-item">
+            <span class="who-icon">🆕</span>
+            New business just getting started and want to look professional from day one
+          </div>
+          <div class="who-item">
+            <span class="who-icon">📱</span>
+            Small local business that gets most work by word-of-mouth but wants to unlock online leads too
+          </div>
+          <div class="who-item">
+            <span class="who-icon">🔧</span>
+            Too busy on the tools to deal with updating your own website
+          </div>
+          <div class="who-item">
+            <span class="who-icon">💰</span>
+            Tired of paying $3k+ upfront or $150/hr for every small change
+          </div>
+        </div>
+      </div>
+
+      <div class="who-card no reveal reveal-delay-1">
+        <div class="who-card-title" style="color:var(--text-mid)">❌ Probably not right if you…</div>
+        <div class="who-list">
+          <div class="who-item">
+            <span class="who-icon">🏢</span>
+            Need a large multi-location enterprise site with complex integrations
+          </div>
+          <div class="who-item">
+            <span class="who-icon">🛒</span>
+            Need a full e-commerce store with hundreds of products
+          </div>
+          <div class="who-item">
+            <span class="who-icon">🎨</span>
+            Want to own the code from day one and self-host without professional support
+          </div>
+          <div class="who-item">
+            <span class="who-icon">📊</span>
+            Need custom web app features or member portals
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ───────────────────────────────────────────── -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="text-center">
+      <span class="tag-label">Questions answered</span>
+      <h2 class="section-title">Fair questions, straight answers</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span class="faq-q-text">Do I own my website?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">The website code remains ours while you're on a subscription — that's how we keep the monthly cost low. Think of it like leasing a ute instead of buying one outright. You get full use of it, we handle the maintenance. After 12 months on a plan, you can purchase the code outright if you want to self-host. We'll always be upfront about the buyout price before you sign up.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span class="faq-q-text">What does "unlimited content updates" actually mean?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">It means you can send us requests to update text, swap photos, add new services, update your pricing, change your phone number — as many times as you like. What it doesn't include is building completely new pages, redesigning the site, or logo work. Those are separate conversations. We'll always be clear about what's in and what's out.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span class="faq-q-text">Is my domain included?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Domain pointing is included — meaning if you already own a domain, we'll connect it to your new site for free. If you don't have a domain yet, we can register one for you for $35/yr (that includes .com.au). We keep domain registration separate so you're never locked out of your own domain name, no matter what happens.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span class="faq-q-text">Can I cancel? What happens to my site?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">After your initial 6-month period, you can cancel with 30 days notice. No hard feelings, no interrogation. When you cancel, your site comes down — but we'll always give you a copy of the files, so nothing is lost. If you later want to reinstate your subscription, we can have you back online quickly.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span class="faq-q-text">How long does setup actually take?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">From the moment you fill in our intake form, your site is live within 3 business days. The intake form takes about 5 minutes — we'll ask for your logo, services, suburb, a few photos, and your contact details. That's genuinely all we need. We'll send you a link to review the site before it goes live, so you can give us any final tweaks.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span class="faq-q-text">Why not just use Wix or Squarespace?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">You can — plenty of tradies do. But there are three issues: First, building something that looks decent takes 15–20 hours of your time. At your hourly rate on the tools, that's a lot of money. Second, DIY template builders aren't built for local SEO — they're built to look nice, not to rank in Google. Third, who's updating it when you're on the job? With FreeRange, you send a message and it's sorted. That's the difference.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <span class="faq-q-text">Will my website actually show up on Google?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">We build every site with local SEO baked in — suburb-targeted copy, structured data markup, fast load times, and Google Business Profile setup. Results vary by trade and location, but most of our clients see Google ranking improvements within 6–12 weeks. We'll also set up Google Analytics so you can see exactly where your traffic is coming from.</div>
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <p style="font-size:14px;color:var(--text-soft)">Still got questions? <a href="mailto:hello@freerangewebsites.com.au">Drop us a line →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ──────────────────────────────────────── -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-inner">
+      <h2 class="final-cta-title">Your competitors are already online.<br>Let's get you <em>sorted.</em></h2>
+      <p class="final-cta-sub">Professional website, live in 3 business days. No lock-in after 6 months. No tech headaches.</p>
+
+      <div class="final-cta-btns">
+        <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
+        <a href="mailto:hello@freerangewebsites.com.au" class="btn btn-ghost-white btn-lg">Ask us a question first</a>
+      </div>
+
+      <div class="final-guarantees">
+        <div class="guarantee-item"><span class="guarantee-check">✓</span>Live in 3 business days</div>
+        <div class="guarantee-item"><span class="guarantee-check">✓</span>Hosting included</div>
+        <div class="guarantee-item"><span class="guarantee-check">✓</span>No lock-in after 6 months</div>
+        <div class="guarantee-item"><span class="guarantee-check">✓</span>Local SEO built in</div>
+        <div class="guarantee-item"><span class="guarantee-check">✓</span>Unlimited updates</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo"><span class="fr">FREE</span><span class="fo">RANGE</span> <span style="color:rgba(255,255,255,.5);font-size:14px;font-weight:400">WEBSITES</span></div>
+        <div class="footer-legal" style="margin-top:6px">© 2026 FreeRange Websites · ABN XX XXX XXX XXX</div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/electricians">Electricians</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:hello@freerangewebsites.com.au">Contact</a>
+        <a href="/privacy">Privacy policy</a>
+      </div>
+
+      <div class="footer-legal" style="text-align:right">
+        Websites for Australian small businesses.<br>
+        Built with care in Australia. 🇦🇺
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── JS ────────────────────────────────────────────── -->
+<script>
+// Sticky nav shadow
+window.addEventListener('scroll', function() {
+  var nav = document.getElementById('mainNav');
+  if (window.scrollY > 10) { nav.classList.add('scrolled'); }
+  else { nav.classList.remove('scrolled'); }
+});
+
+// Mobile nav
+function toggleMobileNav() {
+  var nav = document.getElementById('mobileNav');
+  nav.classList.toggle('open');
+}
+
+// FAQ accordion
+function toggleFaq(item) {
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(el){ el.classList.remove('open'); });
+  if (!isOpen) { item.classList.add('open'); }
+}
+
+// Scroll reveal
+var reveals = document.querySelectorAll('.reveal');
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(function(el){ observer.observe(el); });
+
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      var offset = 80;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
