@@ -55,12 +55,12 @@ ul{list-style:none}
 
 /* ── BUTTONS ────────────────────────────── */
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-weight:700;font-size:16px;letter-spacing:.02em;padding:15px 30px;border-radius:50px;cursor:pointer;border:none;transition:all .2s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;position:relative}
-.btn-primary{background:var(--orange);color:#fff;box-shadow:0 4px 16px rgba(254,155,36,.3)}
-.btn-primary:hover{background:var(--orange2);transform:scale(1.04);box-shadow:0 8px 28px rgba(254,155,36,.42)}
+.btn-primary {background: var(--orange);color: #fff;box-shadow: 0 4px 16px rgba(254,155,36,.3);}
+.btn-primary:hover {background: var(--black);box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);}
 .btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.22)}
 .btn-ghost:hover{background:rgba(255,255,255,.2);transform:scale(1.03)}
-.btn-outline{background:transparent;color:var(--text);border:2px solid var(--border)}
-.btn-outline:hover{border-color:var(--text);background:var(--text);color:#fff;transform:scale(1.03)}
+.btn-outline {background: transparent;color: var(--text);border: 2px solid var(--text);transition: all .2s ease-in-out;}
+.btn-outline:hover {background: var(--text);color: #ffffff !important;}
 .btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.28)}
 .btn-outline-white:hover{background:rgba(255,255,255,.1);transform:scale(1.03)}
 .btn-lg{padding:18px 36px;font-size:18px}
@@ -144,7 +144,7 @@ ul{list-style:none}
 
   /* Proportional scaling gap prevents layout compression on intermediate screens */
   gap: clamp(16px, 2vw, 32px) !important;
-  margin: 0 !important;
+  margin: 0 20px 0 0 !important;
 }
 
 /* 5. TEXT ANCHORS
@@ -178,7 +178,7 @@ ul{list-style:none}
   align-items: center !important;
   justify-content: center !important;
   box-sizing: border-box !important;
-  font-family: var(--fh) !important;
+  font-family: var(--fb) !important;
   font-size: 16px !important;
   line-height: 24px !important;
   font-weight: 700 !important;
@@ -289,7 +289,7 @@ ul{list-style:none}
 .blob2{width:480px;height:480px;background:radial-gradient(circle,rgba(144,183,102,.08) 0%,transparent 70%);bottom:-60px;left:32%;animation-duration:22s;animation-delay:-6s}
 @keyframes blobFloat{0%{transform:translate(0,0) scale(1)}100%{transform:translate(36px,28px) scale(1.07)}}
 
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 400px;gap:52px;align-items:center;width:100%}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 400px;gap:80px;align-items:center;width:100%}
 
 /* eyebrow badge */
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(254,155,36,.14);border:1px solid rgba(254,155,36,.28);border-radius:50px;padding:7px 16px;margin-bottom:30px;animation:fadeUp .6s ease .8s both}
@@ -635,11 +635,11 @@ ul{list-style:none}
 
 
         <!-- Horizontal USPs (Colors inverted seamlessly for light layout readability) -->
-        <div class="hero-usps" style="flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px 24px; margin-bottom: 42px; max-width: 100%;">
-          <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Professional website live in 3 days</div>
-          <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Hosting included & unlimited updates</div>
-          <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Local SEO built in to get found</div>
-          <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>No lock-in after 6 months</div>
+        <div class="hero-usps" style="flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px 24px; margin-bottom: 65px; max-width: 100%;">
+          <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Get a brand new custom built website</div>
+          <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Unlimited content changes</div>
+          <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Hosting included</div>
+              <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>No lock-in after 6 months</div>
         </div>
 
         <!-- Interactive CTAs (Ghost button shifted to an outline variant for crisp light contrast) -->
@@ -647,8 +647,6 @@ ul{list-style:none}
           <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
           <a href="#how-it-works" class="btn btn-outline btn-lg" style="border-color: var(--text); color: var(--text);">How it works</a>
         </div>
-
-        <p class="hero-note" style="margin-bottom: 56px; color: var(--soft);">No upfront costs · No tech headaches · Just a website that works</p>
       </div>
 
       <!-- TWO-ROW HORIZONTAL TICKER -->
@@ -673,8 +671,8 @@ ul{list-style:none}
   <div class="container">
     <div class="prob-grid">
       <div>
-        <span class="tag-lbl rv">Sound familiar?</span>
-        <h2 class="sec-title rv">Most tradie websites are a liability,<br>not an asset.</h2>
+        <span class="tag-lbl rv">Does this Sound familiar?</span>
+        <h2 class="sec-title rv">Most business websites are a liability,<br>not an asset.</h2>
         <p class="sec-sub rv" style="margin-bottom:0">If your website is embarrassingly outdated — or you don't have one at all — you're handing jobs to your competitors every single day.</p>
         <div class="pain-list">
           <div class="pain-card rv d1">
@@ -1288,16 +1286,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   });
 });
 
-/* ── MAGNETIC BUTTONS ───────────────────── */
-document.querySelectorAll('.btn-primary,.btn-dark').forEach(function(btn){
-  btn.addEventListener('mousemove',function(e){
-    var r=btn.getBoundingClientRect();
-    var x=e.clientX-r.left-r.width/2;
-    var y=e.clientY-r.top-r.height/2;
-    btn.style.transform='scale(1.04) translate('+(x*.1)+'px,'+(y*.1)+'px)';
-  });
-  btn.addEventListener('mouseleave',function(){btn.style.transform=''});
-});
 </script>
 </body>
 </html>
