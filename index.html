@@ -21,7 +21,7 @@
   --grey:    #f3f3f4;
   --white:   #ffffff;
   --border:  #e6e2dc;
-  --text:    #2a4e53; /* Global Headings & Base Text changed to Deep Teal */
+  --text:    #000; /* Global Headings & Base Text  */
   --mid:     #42666b; /* Muted teal for body paragraphs */
   --soft:    #5c7f84; /* Soft teal for micro-copy and captions */
   --fh:      'Encode Sans Condensed',sans-serif;
@@ -318,16 +318,23 @@ ul{list-style:none}
 .hero-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);opacity:0;animation:fadeUp .5s ease 1.18s both}
 
 /* ── TICKER ─────────────────────────────── */
-.hero-ticker{position:relative;height:520px;overflow:hidden;border-radius:20px;display:flex;gap:10px;opacity:0;animation:fadeUp .7s ease .45s both}
-.ticker-col{display:flex;flex-direction:column;gap:10px;flex:1}
-.ticker-col.col-a{animation:tickUp 30s linear infinite}
-.ticker-col.col-b{animation:tickUp 38s linear infinite;animation-delay:-16s}
-@keyframes tickUp{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
-.ticker-card{border-radius:13px;overflow:hidden;flex-shrink:0;position:relative}
-.ticker-card img{width:100%;height:170px;object-fit:cover;display:block}
-.ticker-card-label{position:absolute;bottom:0;left:0;right:0;padding:9px 11px;background:linear-gradient(transparent,rgba(0,0,0,.68));font-family:var(--fh);font-weight:700;font-size:11px;color:rgba(255,255,255,.88);letter-spacing:.06em;text-transform:uppercase}
-.ticker-mask-top{position:absolute;top:0;left:0;right:0;height:72px;background:linear-gradient(var(--black),transparent);z-index:2;pointer-events:none}
-.ticker-mask-bot{position:absolute;bottom:0;left:0;right:0;height:72px;background:linear-gradient(transparent,var(--black));z-index:2;pointer-events:none}
+/* ── HERO TESTIMONIAL TICKER ─────────────── */
+.hero-tm-wrap{position:relative;width:100%;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:10px 0;opacity:0;animation:fadeUp .7s ease .45s both}
+.hero-tm-wrap::before,.hero-tm-wrap::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:3;pointer-events:none}
+.hero-tm-wrap::before{left:0;background:linear-gradient(90deg,var(--dark2),transparent)}
+.hero-tm-wrap::after{right:0;background:linear-gradient(-90deg,var(--dark2),transparent)}
+.hero-tm-row{display:flex;gap:14px;width:max-content;will-change:transform;align-items:flex-start}
+.htc{display:inline-flex;flex-direction:column;border-radius:16px;overflow:hidden;flex-shrink:0;box-shadow:0 2px 16px rgba(42,78,83,.09)}
+.htc-photo{width:200px;height:160px;object-fit:cover;display:block}
+.htc-quote{background:#fff;border:1px solid var(--border);padding:18px 20px;width:250px;height:160px;display:flex;flex-direction:column;gap:8px;overflow:hidden;text-align:left}
+.htc-quote.wide{width:300px;height:160px}
+.htc-head{display:flex;align-items:center;gap:10px}
+.htc-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800;font-size:13px;color:#fff;flex-shrink:0}
+.htc-nm{font-family:var(--fb);font-weight:700;font-size:13px;color:var(--text);line-height:1.2}
+.htc-rl{font-size:11px;color:var(--soft);margin-top:1px}
+.htc-stars{color:#f5a623;font-size:12px;letter-spacing:1px}
+.htc-hl{display:none;font-family:var(--fb);font-weight:700;font-size:12px;color:var(--text);line-height:1.45}
+.htc-qt{font-size:12px;color:var(--mid);line-height:1.6}
 
 /* ── SCROLL PEEK HINT ───────────────────── */
 /* No arrow indicator — the next section peeks below the fold naturally via hero max-height */
@@ -338,20 +345,23 @@ ul{list-style:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
 
 /* ── PROBLEM ────────────────────────────── */
-.prob{background:var(--cream)}
-.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.prob{background:var(--white)}
+.prob-intro{max-width:600px;margin:0 auto 56px;text-align:center}
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
 .pain-list{display:flex;flex-direction:column;gap:12px;margin-top:26px}
-.pain-card{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1.5px solid var(--border);border-radius:16px;transition:all .22s}
-.pain-card:hover{border-color:var(--orange);transform:translateX(3px);box-shadow:var(--sh)}
-.pain-ico{font-size:20px;flex-shrink:0;margin-top:2px}
+.pain-card{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;background:rgba(254,155,36,.06);border:1.5px solid rgba(254,155,36,.18);border-radius:16px;transition:all .22s}
+.pain-card:hover{border-color:var(--orange);transform:translateX(4px);box-shadow:0 4px 20px rgba(254,155,36,.12)}
+.pain-ico{font-size:26px;flex-shrink:0;margin-top:1px}
 .pain-txt strong{display:block;font-family:var(--fh);font-weight:800;font-size:16px;color:var(--text);margin-bottom:4px}
-.pain-txt span{font-size:14px;color:var(--soft);line-height:1.6}
-.sol-card{background:var(--dark2);border-radius:22px;padding:42px;color:#fff;border:1px solid rgba(255,255,255,.06)}
-.sol-title{font-family:var(--fh);font-weight:900;font-size:30px;line-height:1.1;margin-bottom:22px}
+.pain-txt span{font-size:14px;color:var(--mid);line-height:1.6}
+.sol-card{background:var(--cream);border-radius:22px;padding:38px;border:1.5px solid var(--border);border-left:5px solid var(--orange);box-shadow:0 8px 32px rgba(42,78,83,.08)}
+.sol-lbl{display:inline-flex;align-items:center;gap:6px;font-family:var(--fb);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.sol-lbl::before{content:'◆';font-size:8px}
+.sol-title{font-family:var(--fh);font-weight:900;font-size:28px;line-height:1.1;margin-bottom:22px;color:var(--text)}
 .sol-title em{font-style:normal;color:var(--orange)}
 .sol-items{display:flex;flex-direction:column;gap:14px;margin-bottom:30px}
-.sol-item{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:rgba(255,255,255,.78);line-height:1.55}
-.sol-ck{color:var(--green);font-weight:700;flex-shrink:0;font-size:16px;margin-top:1px}
+.sol-item{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--mid);line-height:1.55}
+.sol-ck{color:var(--green2);font-weight:700;flex-shrink:0;font-size:16px;margin-top:1px}
 
 /* ── FEATURES ───────────────────────────── */
 .feats{background:var(--white)}
@@ -375,46 +385,36 @@ ul{list-style:none}
 .step-desc{font-size:15px;color:var(--mid);line-height:1.65}
 .hiw-cta{text-align:center;margin-top:56px}
 
-/* ── BEFORE / AFTER ─────────────────────── */
-.ba-sec{background:var(--dark2);padding:104px 0}
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px}
-.ba-card{border-radius:18px;overflow:hidden}
-.ba-lbl{display:flex;align-items:center;gap:8px;padding:12px 18px;font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-.ba-lbl.bef{background:#9b1c1c;color:#fff}
-.ba-lbl.aft{background:var(--green2);color:#fff}
-.ba-lbl-dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.65}
-.ba-cap{padding:12px 18px;font-size:13px;color:rgba(255,255,255,.5);text-align:center;background:rgba(255,255,255,.04)}
-
-/* old site mock */
-.mock-old{background:#ddd9d2;width:100%;aspect-ratio:16/10;display:flex;flex-direction:column}
-.mock-old-hdr{background:#1a3a5c;padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
-.mock-old-logo{width:80px;height:12px;background:rgba(255,255,255,.3);border-radius:2px}
-.mock-old-links{display:flex;gap:8px}
-.mock-old-link{width:32px;height:8px;background:rgba(255,255,255,.2);border-radius:2px}
-.mock-old-body{flex:1;background:repeating-linear-gradient(45deg,#ccc8c0 0,#ccc8c0 2px,#ddd9d2 2px,#ddd9d2 14px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:9px;padding:16px}
-.mock-old-t1{width:68%;height:15px;background:#1a3a5c;border-radius:2px}
-.mock-old-t2{width:50%;height:9px;background:rgba(26,58,92,.4);border-radius:2px}
-.mock-old-btn{width:84px;height:26px;background:#c0392b;border-radius:3px;margin-top:5px}
-.mock-old-ftr{background:#f5f2ee;padding:10px 14px;display:flex;gap:10px}
-.mock-old-col{flex:1;display:flex;flex-direction:column;gap:5px}
-.mock-old-line{height:7px;background:#ccc;border-radius:2px}
-.mock-old-img{width:68px;background:#bbb5ac;border-radius:3px}
-
-/* new site mock */
-.mock-new{background:var(--black);width:100%;aspect-ratio:16/10;display:flex;flex-direction:column;overflow:hidden}
-.mock-new-nav{background:rgba(255,255,255,.07);padding:10px 16px;display:flex;align-items:center;justify-content:space-between}
-.mock-new-logo{width:86px;height:11px;background:rgba(255,255,255,.45);border-radius:3px}
-.mock-new-links{display:flex;gap:10px}
-.mock-new-link{width:34px;height:8px;background:rgba(255,255,255,.18);border-radius:2px}
-.mock-new-cta{width:54px;height:19px;background:var(--orange);border-radius:10px}
-.mock-new-hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:18px 22px;gap:7px}
-.mock-new-h1{width:78%;height:19px;background:rgba(255,255,255,.9);border-radius:3px}
-.mock-new-h2{width:58%;height:19px;background:rgba(255,255,255,.9);border-radius:3px}
-.mock-new-s1{width:70%;height:9px;background:rgba(255,255,255,.32);border-radius:2px;margin-top:3px}
-.mock-new-s2{width:52%;height:9px;background:rgba(255,255,255,.32);border-radius:2px}
-.mock-new-btns{display:flex;gap:8px;margin-top:11px}
-.mock-new-b1{width:80px;height:24px;background:var(--orange);border-radius:12px}
-.mock-new-b2{width:68px;height:24px;border:1px solid rgba(255,255,255,.18);border-radius:12px}
+/* ── DIFF SECTION ────────────────────────── */
+.diff-sec{background:var(--white)}
+.diff-carousel-outer{position:relative;overflow:hidden;width:100%;cursor:grab;user-select:none;margin-bottom:56px}
+.diff-carousel-outer:active{cursor:grabbing}
+.diff-carousel-outer::before,.diff-carousel-outer::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:3;pointer-events:none}
+.diff-carousel-outer::before{left:0;background:linear-gradient(90deg,var(--white),transparent)}
+.diff-carousel-outer::after{right:0;background:linear-gradient(-90deg,var(--white),transparent)}
+.diff-track{display:flex;gap:16px;width:max-content;will-change:transform}
+.myth-c{flex-shrink:0;width:296px;border-radius:18px;padding:24px 26px;min-height:160px;display:flex;flex-direction:column;gap:10px}
+.myth-bust-lbl{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:5px}
+.myth-old-txt{font-size:13px;color:var(--mid);text-decoration:line-through;line-height:1.55}
+.myth-new-txt{font-size:14px;font-weight:600;color:var(--text);line-height:1.5}
+.sc-wrap{border:1.5px solid var(--border);border-radius:20px;overflow:hidden}
+.sc-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr);border-bottom:1.5px solid var(--border)}
+.sc-hc{padding:14px 16px;font-family:var(--fh);font-weight:700;font-size:13px;color:var(--soft);text-align:center}
+.sc-hc:first-child{text-align:left}
+.sc-hc.ours{background:rgba(144,183,102,.12);color:var(--green2)}
+.sc-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr);border-bottom:1px solid var(--border)}
+.sc-row:last-child{border-bottom:none}
+.sc-c{padding:13px 16px;font-size:14px;color:var(--mid);text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.4;transition:background .15s}
+.sc-c:first-child{text-align:left;justify-content:flex-start;font-family:var(--fh);font-weight:700;font-size:14px;color:var(--text)}
+.sc-c.ours{background:rgba(144,183,102,.06)}
+.sc-row:hover .sc-c{background:var(--grey)}
+.sc-row:hover .sc-c.ours{background:rgba(144,183,102,.14)}
+.sc-bad{color:#c0392b;font-size:13px}
+.sc-good{color:var(--green2);font-weight:600;font-size:13px}
+.diff-cta-wrap{text-align:center;margin-top:40px;padding:40px 32px;background:var(--cream);border-radius:20px;border:1.5px solid var(--border)}
+.diff-cta-hl{font-family:var(--fh);font-weight:900;font-size:28px;color:var(--text);margin-bottom:10px}
+.diff-cta-hl em{font-style:normal;color:var(--orange)}
+.diff-cta-sub{font-size:15px;color:var(--mid);margin-bottom:26px;line-height:1.65}
 
 /* ── PRICING ────────────────────────────── */
 .pricing{background:var(--white)}
@@ -422,7 +422,7 @@ ul{list-style:none}
 .price-card{border:1.5px solid var(--border);border-radius:22px;padding:32px;background:var(--cream);position:relative;transition:all .24s}
 .price-card:hover{transform:translateY(-4px);box-shadow:var(--shl)}
 .price-card.feat{border-color:var(--black);background:var(--white);box-shadow:var(--shl);transform:scale(1.025)}
-.price-card.feat:hover{transform:scale(1.025) translateY(-4px)}
+.price-card.feat:hover{transform:scale(<!-- ── BEFORE / AFTER ──1.025) translateY(-4px)}
 .price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:var(--fh);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:50px;white-space:nowrap}
 .price-tier{font-family:var(--fh);font-weight:900;font-size:23px;color:var(--text);margin-bottom:6px}
 .price-tag{font-size:13px;color:var(--soft);margin-bottom:20px;line-height:1.45}
@@ -649,71 +649,16 @@ ul{list-style:none}
         </div>
       </div>
 
-      <!-- TWO-ROW HORIZONTAL TICKER -->
-      <div class="hero-ticker-horizontal" style="position: relative; width: 100%; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 10px 0; opacity: 0; animation: fadeUp .7s ease .45s both;">
-        <!-- Clean linear gradients blending right out into your new light cream bg -->
-        <div style="position: absolute; top: 0; left: 0; bottom: 0; width: 120px; background: linear-gradient(90deg, var(--dark2), transparent); z-index: 2; pointer-events: none;"></div>
-        <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 120px; background: linear-gradient(-90deg, var(--dark2), transparent); z-index: 2; pointer-events: none;"></div>
-
-        <!-- Row 1 Track -->
-        <div id="tickerTrackTop" style="display: flex; gap: 16px; white-space: nowrap; width: max-content; will-change: transform;"></div>
-
-        <!-- Row 2 Track -->
-        <div id="tickerTrackBottom" style="display: flex; gap: 16px; white-space: nowrap; width: max-content; will-change: transform;"></div>
-      </div>
-
+<!-- HERO TESTIMONIAL TICKER -->
+<div class="hero-tm-wrap">
+  <div id="heroTmA" class="hero-tm-row"></div>
+  <div id="heroTmB" class="hero-tm-row"></div>
+</div>
     </div>
   </div>
 </section>
 
 <!-- ── PROBLEM ───────────────────────────── -->
-<section class="sec prob" id="problem">
-  <div class="container">
-    <div class="prob-grid">
-      <div>
-        <span class="tag-lbl rv">Does this Sound familiar?</span>
-        <h2 class="sec-title rv">Most business websites are a liability,<br>not an asset.</h2>
-        <p class="sec-sub rv" style="margin-bottom:0">If your website is embarrassingly outdated — or you don't have one at all — you're handing jobs to your competitors every single day.</p>
-        <div class="pain-list">
-          <div class="pain-card rv d1">
-            <span class="pain-ico">💸</span>
-            <div class="pain-txt">
-              <strong>Web agencies charge $3,000–$8,000 upfront</strong>
-              <span>And then $150/hr every time you want a word changed. For a tradie getting started, that's not a website — that's a tax.</span>
-            </div>
-          </div>
-          <div class="pain-card rv d2">
-            <span class="pain-ico">🕸️</span>
-            <div class="pain-txt">
-              <strong>DIY builders look amateurish and don't rank on Google</strong>
-              <span>Generic templates weren't built for local search. And who's updating it when you're on the tools all day?</span>
-            </div>
-          </div>
-          <div class="pain-card rv d3">
-            <span class="pain-ico">📵</span>
-            <div class="pain-txt">
-              <strong>No website means no phone calls from Google</strong>
-              <span>When someone searches "electrician near me", your competitor's site answers. Yours doesn't even show up.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="rv d1">
-        <div class="sol-card">
-          <div class="sol-title">There's a better way.<br><em>Cage-free.</em></div>
-          <div class="sol-items">
-            <div class="sol-item"><span class="sol-ck">✓</span>Professional website live in 3 business days — not 3 months</div>
-            <div class="sol-item"><span class="sol-ck">✓</span>Built to rank on Google for local searches in your suburb</div>
-            <div class="sol-item"><span class="sol-ck">✓</span>Send us a message, we update your site — no extra charges</div>
-            <div class="sol-item"><span class="sol-ck">✓</span>Hosting, SSL, updates, Google Business Profile — all in</div>
-            <div class="sol-item"><span class="sol-ck">✓</span>Flat monthly fee. No lock-in after 6 months. No surprises.</div>
-          </div>
-          <a href="#pricing" class="btn btn-primary">See how much it costs</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── FEATURES ──────────────────────────── -->
 <section class="sec feats" id="features">
@@ -757,6 +702,116 @@ ul{list-style:none}
     </div>
   </div>
 </section>
+<section class="sec diff-sec" id="why-us">
+  <div class="container">
+    <div class="tc">
+      <span class="tag-lbl rv">Why FreeRange</span>
+      <h2 class="sec-title rv">Let's <em>bust</em> a few myths</h2>
+      <p class="sec-sub rv">A lot of tradies have been burnt by agencies or freelancers. Here's the honest truth.</p>
+    </div>
+    <div class="diff-carousel-outer rv" id="diffOuter">
+      <div class="diff-track" id="diffTrack">
+        <div class="myth-c" style="background:#ede9f5">
+          <div class="myth-bust-lbl" style="color:#534ab7">✕ the myth</div>
+          <div class="myth-old-txt">"A good website costs thousands upfront."</div>
+          <div class="myth-new-txt">Starts at $79/mo. Zero deposit. Zero upfront.</div>
+        </div>
+        <div class="myth-c" style="background:#dff0e8">
+          <div class="myth-bust-lbl" style="color:#0f6e56">✕ the myth</div>
+          <div class="myth-old-txt">"You wait weeks or months to go live."</div>
+          <div class="myth-new-txt">Fill in a 5-min form. Live in 3 business days.</div>
+        </div>
+        <div class="myth-c" style="background:#faeedd">
+          <div class="myth-bust-lbl" style="color:#854f0b">✕ the myth</div>
+          <div class="myth-old-txt">"Every change costs $120–$250 per hour."</div>
+          <div class="myth-new-txt">Send us a message. We update it. No charge.</div>
+        </div>
+        <div class="myth-c" style="background:#fce8e8">
+          <div class="myth-bust-lbl" style="color:#993556">✕ the myth</div>
+          <div class="myth-old-txt">"SEO is an expensive add-on."</div>
+          <div class="myth-new-txt">Local SEO baked into every site from day one.</div>
+        </div>
+        <div class="myth-c" style="background:#e0edf8">
+          <div class="myth-bust-lbl" style="color:#185fa5">✕ the myth</div>
+          <div class="myth-old-txt">"Templates are fine — they all look the same anyway."</div>
+          <div class="myth-new-txt">Every site is handbuilt for your business. No templates.</div>
+        </div>
+        <div class="myth-c" style="background:#eaf3de">
+          <div class="myth-bust-lbl" style="color:#3b6d11">✕ the myth</div>
+          <div class="myth-old-txt">"You need a developer to keep a website running."</div>
+          <div class="myth-new-txt">We handle everything. You just run your business.</div>
+        </div>
+      </div>
+    </div>
+    <div class="sc-wrap rv">
+      <div class="sc-head">
+        <div class="sc-hc"></div>
+        <div class="sc-hc">An agency</div>
+        <div class="sc-hc">A freelancer</div>
+        <div class="sc-hc ours">⚡ FreeRange</div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Upfront cost</div>
+        <div class="sc-c"><span class="sc-bad">$5k – $20k</span></div>
+        <div class="sc-c"><span class="sc-bad">$600 – $5k</span></div>
+        <div class="sc-c ours"><span class="sc-good">$0</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Time to go live</div>
+        <div class="sc-c"><span class="sc-bad">4 – 12 weeks</span></div>
+        <div class="sc-c"><span class="sc-bad">2 – 6 weeks</span></div>
+        <div class="sc-c ours"><span class="sc-good">3 business days</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Content updates</div>
+        <div class="sc-c"><span class="sc-bad">$120 – $250/hr</span></div>
+        <div class="sc-c"><span class="sc-bad">$60 – $150/hr</span></div>
+        <div class="sc-c ours"><span class="sc-good">Unlimited, free</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Hosting included</div>
+        <div class="sc-c"><span class="sc-bad">Rarely</span></div>
+        <div class="sc-c"><span class="sc-bad">No</span></div>
+        <div class="sc-c ours"><span class="sc-good">Always</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Local SEO built in</div>
+        <div class="sc-c"><span class="sc-bad">Expensive add-on</span></div>
+        <div class="sc-c"><span class="sc-bad">Rarely</span></div>
+        <div class="sc-c ours"><span class="sc-good">Always included</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Security &amp; SSL</div>
+        <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
+        <div class="sc-c"><span class="sc-bad">Your problem</span></div>
+        <div class="sc-c ours"><span class="sc-good">Included</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Site performance</div>
+        <div class="sc-c"><span class="sc-bad">Not guaranteed</span></div>
+        <div class="sc-c"><span class="sc-bad">Varies</span></div>
+        <div class="sc-c ours"><span class="sc-good">Fast, always</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Handbuilt websites</div>
+        <div class="sc-c"><span class="sc-good"><span style="caret-color: rgb(192, 57, 43); color: rgb(192, 57, 43); font-weight: 400;">Depends on the budget</span><br></span></div>
+        <div class="sc-c"><span class="sc-bad">Often templates</span></div>
+        <div class="sc-c ours"><span class="sc-good">Every time</span></div>
+      </div>
+      <div class="sc-row">
+        <div class="sc-c">Google Business setup</div>
+        <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
+        <div class="sc-c"><span class="sc-bad">Not offered</span></div>
+        <div class="sc-c ours"><span class="sc-good">Included</span></div>
+      </div>
+    </div>
+    <div class="diff-cta-wrap rv">
+      <div class="diff-cta-hl">Reckon you've <em>seen enough?</em></div>
+      <p class="diff-cta-sub">Most of our clients wish they'd found us sooner.<br>No lock-in after 6 months. Live in 3 business days.</p>
+      <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
+    </div>
+  </div>
+</section>
 
 <!-- ── HOW IT WORKS ──────────────────────── -->
 <section class="sec hiw" id="how-it-works">
@@ -790,59 +845,7 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ── BEFORE / AFTER ────────────────────── -->
-<section class="ba-sec" id="results">
-  <div class="container">
-    <div class="tc">
-      <span class="tag-lbl tag-lbl-white rv">Real results</span>
-      <h2 class="sec-title sec-title-white rv">The difference a proper website makes.</h2>
-      <p class="sec-sub sec-sub-white rv" style="margin:0 auto">This is the gap between being invisible online and generating real enquiries every week.</p>
-    </div>
-    <div class="ba-grid">
-      <div class="ba-card rv">
-        <div class="ba-lbl bef"><span class="ba-lbl-dot"></span>Before — Typical tradie "website"</div>
-        <div class="mock-old">
-          <div class="mock-old-hdr">
-            <div class="mock-old-logo"></div>
-            <div class="mock-old-links"><div class="mock-old-link"></div><div class="mock-old-link"></div><div class="mock-old-link"></div></div>
-          </div>
-          <div class="mock-old-body">
-            <div class="mock-old-t1"></div>
-            <div class="mock-old-t2"></div>
-            <div class="mock-old-btn"></div>
-          </div>
-          <div class="mock-old-ftr">
-            <div class="mock-old-img"></div>
-            <div class="mock-old-col"><div class="mock-old-line"></div><div class="mock-old-line" style="width:60%"></div><div class="mock-old-line" style="width:80%"></div><div class="mock-old-line" style="width:50%"></div></div>
-            <div class="mock-old-col"><div class="mock-old-line" style="width:75%"></div><div class="mock-old-line"></div><div class="mock-old-line" style="width:55%"></div></div>
-          </div>
-        </div>
-        <div class="ba-cap">Built in 2014. Not mobile-friendly. Page 6 on Google. Zero enquiries.</div>
-      </div>
-      <div class="ba-card rv d1">
-        <div class="ba-lbl aft"><span class="ba-lbl-dot"></span>After — FreeRange Website</div>
-        <div class="mock-new">
-          <div class="mock-new-nav">
-            <div class="mock-new-logo"></div>
-            <div class="mock-new-links"><div class="mock-new-link"></div><div class="mock-new-link"></div><div class="mock-new-link"></div></div>
-            <div class="mock-new-cta"></div>
-          </div>
-          <div class="mock-new-hero">
-            <div class="mock-new-h1"></div>
-            <div class="mock-new-h2"></div>
-            <div class="mock-new-s1"></div>
-            <div class="mock-new-s2"></div>
-            <div class="mock-new-btns"><div class="mock-new-b1"></div><div class="mock-new-b2"></div></div>
-          </div>
-        </div>
-        <div class="ba-cap" style="background:rgba(144,183,102,.1);color:rgba(255,255,255,.65)">Live in 3 days. Mobile-first. Ranking page 1 for "electrician [suburb]" within 8 weeks.</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:48px" class="rv">
-      <a href="#pricing" class="btn btn-primary btn-lg">Get your business online properly</a>
-    </div>
-  </div>
-</section>
+<!-- ── WHY FREERANGE ────────────────────── -->
 
 <!-- ── PRICING ───────────────────────────── -->
 <section class="sec pricing" id="pricing">
@@ -918,95 +921,6 @@ ul{list-style:none}
 </section>
 
 <!-- ── TESTIMONIALS ──────────────────────── -->
-<section class="sec testi" id="testimonials">
-  <div class="container">
-    <div class="tc">
-      <span class="tag-lbl rv">What clients say</span>
-      <h2 class="sec-title rv">Tradies who took the leap</h2>
-      <p class="sec-sub rv">Real businesses. Real results. No marketing fluff.</p>
-    </div>
-    <div class="testi-grid">
-      <!-- Card 1 - Orange -->
-      <div class="t-card t-orange rv">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-quote">"Phone started ringing within three weeks of going live. I've already booked two jobs off the website."</div>
-        <div class="t-author">
-          <div class="t-avatar">SM</div>
-          <div>
-            <div class="t-name">Steve M.</div>
-            <div class="t-role">Licensed Plumber · Melbourne</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 - Dark Green -->
-      <div class="t-card t-green rv d1">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-quote">"I'd been embarrassed by my old site for years. Three days after signing up I had something I was actually proud to send to clients."</div>
-        <div class="t-author">
-          <div class="t-avatar">BK</div>
-          <div>
-            <div class="t-name">Brad K.</div>
-            <div class="t-role">Electrician · Western Sydney</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 - Yellow -->
-      <div class="t-card t-yellow rv d2">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-quote">"I was paying a bloke $200 a month to 'manage' a site that hadn't been updated in two years. This is night and day."</div>
-        <div class="t-author">
-          <div class="t-avatar">DC</div>
-          <div>
-            <div class="t-name">Deb C.</div>
-            <div class="t-role">Cleaning Business · Brisbane</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 4 - Slate Blue -->
-      <div class="t-card t-slate rv">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-quote">"Set it and forget it. I filled in a form, they built the site, sorted the Google stuff, and now I just get on with the job."</div>
-        <div class="t-author">
-          <div class="t-avatar">KT</div>
-          <div>
-            <div class="t-name">Kel T.</div>
-            <div class="t-role">Landscaper · Perth</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 5 - Cream/White -->
-      <div class="t-card t-cream rv d1">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-quote">"The local SEO stuff is the real value. We're now showing up on Google Maps for three suburbs we never would have appeared in before."</div>
-        <div class="t-author">
-          <div class="t-avatar">TW</div>
-          <div>
-            <div class="t-name">Tony W.</div>
-            <div class="t-role">Builder · Adelaide</div>
-          </div>
-        </div>
-      </div>
-      <!-- Card 6 - Plum -->
-      <div class="t-card t-plum rv d2">
-        <div class="t-stars">★★★★★</div>
-        <div class="t-quote">"Started my bookkeeping business three months ago. Having a proper website from day one made me look established straight away."</div>
-        <div class="t-author">
-          <div class="t-avatar">AP</div>
-          <div>
-            <div class="t-name">Angela P.</div>
-            <div class="t-role">Bookkeeper · Gold Coast</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Stats row -->
-    <div class="testi-stat rv">
-      <div class="ts-item"><div class="ts-num"><em>3</em> days</div><div class="ts-lbl">Average go-live time</div></div>
-      <div class="ts-item" style="border-left:1px solid var(--border);padding-left:52px"><div class="ts-num"><em>5</em>★</div><div class="ts-lbl">Average client rating</div></div>
-      <div class="ts-item" style="border-left:1px solid var(--border);padding-left:52px"><div class="ts-num">$<em>0</em></div><div class="ts-lbl">Upfront cost</div></div>
-    </div>
-  </div>
-</section>
 
 <!-- ── WHO IT'S FOR ──────────────────────── -->
 <section class="sec who" id="who">
@@ -1151,83 +1065,47 @@ ul{list-style:none}
 </footer>
 
 <script>
-/* ── TICKER (DOUBLE HORIZONTAL ROWS) ─────────────────── */
-var imgs = [
-  {url:'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=250&fit=crop&auto=format',label:'Electrician'},
-  {url:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&auto=format',label:'Plumber'},
-  {url:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=250&fit=crop&auto=format',label:'Landscaper'},
-  {url:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=250&fit=crop&auto=format',label:'Builder'},
-  {url:'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&auto=format',label:'Local Business'},
-  {url:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=250&fit=crop&auto=format',label:'Cleaner'},
-  {url:'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop&auto=format',label:'Tradie'},
-  {url:'https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=250&fit=crop&auto=format',label:'On the Tools'}
+/* ── HERO TESTIMONIAL TICKER ─────────────────── */
+var heroTmCards=[
+  {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop&auto=format',alt:'Electrician on the job',tall:false},
+  {type:'quote',row:'a',size:'',av:'DM',ac:'#5a8a35',name:'Dave M.',role:'Electrician · Sydney',hl:'3–4 new leads a week',qt:'"Didn\'t expect results that fast. Phone\'s been running hot."'},
+  {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=380&fit=crop&auto=format',alt:'Plumber working',tall:true},
+  {type:'quote',row:'a',size:'wide',av:'SK',ac:'#7c5cbf',name:'Sarah K.',role:'Bookkeeper · Brisbane',hl:'Finally looks like a real business',qt:'"Was paying $180/mo for a site that looked like 2009. FreeRange sorted me out in three days."'},
+  {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop&auto=format',alt:'Builder on site',tall:false},
+  {type:'quote',row:'a',size:'',av:'MT',ac:'#fe9b24',name:'Mick T.',role:'Plumber · Melbourne',hl:null,qt:'"Calls from Google every week now. Pays for itself easily."'},
+  {type:'quote',row:'b',size:'wide',av:'AP',ac:'#7c5cbf',name:'Angela P.',role:'Bookkeeper · Gold Coast',hl:'Looked established from day one',qt:'"Started the business 3 months ago. A proper website made clients take me seriously straight away."'},
+  {type:'photo',row:'b',url:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=320&fit=crop&auto=format',alt:'Cleaner at work',tall:true},
+  {type:'quote',row:'b',size:'',av:'TW',ac:'#3a7bd5',name:'Tony W.',role:'Builder · Adelaide',hl:null,qt:'"Showing up in Google Maps now. That alone paid for a year\'s subscription."'},
+  {type:'photo',row:'b',url:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop&auto=format',alt:'Landscaper working',tall:false},
+  {type:'quote',row:'b',size:'',av:'JR',ac:'#e05c4b',name:'Jake R.',role:'Painter · Perth',hl:'No drama, just done',qt:'"Sent my details Monday, site was live Thursday."'}
 ];
-
-var trackTop = document.getElementById('tickerTrackTop');
-var trackBottom = document.getElementById('tickerTrackBottom');
-
-// Helper function to build infinite element loops
-function populateTrack(trackElement, imageArray) {
-  if (!trackElement) return;
-  // Triple up the array split to allow perfect, seamless snapping boundaries
-  var loopedSet = imageArray.concat(imageArray).concat(imageArray);
-
-  loopedSet.forEach(function(img) {
-    var card = document.createElement('div');
-    card.className = 'ticker-card';
-    card.style.width = '220px';
-    card.style.height = '130px'; // Shorter card height looks significantly cleaner on stacked rows
-    card.style.position = 'relative';
-    card.style.display = 'inline-block';
-
-    card.innerHTML = '<img src="'+img.url+'" alt="'+img.label+'" loading="lazy" style="width:100%; height:100%; object-fit:cover;"><div class="ticker-card-label">'+img.label+'</div>';
-    trackElement.appendChild(card);
-  });
-}
-
-// Split our core imagery sets between the two tracks so the rows look distinct
-var setA = imgs.filter(function(_, i) { return i % 2 === 0; });
-var setB = imgs.filter(function(_, i) { return i % 2 !== 0; });
-
-populateTrack(trackTop, setA);
-populateTrack(trackBottom, setB);
-
-// Speed Engine & Positions
-var speedTop = 0.7;     // Top row speed
-var speedBottom = 0.4;  // Bottom row is visibly slower
-var currentXTop = 0;
-var currentXBottom = 0;
-
-function animateDoubleTicker() {
-  // Move both to the left
-  currentXTop -= speedTop;
-  currentXBottom -= speedBottom;
-
-  // Reset Top Track once first section boundary is crossed
-  if (trackTop) {
-    var maxResetTop = trackTop.scrollWidth / 3;
-    if (Math.abs(currentXTop) >= maxResetTop) {
-      currentXTop = 0;
-    }
-    trackTop.style.transform = 'translateX(' + currentXTop + 'px)';
+function buildHeroTmCard(d){
+  var el=document.createElement('div');
+  if(d.type==='photo'){
+    el.className='htc';
+    el.innerHTML='<img class="htc-photo'+(d.tall?' tall':'')+'" src="'+d.url+'" alt="'+d.alt+'" loading="lazy">';
+  } else {
+    el.className='htc htc-quote'+(d.size?' '+d.size:'');
+    var hl=d.hl?'<div class="htc-hl">'+d.hl+'</div>':'';
+    el.innerHTML='<div class="htc-head"><div class="htc-av" style="background:'+d.ac+'">'+d.av+'</div><div><div class="htc-nm">'+d.name+'</div><div class="htc-rl">'+d.role+'</div></div></div><div class="htc-stars">★★★★★</div>'+hl+'<div class="htc-qt">'+d.qt+'</div>';
   }
-
-  // Reset Bottom Track once first section boundary is crossed
-  if (trackBottom) {
-    var maxResetBottom = trackBottom.scrollWidth / 3;
-    if (Math.abs(currentXBottom) >= maxResetBottom) {
-      currentXBottom = 0;
-    }
-    trackBottom.style.transform = 'translateX(' + currentXBottom + 'px)';
-  }
-
-  requestAnimationFrame(animateDoubleTicker);
+  return el;
 }
-
-// Fire up the animation cycle
-if (trackTop || trackBottom) {
-  animateDoubleTicker();
+var heroA=document.getElementById('heroTmA');
+var heroB=document.getElementById('heroTmB');
+function shuffle(arr){return arr.slice().sort(function(){return Math.random()-.5})}
+var setHA=shuffle(heroTmCards.filter(function(d){return d.row==='a'}));
+var setHB=shuffle(heroTmCards.filter(function(d){return d.row==='b'}));
+[].concat(setHA,setHA,setHA).forEach(function(d){if(heroA)heroA.appendChild(buildHeroTmCard(d))});
+[].concat(setHB,setHB,setHB).forEach(function(d){if(heroB)heroB.appendChild(buildHeroTmCard(d))});
+var hSpA=0.6,hSpB=0.38,hXA=0,hXB=0;
+function animHeroTm(){
+  hXA-=hSpA;hXB-=hSpB;
+  if(heroA){var mA=heroA.scrollWidth/3;if(Math.abs(hXA)>=mA)hXA=0;heroA.style.transform='translateX('+hXA+'px)'}
+  if(heroB){var mB=heroB.scrollWidth/3;if(Math.abs(hXB)>=mB)hXB=0;heroB.style.transform='translateX('+hXB+'px)'}
+  requestAnimationFrame(animHeroTm);
 }
+if(heroA||heroB)animHeroTm();
 
 /* ── INVERSE SCROLL NAV ─────────────────── */
 var lastScroll=0;
@@ -1256,6 +1134,27 @@ window.addEventListener('scroll',function(){
     ticking=true;
   }
 },{passive:true});
+
+  /* ── MYTH CAROUSEL ───────────────────── */
+(function(){
+  var outer=document.getElementById('diffOuter');
+  var track=document.getElementById('diffTrack');
+  if(!outer||!track)return;
+  var orig=Array.from(track.children);
+  orig.forEach(function(c){track.appendChild(c.cloneNode(true))});
+  orig.forEach(function(c){track.appendChild(c.cloneNode(true))});
+  var cardW=296+16;
+  var totalW=orig.length*cardW;
+  var pos=0;
+  var paused=false;
+  outer.addEventListener('mouseenter',function(){paused=true});
+  outer.addEventListener('mouseleave',function(){paused=false});
+  function animMyth(){
+    if(!paused){pos+=0.7;if(pos>=totalW)pos=0;track.style.transform='translateX(-'+pos+'px)'}
+    requestAnimationFrame(animMyth);
+  }
+  animMyth();
+})();
 
 /* ── SCROLL REVEAL ──────────────────────── */
 var rvEls=document.querySelectorAll('.rv');
