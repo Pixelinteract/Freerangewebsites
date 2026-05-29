@@ -31,7 +31,12 @@
   --sh:      0 2px 16px rgba(42,78,83,.07);
   --shl:     0 12px 48px rgba(42,78,83,.12);
 }
+  /* Global Typography Overrides */
+html {font-size: 16px;}
+body {font-size: 1rem !important;}
+p {font-size: 1rem !important;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
 html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--cream);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
@@ -39,16 +44,16 @@ a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
 /* ── UTILS ──────────────────────────────── */
-.container{width:100%;max-width:1120px;margin:0 auto;padding:0 32px}
+.container{width: 90vw;max-width: 1504px;margin:0 auto;padding:0 32px}
 .sec{padding:112px 0}
 .sec-sm{padding:64px 0}
 .tag-lbl{display:inline-flex;align-items:center;gap:6px;font-family:var(--fb);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
-.tag-lbl::before{content:'◆';font-size:8px}
+
 .tag-lbl-white{color:rgba(255,255,255,.55)}
 .tag-lbl-white::before{color:rgba(255,255,255,.3)}
 .sec-title{font-family:var(--fh);font-weight:900;font-size:clamp(34px,4vw,50px);line-height:1.06;color:var(--text);margin-bottom:16px;letter-spacing:-.01em}
 .sec-title-white{color:#fff}
-.sec-sub{font-size:17px;font-weight:400;color:var(--mid);max-width:560px;line-height:1.7}
+.sec-sub{font-size:17px;font-weight:400;color:var(--mid);max-width:1000px;line-height:1.7}
 .sec-sub-white{color:rgba(255,255,255,.6)}
 .tc{text-align:center}
 .tc .sec-sub{margin:0 auto}
@@ -64,7 +69,7 @@ ul{list-style:none}
 .btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.28)}
 .btn-outline-white:hover{background:rgba(255,255,255,.1);transform:scale(1.03)}
 .btn-lg{padding:18px 36px;font-size:18px}
-.btn-sm{padding:10px 22px;font-size:14px}
+.btn-sm{padding:10px 22px;font-size:1rem}
 .btn-dark{background:var(--black);color:#fff}
 .btn-dark:hover{background:#2e3330;transform:scale(1.03)}
 
@@ -217,7 +222,7 @@ ul{list-style:none}
   }
   .nav-links a {
     font-size: 16px !important;
-    padding: 8px 14px !important;
+    padding: 8px 1rem !important;
   }
   .nav-cta-pill {
     padding: 10px 24px !important;
@@ -229,9 +234,9 @@ ul{list-style:none}
 .logo-rng{color:var(--orange)}
 .logo-dot{color:var(--green);font-size:22px;line-height:0;vertical-align:middle;margin:0 1px}
 .nav-links{display:flex;align-items:center;gap:24px;margin:0 24px}
-.nav-links a{font-family:var(--fb);font-weight:500;font-size:14px;color:var(--mid);transition:color .15s}
+.nav-links a{font-family:var(--fb);font-weight:500;font-size:1rem;color:var(--mid);transition:color .15s}
 .nav-links a:hover{color:var(--black)}
-.nav-cta-pill{background:var(--black);color:#fff;font-family:var(--fh);font-weight:700;font-size:14px;padding:11px 22px;border-radius:50px;transition:all .2s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
+.nav-cta-pill{background:var(--black);color:#fff;font-family:var(--fh);font-weight:700;font-size:1rem;padding:11px 22px;border-radius:50px;transition:all .2s cubic-bezier(.34,1.56,.64,1);white-space:nowrap}
 .nav-cta-pill:hover{background:var(--orange);transform:scale(1.05)}
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;margin-left:8px}
 .ham span{display:block;width:20px;height:2px;background:var(--black);border-radius:2px;transition:all .2s}
@@ -319,11 +324,11 @@ ul{list-style:none}
 
 /* ── TICKER ─────────────────────────────── */
 /* ── HERO TESTIMONIAL TICKER ─────────────── */
-.hero-tm-wrap{position:relative;width:100%;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:10px 0;opacity:0;animation:fadeUp .7s ease .45s both}
+.hero-tm-wrap{position:relative;width:100%;overflow:hidden;display:flex;flex-direction:column;gap:1rem;padding:10px 0;opacity:0;animation:fadeUp .7s ease .45s both}
 .hero-tm-wrap::before,.hero-tm-wrap::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:3;pointer-events:none}
 .hero-tm-wrap::before{left:0;background:linear-gradient(90deg,var(--dark2),transparent)}
 .hero-tm-wrap::after{right:0;background:linear-gradient(-90deg,var(--dark2),transparent)}
-.hero-tm-row{display:flex;gap:14px;width:max-content;will-change:transform;align-items:flex-start}
+.hero-tm-row{display:flex;gap:1rem;width:max-content;will-change:transform;align-items:flex-start}
 .htc{display:inline-flex;flex-direction:column;border-radius:16px;overflow:hidden;flex-shrink:0;box-shadow:0 2px 16px rgba(42,78,83,.09)}
 .htc-photo{width:200px;height:160px;object-fit:cover;display:block}
 .htc-quote{background:#fff;border:1px solid var(--border);padding:18px 20px;width:250px;height:160px;display:flex;flex-direction:column;gap:8px;overflow:hidden;text-align:left}
@@ -353,26 +358,52 @@ ul{list-style:none}
 .pain-card:hover{border-color:var(--orange);transform:translateX(4px);box-shadow:0 4px 20px rgba(254,155,36,.12)}
 .pain-ico{font-size:26px;flex-shrink:0;margin-top:1px}
 .pain-txt strong{display:block;font-family:var(--fh);font-weight:800;font-size:16px;color:var(--text);margin-bottom:4px}
-.pain-txt span{font-size:14px;color:var(--mid);line-height:1.6}
+.pain-txt span{font-size:1rem;color:var(--mid);line-height:1.6}
 .sol-card{background:var(--cream);border-radius:22px;padding:38px;border:1.5px solid var(--border);border-left:5px solid var(--orange);box-shadow:0 8px 32px rgba(42,78,83,.08)}
-.sol-lbl{display:inline-flex;align-items:center;gap:6px;font-family:var(--fb);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:14px}
+.sol-lbl{display:inline-flex;align-items:center;gap:6px;font-family:var(--fb);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem}
 .sol-lbl::before{content:'◆';font-size:8px}
 .sol-title{font-family:var(--fh);font-weight:900;font-size:28px;line-height:1.1;margin-bottom:22px;color:var(--text)}
 .sol-title em{font-style:normal;color:var(--orange)}
-.sol-items{display:flex;flex-direction:column;gap:14px;margin-bottom:30px}
+.sol-items{display:flex;flex-direction:column;gap:1rem;margin-bottom:30px}
 .sol-item{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:var(--mid);line-height:1.55}
 .sol-ck{color:var(--green2);font-weight:700;flex-shrink:0;font-size:16px;margin-top:1px}
 
 /* ── FEATURES ───────────────────────────── */
 .feats{background:var(--white)}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
-.feat-card{background:var(--cream);border:1.5px solid var(--border);border-radius:20px;padding:28px;transition:all .24s;cursor:default}
-.feat-card:hover{transform:translateY(-5px);box-shadow:var(--shl);border-color:var(--orange)}
-.feat-icon{width:50px;height:50px;background:var(--black);border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:background .2s}
-.feat-card:hover .feat-icon{background:var(--orange)}
-.feat-icon svg{width:24px;height:24px}
+
+/* Card Base State with Soft Box Shadows */
+/* Card Base State - Flat and Borderless */
+.feat-card{
+  border: 1px solid transparent;
+  border-radius:20px;
+  padding:28px;
+  cursor:default;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Subtle Hover Shift: Slight lift, deeper shadow, crisp outer accent glow */
+.feat-card.f-blue:hover   { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(26, 115, 232, 0.08); border-color: rgba(26, 115, 232, 0.15); }
+.feat-card.f-pink:hover   { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(217, 119, 119, 0.08); border-color: rgba(217, 119, 119, 0.15); }
+.feat-card.f-green:hover  { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(90, 138, 53, 0.08); border-color: rgba(90, 138, 53, 0.15); }
+.feat-card.f-yellow:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(217, 163, 0, 0.08); border-color: rgba(217, 163, 0, 0.15); }
+.feat-card.f-purple:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(124, 92, 191, 0.08); border-color: rgba(124, 92, 191, 0.15); }
+.feat-card.f-grey:hover   { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06); border-color: rgba(0, 0, 0, 0.08); }
+
+/* White Squircle Icon Wrapper */
+.feat-icon{width:48px;height:48px;background:#ffffff;border-radius:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.04)}
+.feat-icon svg{width:22px;height:22px}
+
+/* Full Pastel Fills for the Entire Card */
+.feat-card.f-blue   { background-color: #f0f6ff; }
+.feat-card.f-pink   { background-color: #fdf2f2; }
+.feat-card.f-green  { background-color: #f2f9f0; }
+.feat-card.f-yellow { background-color: #fffdeb; }
+.feat-card.f-purple { background-color: #f6f2fc; }
+.feat-card.f-grey   { background-color: #f5f7f8; }
+
 .feat-name{font-family:var(--fh);font-weight:800;font-size:19px;color:var(--text);margin-bottom:8px}
-.feat-desc{font-size:14px;color:var(--mid);line-height:1.65}
+.feat-desc{font-size:1rem;color:var(--mid);line-height:1.65}
 
 /* ── HOW IT WORKS ───────────────────────── */
 .hiw{background:var(--cream)}
@@ -386,35 +417,52 @@ ul{list-style:none}
 .hiw-cta{text-align:center;margin-top:56px}
 
 /* ── DIFF SECTION ────────────────────────── */
-.diff-sec{background:var(--white)}
+.diff-sec{background:#f3f3f4}
+
+/* Unified Main Content Container Box */
+.diff-card-panel {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 64px 48px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+  margin-top: 40px;
+}
+
 .diff-carousel-outer{position:relative;overflow:hidden;width:100%;cursor:grab;user-select:none;margin-bottom:56px}
 .diff-carousel-outer:active{cursor:grabbing}
 .diff-carousel-outer::before,.diff-carousel-outer::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:3;pointer-events:none}
-.diff-carousel-outer::before{left:0;background:linear-gradient(90deg,var(--white),transparent)}
-.diff-carousel-outer::after{right:0;background:linear-gradient(-90deg,var(--white),transparent)}
+.diff-carousel-outer::before{left:0;background:linear-gradient(90deg,#ffffff,transparent)}
+.diff-carousel-outer::after{right:0;background:linear-gradient(-90deg,#ffffff,transparent)}
 .diff-track{display:flex;gap:16px;width:max-content;will-change:transform}
-.myth-c{flex-shrink:0;width:296px;border-radius:18px;padding:24px 26px;min-height:160px;display:flex;flex-direction:column;gap:10px}
+
+/* Carousel Cards updated to a soft light grey tone to pop out from the main white box */
+.myth-c{flex-shrink:0;width:296px;border-radius:18px;padding:24px 26px;min-height:160px;display:flex;flex-direction:column;gap:10px;background:#f8f9fa !important;border:1px solid rgba(0,0,0,0.04)}
 .myth-bust-lbl{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:5px}
 .myth-old-txt{font-size:13px;color:var(--mid);text-decoration:line-through;line-height:1.55}
-.myth-new-txt{font-size:14px;font-weight:600;color:var(--text);line-height:1.5}
+.myth-new-txt{font-size:1rem;font-weight:600;color:var(--text);line-height:1.5}
+
 .sc-wrap{border:1.5px solid var(--border);border-radius:20px;overflow:hidden}
 .sc-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr);border-bottom:1.5px solid var(--border)}
-.sc-hc{padding:14px 16px;font-family:var(--fh);font-weight:700;font-size:13px;color:var(--soft);text-align:center}
+
+/* Increased Table Typography Sizes */
+.sc-hc{padding:18px 16px;font-family:var(--fh);font-weight:700;font-size:16px;color:var(--soft);text-align:center}
 .sc-hc:first-child{text-align:left}
 .sc-hc.ours{background:rgba(144,183,102,.12);color:var(--green2)}
 .sc-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr);border-bottom:1px solid var(--border)}
 .sc-row:last-child{border-bottom:none}
-.sc-c{padding:13px 16px;font-size:14px;color:var(--mid);text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.4;transition:background .15s}
-.sc-c:first-child{text-align:left;justify-content:flex-start;font-family:var(--fh);font-weight:700;font-size:14px;color:var(--text)}
+.sc-c{padding:16px 16px;font-size:16px;color:var(--mid);text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.4;transition:background .15s}
+.sc-c:first-child{text-align:left;justify-content:flex-start;font-family:var(--fh);font-weight:700;font-size:16px;color:var(--text)}
 .sc-c.ours{background:rgba(144,183,102,.06)}
 .sc-row:hover .sc-c{background:var(--grey)}
 .sc-row:hover .sc-c.ours{background:rgba(144,183,102,.14)}
-.sc-bad{color:#c0392b;font-size:13px}
-.sc-good{color:var(--green2);font-weight:600;font-size:13px}
-.diff-cta-wrap{text-align:center;margin-top:40px;padding:40px 32px;background:var(--cream);border-radius:20px;border:1.5px solid var(--border)}
-.diff-cta-hl{font-family:var(--fh);font-weight:900;font-size:28px;color:var(--text);margin-bottom:10px}
+.sc-bad{color:#c0392b;font-size:15px}
+.sc-good{color:var(--green2);font-weight:600;font-size:15px}
+
+/* Adjusted lower CTA block to remove redundant cream backgrounds inside the white box */
+.diff-cta-wrap{text-align:center;margin-top:48px;padding:40px 32px;background:transparent;border:none}
+.diff-cta-hl{font-family:var(--fh);font-weight:900;font-size:32px;color:var(--text);margin-bottom:10px}
 .diff-cta-hl em{font-style:normal;color:var(--orange)}
-.diff-cta-sub{font-size:15px;color:var(--mid);margin-bottom:26px;line-height:1.65}
+.diff-cta-sub{font-size:16px;color:var(--mid);margin-bottom:26px;line-height:1.65}
 
 /* ── PRICING ────────────────────────────── */
 .pricing{background:var(--white)}
@@ -429,27 +477,27 @@ ul{list-style:none}
 .price-amt{display:flex;align-items:baseline;gap:2px;margin-bottom:3px}
 .pa-sym{font-family:var(--fh);font-weight:700;font-size:21px;color:var(--text)}
 .pa-num{font-family:var(--fh);font-weight:900;font-size:54px;line-height:1;color:var(--text)}
-.pa-per{font-size:14px;color:var(--soft)}
+.pa-per{font-size:1rem;color:var(--soft)}
 .price-note{font-size:12px;color:var(--soft);margin-bottom:22px;margin-top:2px}
 .price-div{height:1px;background:var(--border);margin:20px 0}
 .price-inc{font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin-bottom:13px}
 .price-feats{display:flex;flex-direction:column;gap:9px;margin-bottom:26px}
-.pf{display:flex;gap:9px;align-items:flex-start;font-size:14px;color:var(--mid);line-height:1.45}
+.pf{display:flex;gap:9px;align-items:flex-start;font-size:1rem;color:var(--mid);line-height:1.45}
 .pf-ck{color:var(--green2);font-weight:700;flex-shrink:0;font-size:15px}
 .price-excl{font-size:11.5px;color:var(--soft);margin-top:12px;padding-top:12px;border-top:1px dashed var(--border);line-height:1.55}
 .price-footer{margin-top:48px;text-align:center;padding:28px;background:var(--cream);border-radius:16px;border:1px solid var(--border)}
-.price-footer p{font-size:14px;color:var(--mid);margin-bottom:4px}
+.price-footer p{font-size:1rem;color:var(--mid);margin-bottom:4px}
 
 /* ── TESTIMONIALS ───────────────────────── */
 .testi{background:var(--cream)}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
 .t-card{border-radius:20px;padding:28px;position:relative;transition:transform .24s,box-shadow .24s}
 .t-card:hover{transform:translateY(-4px);box-shadow:var(--shl)}
-.t-stars{font-size:14px;color:#f59e0b;margin-bottom:14px;letter-spacing:1px}
+.t-stars{font-size:1rem;color:#f59e0b;margin-bottom:1rem;letter-spacing:1px}
 .t-quote{font-family:var(--fh);font-weight:700;font-size:18px;line-height:1.35;margin-bottom:16px}
 .t-author{display:flex;align-items:center;gap:10px;margin-top:auto}
-.t-avatar{width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:14px;flex-shrink:0}
-.t-name{font-family:var(--fh);font-weight:700;font-size:14px;line-height:1.2}
+.t-avatar{width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:1rem;flex-shrink:0}
+.t-name{font-family:var(--fh);font-weight:700;font-size:1rem;line-height:1.2}
 .t-role{font-size:12px;opacity:.7;font-weight:400;margin-top:1px}
 /* card colour variants */
 .t-orange{background:#fe9b24;color:#fff}
@@ -474,7 +522,7 @@ ul{list-style:none}
 .ts-item{text-align:center}
 .ts-num{font-family:var(--fh);font-weight:900;font-size:42px;color:var(--text);line-height:1}
 .ts-num em{font-style:normal;color:var(--orange)}
-.ts-lbl{font-size:14px;color:var(--soft);margin-top:5px}
+.ts-lbl{font-size:1rem;color:var(--soft);margin-top:5px}
 
 /* ── WHO ────────────────────────────────── */
 .who{background:var(--white)}
@@ -500,7 +548,7 @@ ul{list-style:none}
 .faq-ans{display:none;padding:0 22px 20px;font-size:15px;color:rgba(255,255,255,.6);line-height:1.75}
 .faq-item.open .faq-ans{display:block}
 .faq-more{text-align:center;margin-top:32px}
-.faq-more a{font-size:14px;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px;transition:all .18s}
+.faq-more a{font-size:1rem;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px;transition:all .18s}
 .faq-more a:hover{color:#fff;border-color:rgba(255,255,255,.45)}
 
 /* ── FINAL CTA ──────────────────────────── */
@@ -510,10 +558,10 @@ ul{list-style:none}
 .fcta-title{font-family:var(--fh);font-weight:900;font-size:clamp(38px,5.2vw,64px);line-height:1.04;color:#fff;margin-bottom:18px;letter-spacing:-.01em}
 .fcta-title em{font-style:normal;color:var(--orange)}
 .fcta-sub{font-size:18px;color:rgba(255,255,255,.55);margin-bottom:42px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
-.fcta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.fcta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .fcta-gts{display:flex;justify-content:center;gap:26px;margin-top:34px;flex-wrap:wrap}
 .gt{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.38)}
-.gt-ck{color:var(--green);font-weight:700;font-size:14px}
+.gt-ck{color:var(--green);font-weight:700;font-size:1rem}
 
 /* ── FOOTER ─────────────────────────────── */
 .footer{background:#111413;padding:0}
@@ -529,7 +577,7 @@ ul{list-style:none}
 .foot-au{font-size:12px;color:rgba(255,255,255,.24);text-align:right;line-height:1.65}
 /* Acknowledgement of Country */
 .ack-bar{border-top:1px solid rgba(255,255,255,.07);padding:22px 0}
-.ack-inner{display:flex;align-items:flex-start;gap:14px}
+.ack-inner{display:flex;align-items:flex-start;gap:1rem}
 .ack-flags{display:flex;gap:6px;flex-shrink:0;margin-top:2px}
 .flag{width:28px;height:18px;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;flex-shrink:0}
 /* Aboriginal flag */
@@ -603,16 +651,16 @@ ul{list-style:none}
 </div>
 
 <!-- ── HERO ──────────────────────────────── -->
-<section class="hero" id="top" style="max-height: none; min-height: auto; padding: 200px 0 64px; background: var(--dark2);">
+<section class="hero" id="top" style="max-height: none; min-height: auto; padding: 250px 0 64px; background: var(--dark2);">
   <!-- Subtle ambient soft glows for a light background layout -->
   <div class="blob blob1" style="background: radial-gradient(circle, rgba(254,155,36,0.08) 0%, transparent 70%);"></div>
   <div class="blob blob2" style="background: radial-gradient(circle, rgba(144,183,102,0.06) 0%, transparent 70%);"></div>
 
-  <div class="container" style="max-width: 100%; padding: 0;">
+  <div class="container">
     <div class="hero-inner" style="grid-template-columns: 1fr; text-align: center; max-width: 100%; margin: 0 auto;">
 
       <!-- Copy Container -->
-      <div class="hero-copy" style="display: flex; flex-direction: column; align-items: center; max-width: 1120px; margin: 0 auto; padding: 0 32px;">
+      <div class="hero-copy" style="display: flex; flex-direction: column; align-items: center; max-width: 1504px; margin: 0 auto; padding: 0 32px;">
 
 
 <h1 class="hero-hl rv" style="line-height: 1.05; margin-bottom: 24px; color: var(--text);">
@@ -621,7 +669,7 @@ ul{list-style:none}
             <em style="font-style: normal; position: relative; display: inline-block; padding-bottom: 12px; color: var(--text); z-index: 1;">
               <span>ca</span><span style="position: relative; z-index: 3;">g</span><span>e-free</span>
 
-              <svg viewBox="0 0 100 16" preserveAspectRatio="none" style="position: absolute; left: -1%; bottom: 4px; width: 103%; height: 14px; pointer-events: none; z-index: 2; overflow: visible;">
+              <svg viewBox="0 0 100 16" preserveAspectRatio="none" style="position: absolute; left: -1%; bottom: 4px; width: 103%; height: 1rem; pointer-events: none; z-index: 2; overflow: visible;">
                 <g fill="none" stroke="var(--orange)" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M 2,5 C 32,6.2 68,4.5 98,3.5" stroke-width="4.8" opacity="0.95" id="sketchLine1" />
                   <path d="M 4,12 C 36,13.5 70,11.8 96,10.2" stroke-width="3.6" opacity="0.85" id="sketchLine2" />
@@ -635,7 +683,7 @@ ul{list-style:none}
 
 
         <!-- Horizontal USPs (Colors inverted seamlessly for light layout readability) -->
-        <div class="hero-usps" style="flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px 24px; margin-bottom: 65px; max-width: 100%;">
+        <div class="hero-usps" style="flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px 24px; margin-bottom: 85px; max-width: 100%;">
           <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Get a brand new custom built website</div>
           <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Unlimited content changes</div>
           <div class="usp-row" style="font-size: 15px; color: var(--text);"><span class="usp-tick">✓</span>Hosting included</div>
@@ -658,158 +706,176 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ── PROBLEM ───────────────────────────── -->
-
 <!-- ── FEATURES ──────────────────────────── -->
 <section class="sec feats" id="features">
   <div class="container">
     <div class="tc">
-      <span class="tag-lbl rv">Everything included</span>
+      <span class="tag-lbl rv">Whats included</span>
       <h2 class="sec-title rv">What you get with every plan</h2>
       <p class="sec-sub rv">No hidden extras. No "that's a separate package." Everything you need to get found online and start generating enquiries.</p>
     </div>
-    <div class="feat-grid">
-      <div class="feat-card rv">
-        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+   <div class="feat-grid">
+      <!-- Card 1: Blue Pastel -->
+      <div class="feat-card f-blue rv">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#42666b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
         <div class="feat-name">5-page website</div>
         <div class="feat-desc">Home, Services, About, Contact, plus a suburb-targeted landing page. Built around your business, your branding, and your trade.</div>
       </div>
-      <div class="feat-card rv d1">
-        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+
+      <!-- Card 2: Pink Pastel -->
+      <div class="feat-card f-pink rv d1">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#42666b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <div class="feat-name">Hosting included</div>
         <div class="feat-desc">Fast, secure, Australian-optimised hosting. SSL certificate included. No hosting bills or cPanel headaches — ever.</div>
       </div>
-      <div class="feat-card rv d2">
-        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+
+      <!-- Card 3: Green Pastel -->
+      <div class="feat-card f-green rv d2">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#42666b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
         <div class="feat-name">Unlimited updates</div>
         <div class="feat-desc">New service? Changed your rates? Got fresh photos? Send us a message and it's updated within 3 business days — no extra charges, ever.</div>
       </div>
-      <div class="feat-card rv d1">
-        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+
+      <!-- Card 4: Yellow Pastel -->
+      <div class="feat-card f-yellow rv d1">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#42666b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <div class="feat-name">Google Business setup</div>
         <div class="feat-desc">We set up and optimise your GBP so you show up in Google Maps when locals search for your trade in your area.</div>
       </div>
-      <div class="feat-card rv d2">
-        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+
+      <!-- Card 5: Purple Pastel -->
+      <div class="feat-card f-purple rv d2">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#42666b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <div class="feat-name">Local SEO built in</div>
         <div class="feat-desc">Every site has local keyword targeting, structured data markup, and suburb-specific pages so Google knows exactly who to show you to.</div>
       </div>
-      <div class="feat-card rv d3">
-        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+
+      <!-- Card 6: Grey Pastel -->
+      <div class="feat-card f-grey rv d3">
+        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#42666b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <div class="feat-name">Live in 3 business days</div>
         <div class="feat-desc">Fill in our 5-minute form, we do the rest. Your site goes live in 3 business days — or we'll tell you in advance if anything needs more time.</div>
       </div>
     </div>
   </div>
 </section>
-<section class="sec diff-sec" id="why-us">
+<!-- ── DIFF SECTION ────────────────────────── -->
+Sure<section class="sec diff-sec" id="why-us">
   <div class="container">
     <div class="tc">
       <span class="tag-lbl rv">Why FreeRange</span>
       <h2 class="sec-title rv">Let's <em>bust</em> a few myths</h2>
       <p class="sec-sub rv">A lot of tradies have been burnt by agencies or freelancers. Here's the honest truth.</p>
     </div>
-    <div class="diff-carousel-outer rv" id="diffOuter">
-      <div class="diff-track" id="diffTrack">
-        <div class="myth-c" style="background:#ede9f5">
-          <div class="myth-bust-lbl" style="color:#534ab7">✕ the myth</div>
-          <div class="myth-old-txt">"A good website costs thousands upfront."</div>
-          <div class="myth-new-txt">Starts at $79/mo. Zero deposit. Zero upfront.</div>
+
+    <!-- Opening White Panel Wrapper -->
+    <div class="diff-card-panel rv">
+
+      <div class="diff-carousel-outer" id="diffOuter">
+        <div class="diff-track" id="diffTrack">
+          <div class="myth-c">
+            <div class="myth-bust-lbl" style="color:#534ab7">✕ the myth</div>
+            <div class="myth-old-txt">"A good website costs thousands upfront."</div>
+            <div class="myth-new-txt">Starts at $79/mo. Zero deposit. Zero upfront.</div>
+          </div>
+          <div class="myth-c">
+            <div class="myth-bust-lbl" style="color:#0f6e56">✕ the myth</div>
+            <div class="myth-old-txt">"You wait weeks or months to go live."</div>
+            <div class="myth-new-txt">Fill in a 5-min form. Live in 3 business days.</div>
+          </div>
+          <div class="myth-c">
+            <div class="myth-bust-lbl" style="color:#854f0b">✕ the myth</div>
+            <div class="myth-old-txt">"Every change costs $120–$250 per hour."</div>
+            <div class="myth-new-txt">Send us a message. We update it. No charge.</div>
+          </div>
+          <div class="myth-c">
+            <div class="myth-bust-lbl" style="color:#993556">✕ the myth</div>
+            <div class="myth-old-txt">"SEO is an expensive add-on."</div>
+            <div class="myth-new-txt">Local SEO baked into every site from day one.</div>
+          </div>
+          <div class="myth-c">
+            <div class="myth-bust-lbl" style="color:#185fa5">✕ the myth</div>
+            <div class="myth-old-txt">"Templates are fine — they all look the same anyway."</div>
+            <div class="myth-new-txt">Every site is handbuilt for your business. No templates.</div>
+          </div>
+          <div class="myth-c">
+            <div class="myth-bust-lbl" style="color:#3b6d11">✕ the myth</div>
+            <div class="myth-old-txt">"You need a developer to keep a website running."</div>
+            <div class="myth-new-txt">We handle everything. You just run your business.</div>
+          </div>
         </div>
-        <div class="myth-c" style="background:#dff0e8">
-          <div class="myth-bust-lbl" style="color:#0f6e56">✕ the myth</div>
-          <div class="myth-old-txt">"You wait weeks or months to go live."</div>
-          <div class="myth-new-txt">Fill in a 5-min form. Live in 3 business days.</div>
+      </div>
+
+      <div class="sc-wrap">
+        <div class="sc-head">
+          <div class="sc-hc"></div>
+          <div class="sc-hc">An agency</div>
+          <div class="sc-hc">A freelancer</div>
+          <div class="sc-hc ours">⚡ FreeRange</div>
         </div>
-        <div class="myth-c" style="background:#faeedd">
-          <div class="myth-bust-lbl" style="color:#854f0b">✕ the myth</div>
-          <div class="myth-old-txt">"Every change costs $120–$250 per hour."</div>
-          <div class="myth-new-txt">Send us a message. We update it. No charge.</div>
+        <div class="sc-row">
+          <div class="sc-c">Upfront cost</div>
+          <div class="sc-c"><span class="sc-bad">$5k – $20k</span></div>
+          <div class="sc-c"><span class="sc-bad">$600 – $5k</span></div>
+          <div class="sc-c ours"><span class="sc-good">$0</span></div>
         </div>
-        <div class="myth-c" style="background:#fce8e8">
-          <div class="myth-bust-lbl" style="color:#993556">✕ the myth</div>
-          <div class="myth-old-txt">"SEO is an expensive add-on."</div>
-          <div class="myth-new-txt">Local SEO baked into every site from day one.</div>
+        <div class="sc-row">
+          <div class="sc-c">Time to go live</div>
+          <div class="sc-c"><span class="sc-bad">4 – 12 weeks</span></div>
+          <div class="sc-c"><span class="sc-bad">2 – 6 weeks</span></div>
+          <div class="sc-c ours"><span class="sc-good">3 business days</span></div>
         </div>
-        <div class="myth-c" style="background:#e0edf8">
-          <div class="myth-bust-lbl" style="color:#185fa5">✕ the myth</div>
-          <div class="myth-old-txt">"Templates are fine — they all look the same anyway."</div>
-          <div class="myth-new-txt">Every site is handbuilt for your business. No templates.</div>
+        <div class="sc-row">
+          <div class="sc-c">Content updates</div>
+          <div class="sc-c"><span class="sc-bad">$120 – $250/hr</span></div>
+          <div class="sc-c"><span class="sc-bad">$60 – $150/hr</span></div>
+          <div class="sc-c ours"><span class="sc-good">Unlimited, free</span></div>
         </div>
-        <div class="myth-c" style="background:#eaf3de">
-          <div class="myth-bust-lbl" style="color:#3b6d11">✕ the myth</div>
-          <div class="myth-old-txt">"You need a developer to keep a website running."</div>
-          <div class="myth-new-txt">We handle everything. You just run your business.</div>
+        <div class="sc-row">
+          <div class="sc-c">Hosting included</div>
+          <div class="sc-c"><span class="sc-bad">Rarely</span></div>
+          <div class="sc-c"><span class="sc-bad">No</span></div>
+          <div class="sc-c ours"><span class="sc-good">Always</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Local SEO built in</div>
+          <div class="sc-c"><span class="sc-bad">Expensive add-on</span></div>
+          <div class="sc-c"><span class="sc-bad">Rarely</span></div>
+          <div class="sc-c ours"><span class="sc-good">Always included</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Security &amp; SSL</div>
+          <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
+          <div class="sc-c"><span class="sc-bad">Your problem</span></div>
+          <div class="sc-c ours"><span class="sc-good">Included</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Site performance</div>
+          <div class="sc-c"><span class="sc-bad">Not guaranteed</span></div>
+          <div class="sc-c"><span class="sc-bad">Varies</span></div>
+          <div class="sc-c ours"><span class="sc-good">Fast, always</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Handbuilt websites</div>
+          <div class="sc-c"><span class="sc-good"><span style="color: rgb(192, 57, 43); font-weight: 400;">Depends on the budget</span></span></div>
+          <div class="sc-c"><span class="sc-bad">Often templates</span></div>
+          <div class="sc-c ours"><span class="sc-good">Every time</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Google Business setup</div>
+          <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
+          <div class="sc-c"><span class="sc-bad">Not offered</span></div>
+          <div class="sc-c ours"><span class="sc-good">Included</span></div>
         </div>
       </div>
-    </div>
-    <div class="sc-wrap rv">
-      <div class="sc-head">
-        <div class="sc-hc"></div>
-        <div class="sc-hc">An agency</div>
-        <div class="sc-hc">A freelancer</div>
-        <div class="sc-hc ours">⚡ FreeRange</div>
+
+      <div class="diff-cta-wrap">
+        <div class="diff-cta-hl">Reckon you've <em>seen enough?</em></div>
+        <p class="diff-cta-sub">Most of our clients wish they'd found us sooner.</p>
+        <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
       </div>
-      <div class="sc-row">
-        <div class="sc-c">Upfront cost</div>
-        <div class="sc-c"><span class="sc-bad">$5k – $20k</span></div>
-        <div class="sc-c"><span class="sc-bad">$600 – $5k</span></div>
-        <div class="sc-c ours"><span class="sc-good">$0</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Time to go live</div>
-        <div class="sc-c"><span class="sc-bad">4 – 12 weeks</span></div>
-        <div class="sc-c"><span class="sc-bad">2 – 6 weeks</span></div>
-        <div class="sc-c ours"><span class="sc-good">3 business days</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Content updates</div>
-        <div class="sc-c"><span class="sc-bad">$120 – $250/hr</span></div>
-        <div class="sc-c"><span class="sc-bad">$60 – $150/hr</span></div>
-        <div class="sc-c ours"><span class="sc-good">Unlimited, free</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Hosting included</div>
-        <div class="sc-c"><span class="sc-bad">Rarely</span></div>
-        <div class="sc-c"><span class="sc-bad">No</span></div>
-        <div class="sc-c ours"><span class="sc-good">Always</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Local SEO built in</div>
-        <div class="sc-c"><span class="sc-bad">Expensive add-on</span></div>
-        <div class="sc-c"><span class="sc-bad">Rarely</span></div>
-        <div class="sc-c ours"><span class="sc-good">Always included</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Security &amp; SSL</div>
-        <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
-        <div class="sc-c"><span class="sc-bad">Your problem</span></div>
-        <div class="sc-c ours"><span class="sc-good">Included</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Site performance</div>
-        <div class="sc-c"><span class="sc-bad">Not guaranteed</span></div>
-        <div class="sc-c"><span class="sc-bad">Varies</span></div>
-        <div class="sc-c ours"><span class="sc-good">Fast, always</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Handbuilt websites</div>
-        <div class="sc-c"><span class="sc-good"><span style="caret-color: rgb(192, 57, 43); color: rgb(192, 57, 43); font-weight: 400;">Depends on the budget</span><br></span></div>
-        <div class="sc-c"><span class="sc-bad">Often templates</span></div>
-        <div class="sc-c ours"><span class="sc-good">Every time</span></div>
-      </div>
-      <div class="sc-row">
-        <div class="sc-c">Google Business setup</div>
-        <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
-        <div class="sc-c"><span class="sc-bad">Not offered</span></div>
-        <div class="sc-c ours"><span class="sc-good">Included</span></div>
-      </div>
-    </div>
-    <div class="diff-cta-wrap rv">
-      <div class="diff-cta-hl">Reckon you've <em>seen enough?</em></div>
-      <p class="diff-cta-sub">Most of our clients wish they'd found us sooner.<br>No lock-in after 6 months. Live in 3 business days.</p>
-      <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
-    </div>
+
+    </div> <!-- Closing White Panel Wrapper -->
   </div>
 </section>
 
@@ -845,7 +911,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ── WHY FREERANGE ────────────────────── -->
 
 <!-- ── PRICING ───────────────────────────── -->
 <section class="sec pricing" id="pricing">
