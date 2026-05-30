@@ -72,6 +72,7 @@ ul{list-style:none}
 .btn-sm{padding:10px 22px;font-size:1rem}
 .btn-dark{background:var(--black);color:#fff}
 .btn-dark:hover{background:#2e3330;transform:scale(1.03)}
+.fcta .btn-primary:hover {background: transparent !important;color: #ffffff !important;box-shadow: 0 8px 28px rgba(229,134,26,.35) !important;border: 2px solid var(--orange);}
 
 /* ==========================================================================
    ── GLOBAL HEADER WRAPPER
@@ -543,18 +544,18 @@ ul{list-style:none}
 
 /* ── FAQ ────────────────────────────────── */
 .faq-sec{background:var(--dark2);padding:104px 0}
-.faq-list{max-width:720px;margin:48px auto 0;display:flex;flex-direction:column;gap:8px}
-.faq-item{border:1px solid rgba(255,255,255,.1);border-radius:13px;overflow:hidden;background:rgba(255,255,255,.04);transition:border-color .2s}
-.faq-item.open{border-color:var(--orange)}
+.faq-list{max-width:720px;margin:48px auto 0;display:flex;flex-direction:column;gap:12px}
+.faq-item{border:1px solid var(--border);border-radius:13px;overflow:hidden;background:var(--white);transition:border-color .2s, box-shadow .2s}
+.faq-item.open{border-color:var(--orange);box-shadow: var(--sh);}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
-.faq-qt{font-family:var(--fh);font-weight:700;font-size:17px;color:#fff;line-height:1.3}
-.faq-ico{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;transition:all .25s;font-weight:300}
-.faq-item.open .faq-ico{background:var(--orange);transform:rotate(45deg)}
-.faq-ans{display:none;padding:0 22px 20px;font-size:15px;color:rgba(255,255,255,.6);line-height:1.75}
+.faq-qt{font-family:var(--fh);font-weight:700;font-size:17px;color:var(--text);line-height:1.3}
+.faq-ico{width:28px;height:28px;border-radius:50%;background:var(--grey);color:var(--text);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;transition:all .25s;font-weight:300}
+.faq-item.open .faq-ico{background:var(--orange);color:#fff;transform:rotate(45deg)}
+.faq-ans{display:none;padding:0 22px 20px;font-size:15px;color:var(--mid);line-height:1.75}
 .faq-item.open .faq-ans{display:block}
 .faq-more{text-align:center;margin-top:32px}
-.faq-more a{font-size:1rem;color:rgba(255,255,255,.45);border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:2px;transition:all .18s}
-.faq-more a:hover{color:#fff;border-color:rgba(255,255,255,.45)}
+.faq-more a{font-size:1rem;color:var(--soft);border-bottom:1px solid var(--border);padding-bottom:2px;transition:all .18s}
+.faq-more a:hover{color:var(--text);border-color:var(--text)}
 
 /* ── FINAL CTA ──────────────────────────── */
 .fcta{background:var(--black);border-top:1px solid rgba(255,255,255,.05);padding:112px 0;text-align:center;position:relative;overflow:hidden}
@@ -562,7 +563,7 @@ ul{list-style:none}
 .fcta-inner{position:relative;z-index:1}
 .fcta-title{font-family:var(--fh);font-weight:900;font-size:clamp(38px,5.2vw,64px);line-height:1.04;color:#fff;margin-bottom:18px;letter-spacing:-.01em}
 .fcta-title em{font-style:normal;color:var(--orange)}
-.fcta-sub{font-size:18px;color:rgba(255,255,255,.55);margin-bottom:42px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
+.fcta-sub{font-size:18px;color:rgba(255,255,255,.55);margin-bottom:0px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
 .fcta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .fcta-gts{display:flex;justify-content:center;gap:26px;margin-top:34px;flex-wrap:wrap}
 .gt{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.38)}
@@ -594,7 +595,7 @@ ul{list-style:none}
 .flag-tsi-g{flex:1;background:#009b77}
 .flag-tsi-b{flex:2;background:#0051a5;position:relative;display:flex;align-items:center;justify-content:center}
 .flag-tsi-g2{flex:1;background:#009b77}
-.ack-text{font-size:12px;color:rgba(255,255,255,.35);line-height:1.7;max-width:760px}
+.ack-text{font-size:12px !important;color:rgba(255,255,255,.35);line-height:1.7;max-width:90vw}
 .ack-text strong{color:rgba(255,255,255,.5);font-weight:600}
 
 /* ── RESPONSIVE ─────────────────────────── */
@@ -711,7 +712,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ── FEATURES ──
 <!-- ── FEATURES ──────────────────────────── -->
 <section class="sec feats" id="features">
   <div class="container">
@@ -1065,8 +1065,8 @@ ul{list-style:none}
 <section class="faq-sec" id="faq">
   <div class="container">
     <div class="tc">
-      <span class="tag-lbl tag-lbl-white rv">Questions answered</span>
-      <h2 class="sec-title sec-title-white rv">Fair questions, straight answers</h2>
+      <span class="tag-lbl rv">Questions answered</span>
+      <h2 class="sec-title rv">Fair questions, straight answers</h2>
     </div>
     <div class="faq-list">
       <div class="faq-item rv" onclick="toggleFaq(this)">
@@ -1098,7 +1098,7 @@ ul{list-style:none}
         <div class="faq-ans">We build every site with local SEO baked in — suburb-targeted copy, structured data markup, fast load times, and Google Business Profile setup included. Most clients see ranking improvements within 6–12 weeks. We'll also set up Google Analytics so you can see exactly where your traffic comes from.</div>
       </div>
     </div>
-    <div class="faq-more rv"><a href="mailto:hello@freerangewebsites.com.au">Still got questions? Drop us a line</a></div>
+    <div class="faq-more rv"><a href="/contact">Still got questions? Drop us a line</a></div>
   </div>
 </section>
 
@@ -1109,7 +1109,7 @@ ul{list-style:none}
       <h2 class="fcta-title rv">Your competitors are already online.<br>Let's get you <em>sorted.</em></h2>
       <p class="fcta-sub rv">&nbsp;</p>
       <div class="fcta-btns rv">
-        <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
+        <a href="#pricing" class="btn btn-primary btn-lg">Get started</a>
         <!-- <a href="mailto:hello@freerangewebsites.com.au" class="btn btn-outline-white btn-lg">Ask us a question first</a> -->
       </div>
     </div>
@@ -1123,16 +1123,16 @@ ul{list-style:none}
       <div class="foot-inner">
         <div>
           <div class="foot-logo"><span class="fr">FREE</span><span class="rng">RANGE</span> <span style="color:rgba(255,255,255,.35);font-size:15px;font-weight:400;font-family:var(--fb)">WEBSITES</span></div>
-          <div class="foot-legal">© 2026 FreeRange Websites · ABN XX XXX XXX XXX</div>
+          <div class="foot-legal">Websites for Aussie small businesses. Built with love.</div>
         </div>
         <div class="foot-links">
-          <a href="#how-it-works">How it works</a>
+          <a href="#top">Home</a>
           <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-          <a href="mailto:hello@freerangewebsites.com.au">Contact</a>
+          <a href="/contact">Contact</a>
+          <a href="/terms">Terms & Conditions</a>
           <a href="/privacy">Privacy</a>
         </div>
-        <div class="foot-au">Websites for Aussie small businesses.<br>Built with care. 🇦🇺</div>
+        <div class="foot-au">© 2026 FreeRange Websites<br>ABN XX XXX XXX XXX</div>
       </div>
     </div>
   </div>
