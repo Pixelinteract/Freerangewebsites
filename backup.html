@@ -16,7 +16,7 @@
   --orange:  #fe9b24;
   --orange2: #e5861a;
   --green:   #90b766;
-  --greenlt:  #f2f6f5;
+  --green2:  #5a8a35;
   --cream:   #f7f5f2;
   --grey:    #f3f3f4;
   --white:   #ffffff;
@@ -406,23 +406,18 @@ ul{list-style:none}
 .feat-desc{font-size:1rem;color:var(--mid);line-height:1.65}
 
 /* ── HOW IT WORKS ───────────────────────── */
-.hiw{background:var(--greenlt);padding-top:10px}
-.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px;position:relative}
-.hiw-steps::before{display:none}
-.hiw-path{position:absolute;top:26px;left:0;width:100%;height:74px;pointer-events:none;z-index:0;overflow:visible}
-.step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 16px;background:transparent;border-radius:20px;position:relative;z-index:1}
-.step-num{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:28px;color:#fff;margin-bottom:24px;position:relative;z-index:1;transition:all .28s}
-.step:nth-child(2) .step-num{background:#ffc66e}
-.step:nth-child(3) .step-num{background:#ffbc53}
-.step:nth-child(4) .step-num{background:#feb44d}
-.step:nth-child(5) .step-num{background:var(--orange)}
+.hiw{background:var(--cream)}
+.hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px;position:relative}
+.hiw-steps::before{content:'';position:absolute;top:37px;left:calc(16.66% + 22px);right:calc(16.66% + 22px);height:1.5px;background:repeating-linear-gradient(90deg,var(--border) 0,var(--border) 8px,transparent 8px,transparent 18px)}
+.step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 26px}
+.step-num{width:74px;height:74px;background:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:900;font-size:28px;color:#fff;margin-bottom:24px;border:4px solid var(--cream);position:relative;z-index:1;transition:all .28s}
 .step:hover .step-num{background:var(--orange);transform:scale(1.08)}
 .step-title{font-family:var(--fh);font-weight:800;font-size:21px;color:var(--text);margin-bottom:11px}
 .step-desc{font-size:15px;color:var(--mid);line-height:1.65}
 .hiw-cta{text-align:center;margin-top:56px}
 
 /* ── DIFF SECTION ────────────────────────── */
-.diff-sec{background: var(--greenlt);}
+.diff-sec{background:#f3f3f4}
 
 /* Unified Main Content Container Box */
 .diff-card-panel {
@@ -433,7 +428,7 @@ ul{list-style:none}
   margin-top: 40px;
 }
 
-.diff-carousel-outer{position:relative;overflow:hidden;width:100%;cursor:grab;user-select:none;margin-top:56px;margin-bottom:24px}
+.diff-carousel-outer{position:relative;overflow:hidden;width:100%;cursor:grab;user-select:none;margin-bottom:56px}
 .diff-carousel-outer:active{cursor:grabbing}
 .diff-carousel-outer::before,.diff-carousel-outer::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:3;pointer-events:none}
 .diff-carousel-outer::before{left:0;background:linear-gradient(90deg,#ffffff,transparent)}
@@ -446,25 +441,25 @@ ul{list-style:none}
 .myth-old-txt{font-size:13px;color:var(--mid);text-decoration:line-through;line-height:1.55}
 .myth-new-txt{font-size:1rem;font-weight:600;color:var(--text);line-height:1.5}
 
-.sc-wrap{max-width:900px;margin:0 auto}
-.sc-table{width:100%;border-collapse:separate;border-spacing:0}
-.sc-table th:first-child,.sc-table td:first-child{border:none;font-family:var(--fh);font-weight:700;font-size:17px;color:var(--text);text-align:left;padding:16px 18px;background:#fff}
-.sc-table thead th:not(:first-child){padding:18px 18px;font-family:var(--fh);font-weight:700;font-size:19px;color:var(--soft);text-align:center;background:#fff;border-top:1.5px solid var(--border);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.sc-table thead th:nth-child(2){border-left:1.5px solid var(--border);border-top-left-radius:18px}
-.sc-table thead th:last-child{border-left:2px solid var(--black);border-right:2px solid var(--black);border-top:2px solid var(--black);border-top-right-radius:18px;background:var(--black);color:#fff}
-.sc-table tbody td:not(:first-child){padding:16px 18px;font-size:15px;color:var(--mid);text-align:center;background:#fff;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.sc-table tbody td:nth-child(2){border-left:1.5px solid var(--border)}
-.sc-table tbody td:last-child{border-left:2px solid var(--black);border-right:2px solid var(--black);background:rgba(144,183,102,.06);font-weight:600;color:var(--text)}
-.sc-table tbody tr:last-child td:not(:first-child){border-bottom:1.5px solid var(--border)}
-.sc-table tbody tr:last-child td:nth-child(2){border-bottom-left-radius:18px}
-.sc-table tbody tr:last-child td:last-child{border-bottom:2px solid var(--orange);border-bottom-right-radius:18px}
-.sc-table tbody tr:hover td:not(:first-child){background:var(--grey)}
-.sc-table tbody tr:hover td:last-child{background:rgba(144,183,102,.14)}
-.sc-bad{color:#c0392b}
-.sc-good{color:var(--green2);font-weight:600}
+.sc-wrap{border:1.5px solid var(--border);border-radius:20px;overflow:hidden}
+.sc-head{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr);border-bottom:1.5px solid var(--border)}
+
+/* Increased Table Typography Sizes */
+.sc-hc{padding:18px 16px;font-family:var(--fh);font-weight:700;font-size:16px;color:var(--soft);text-align:center}
+.sc-hc:first-child{text-align:left}
+.sc-hc.ours{background:rgba(144,183,102,.12);color:var(--green2)}
+.sc-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.15fr);border-bottom:1px solid var(--border)}
+.sc-row:last-child{border-bottom:none}
+.sc-c{padding:16px 16px;font-size:16px;color:var(--mid);text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.4;transition:background .15s}
+.sc-c:first-child{text-align:left;justify-content:flex-start;font-family:var(--fh);font-weight:700;font-size:16px;color:var(--text)}
+.sc-c.ours{background:rgba(144,183,102,.06)}
+.sc-row:hover .sc-c{background:var(--grey)}
+.sc-row:hover .sc-c.ours{background:rgba(144,183,102,.14)}
+.sc-bad{color:#c0392b;font-size:15px}
+.sc-good{color:var(--green2);font-weight:600;font-size:15px}
 
 /* Adjusted lower CTA block to remove redundant cream backgrounds inside the white box */
-.diff-cta-wrap{text-align:center;margin-top:48px;padding-top:40px;padding-bottom:10px;background:transparent;border:none}
+.diff-cta-wrap{text-align:center;margin-top:48px;padding:40px 32px;background:transparent;border:none}
 .diff-cta-hl{font-family:var(--fh);font-weight:900;font-size:32px;color:var(--text);margin-bottom:10px}
 .diff-cta-hl em{font-style:normal;color:var(--orange)}
 .diff-cta-sub{font-size:16px;color:var(--mid);margin-bottom:26px;line-height:1.65}
@@ -699,7 +694,7 @@ ul{list-style:none}
         <div class="hero-ctas" style="justify-content: center; width: 100%;">
           <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
           <a href="#how-it-works" class="btn btn-outline btn-lg" style="border-color: var(--text); color: var(--text);">How it works</a>
- </div>
+        </div>
       </div>
 
 <!-- HERO TESTIMONIAL TICKER -->
@@ -711,7 +706,6 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- ── FEATURES ──
 <!-- ── FEATURES ──────────────────────────── -->
 <section class="sec feats" id="features">
   <div class="container">
@@ -766,10 +760,10 @@ ul{list-style:none}
   </div>
 </section>
 <!-- ── DIFF SECTION ────────────────────────── -->
-<section class="sec diff-sec" id="why-us" style="padding-top:60px;padding-bottom:0">
+Sure<section class="sec diff-sec" id="why-us">
   <div class="container">
     <div class="tc">
-      <span class="tag-lbl rv">Why Free Range Websites?</span>
+      <span class="tag-lbl rv">Why FreeRange</span>
       <h2 class="sec-title rv">Let's <em>bust</em> a few myths</h2>
       <p class="sec-sub rv">A lot of tradies have been burnt by agencies or freelancers. Here's the honest truth.</p>
     </div>
@@ -777,77 +771,6 @@ ul{list-style:none}
     <!-- Opening White Panel Wrapper -->
     <div class="diff-card-panel rv">
 
-
-
-      <div class="sc-wrap">
-  <table class="sc-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>An agency</th>
-        <th>A freelancer</th>
-        <th>⚡ FreeRange</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Upfront cost</td>
-        <td><span class="sc-bad">$5k – $20k</span></td>
-        <td><span class="sc-bad">$600 – $5k</span></td>
-        <td><span class="sc-good">✓ $0</span></td>
-      </tr>
-      <tr>
-        <td>Time to go live</td>
-        <td><span class="sc-bad">4 – 12 weeks</span></td>
-        <td><span class="sc-bad">2 – 6 weeks</span></td>
-        <td><span class="sc-good">✓ 3 business days</span></td>
-      </tr>
-      <tr>
-        <td>Content updates</td>
-        <td><span class="sc-bad">$120 – $250/hr</span></td>
-        <td><span class="sc-bad">$60 – $150/hr</span></td>
-        <td><span class="sc-good">Unlimited, free</span></td>
-      </tr>
-      <tr>
-        <td>Hosting included</td>
-        <td><span class="sc-bad">Rarely</span></td>
-        <td><span class="sc-bad">No</span></td>
-        <td><span class="sc-good">Always</span></td>
-      </tr>
-      <tr>
-        <td>Local SEO built in</td>
-        <td><span class="sc-bad">Expensive add-on</span></td>
-        <td><span class="sc-bad">Rarely</span></td>
-        <td><span class="sc-good">Always included</span></td>
-      </tr>
-      <tr>
-      </tr><tr>
-        <td>Security &amp; SSL</td>
-        <td><span class="sc-bad">Extra cost</span></td>
-        <td><span class="sc-bad">Your problem</span></td>
-        <td><span class="sc-good">Included</span></td>
-      </tr>
-      <tr>
-        <td>Site performance</td>
-        <td><span class="sc-bad">Not guaranteed</span></td>
-        <td><span class="sc-bad">Varies</span></td>
-        <td><span class="sc-good">Fast, always</span></td>
-      </tr>
-      <tr>
-        <td>Handbuilt websites</td>
-        <td><span class="sc-bad">Depends on the budget</span></td>
-        <td><span class="sc-bad">Often templates</span></td>
-        <td><span class="sc-good">Every time</span></td>
-      </tr>
-      <tr>
-        <td>Google Business setup</td>
-        <td><span class="sc-bad">Extra cost</span></td>
-        <td><span class="sc-bad">Not offered</span></td>
-        <td><span class="sc-good">Included</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
       <div class="diff-carousel-outer" id="diffOuter">
         <div class="diff-track" id="diffTrack">
           <div class="myth-c">
@@ -880,56 +803,72 @@ ul{list-style:none}
             <div class="myth-old-txt">"You need a developer to keep a website running."</div>
             <div class="myth-new-txt">We handle everything. You just run your business.</div>
           </div>
-        <div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#534ab7">✕ the myth</div>
-            <div class="myth-old-txt">"A good website costs thousands upfront."</div>
-            <div class="myth-new-txt">Starts at $79/mo. Zero deposit. Zero upfront.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#0f6e56">✕ the myth</div>
-            <div class="myth-old-txt">"You wait weeks or months to go live."</div>
-            <div class="myth-new-txt">Fill in a 5-min form. Live in 3 business days.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#854f0b">✕ the myth</div>
-            <div class="myth-old-txt">"Every change costs $120–$250 per hour."</div>
-            <div class="myth-new-txt">Send us a message. We update it. No charge.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#993556">✕ the myth</div>
-            <div class="myth-old-txt">"SEO is an expensive add-on."</div>
-            <div class="myth-new-txt">Local SEO baked into every site from day one.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#185fa5">✕ the myth</div>
-            <div class="myth-old-txt">"Templates are fine — they all look the same anyway."</div>
-            <div class="myth-new-txt">Every site is handbuilt for your business. No templates.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#3b6d11">✕ the myth</div>
-            <div class="myth-old-txt">"You need a developer to keep a website running."</div>
-            <div class="myth-new-txt">We handle everything. You just run your business.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#534ab7">✕ the myth</div>
-            <div class="myth-old-txt">"A good website costs thousands upfront."</div>
-            <div class="myth-new-txt">Starts at $79/mo. Zero deposit. Zero upfront.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#0f6e56">✕ the myth</div>
-            <div class="myth-old-txt">"You wait weeks or months to go live."</div>
-            <div class="myth-new-txt">Fill in a 5-min form. Live in 3 business days.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#854f0b">✕ the myth</div>
-            <div class="myth-old-txt">"Every change costs $120–$250 per hour."</div>
-            <div class="myth-new-txt">Send us a message. We update it. No charge.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#993556">✕ the myth</div>
-            <div class="myth-old-txt">"SEO is an expensive add-on."</div>
-            <div class="myth-new-txt">Local SEO baked into every site from day one.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#185fa5">✕ the myth</div>
-            <div class="myth-old-txt">"Templates are fine — they all look the same anyway."</div>
-            <div class="myth-new-txt">Every site is handbuilt for your business. No templates.</div>
-          </div><div class="myth-c">
-            <div class="myth-bust-lbl" style="color:#3b6d11">✕ the myth</div>
-            <div class="myth-old-txt">"You need a developer to keep a website running."</div>
-            <div class="myth-new-txt">We handle everything. You just run your business.</div>
-          </div></div>
+        </div>
       </div>
+
+      <div class="sc-wrap">
+        <div class="sc-head">
+          <div class="sc-hc"></div>
+          <div class="sc-hc">An agency</div>
+          <div class="sc-hc">A freelancer</div>
+          <div class="sc-hc ours">⚡ FreeRange</div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Upfront cost</div>
+          <div class="sc-c"><span class="sc-bad">$5k – $20k</span></div>
+          <div class="sc-c"><span class="sc-bad">$600 – $5k</span></div>
+          <div class="sc-c ours"><span class="sc-good">$0</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Time to go live</div>
+          <div class="sc-c"><span class="sc-bad">4 – 12 weeks</span></div>
+          <div class="sc-c"><span class="sc-bad">2 – 6 weeks</span></div>
+          <div class="sc-c ours"><span class="sc-good">3 business days</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Content updates</div>
+          <div class="sc-c"><span class="sc-bad">$120 – $250/hr</span></div>
+          <div class="sc-c"><span class="sc-bad">$60 – $150/hr</span></div>
+          <div class="sc-c ours"><span class="sc-good">Unlimited, free</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Hosting included</div>
+          <div class="sc-c"><span class="sc-bad">Rarely</span></div>
+          <div class="sc-c"><span class="sc-bad">No</span></div>
+          <div class="sc-c ours"><span class="sc-good">Always</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Local SEO built in</div>
+          <div class="sc-c"><span class="sc-bad">Expensive add-on</span></div>
+          <div class="sc-c"><span class="sc-bad">Rarely</span></div>
+          <div class="sc-c ours"><span class="sc-good">Always included</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Security &amp; SSL</div>
+          <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
+          <div class="sc-c"><span class="sc-bad">Your problem</span></div>
+          <div class="sc-c ours"><span class="sc-good">Included</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Site performance</div>
+          <div class="sc-c"><span class="sc-bad">Not guaranteed</span></div>
+          <div class="sc-c"><span class="sc-bad">Varies</span></div>
+          <div class="sc-c ours"><span class="sc-good">Fast, always</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Handbuilt websites</div>
+          <div class="sc-c"><span class="sc-good"><span style="color: rgb(192, 57, 43); font-weight: 400;">Depends on the budget</span></span></div>
+          <div class="sc-c"><span class="sc-bad">Often templates</span></div>
+          <div class="sc-c ours"><span class="sc-good">Every time</span></div>
+        </div>
+        <div class="sc-row">
+          <div class="sc-c">Google Business setup</div>
+          <div class="sc-c"><span class="sc-bad">Extra cost</span></div>
+          <div class="sc-c"><span class="sc-bad">Not offered</span></div>
+          <div class="sc-c ours"><span class="sc-good">Included</span></div>
+        </div>
+      </div>
+
       <div class="diff-cta-wrap">
         <div class="diff-cta-hl">Reckon you've <em>seen enough?</em></div>
         <p class="diff-cta-sub">Most of our clients wish they'd found us sooner.</p>
@@ -943,46 +882,32 @@ ul{list-style:none}
 <!-- ── HOW IT WORKS ──────────────────────── -->
 <section class="sec hiw" id="how-it-works">
   <div class="container">
-<div style="background:var(--white);border-radius:28px;padding:48px;margin-top:40px">
-<div class="tc" style="margin-bottom:40px">
-  <span class="tag-lbl">Simple as</span>
-  <h2 class="sec-title">Up and running in 4 steps</h2>
-  <p class="sec-sub">No technical knowledge needed. No back-and-forth for weeks. Just fill in a form and we handle the rest.</p>
-</div>
-<div class="hiw-steps" style="margin-top:0">
-
-  <!-- Bee path SVG -->
-<svg class="hiw-path" viewBox="0 0 1000 74" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M 156,37 Q 250,10 344,37" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-dasharray="7,7" opacity="0.5"/>
-    <path d="M 406,37 Q 500,64 594,37" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-dasharray="7,7" opacity="0.5"/>
-    <path d="M 656,37 Q 750,10 844,37" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-dasharray="7,7" opacity="0.5"/>
-  </svg>
-
-  <div class="step rv">
-    <div class="step-num">1</div>
-    <div class="step-title">Fill in our 5-min form</div>
-    <div class="step-desc">Tell us your business name, services, suburb, and upload your logo and a few photos. That's genuinely all we need.</div>
-  </div>
-
-  <div class="step rv d1">
-    <div class="step-num">2</div>
-    <div class="step-title">We build your site</div>
-    <div class="step-desc">We get to work straight away. Your professional, SEO-ready website is built and ready to review within 3 business days.</div>
-  </div>
-
-  <div class="step rv d2">
-    <div class="step-num">3</div>
-    <div class="step-title">You go live</div>
-    <div class="step-desc">We point your domain, launch your site, and set up your Google Business Profile. You're open for business.</div>
-  </div>
-
-  <div class="step rv d3">
-    <div class="step-num">4</div>
-    <div class="step-title">Updates whenever you need</div>
-    <div class="step-desc">New service, new photos, changed your rates? Just send us a message. We update your site — no extra charge, ever.</div>
-  </div>
-  </div>
-</div>
+    <div class="tc">
+      <span class="tag-lbl rv">Simple as</span>
+      <h2 class="sec-title rv">Up and running in 3 steps</h2>
+      <p class="sec-sub rv">No technical knowledge needed. No back-and-forth for weeks. Just fill in a form and we handle the rest.</p>
+    </div>
+    <div class="hiw-steps">
+      <div class="step rv">
+        <div class="step-num">1</div>
+        <div class="step-title">Fill in our 5-min form</div>
+        <div class="step-desc">Tell us your business name, services, suburb, and upload your logo and a few photos. That's genuinely all we need.</div>
+      </div>
+      <div class="step rv d1">
+        <div class="step-num">2</div>
+        <div class="step-title">We build your site</div>
+        <div class="step-desc">We get to work straight away. Your professional, SEO-ready website is built and ready to review within 3 business days.</div>
+      </div>
+      <div class="step rv d2">
+        <div class="step-num">3</div>
+        <div class="step-title">You go live</div>
+        <div class="step-desc">We point your domain, launch your site, and set up your Google Business Profile. Then we stay on to manage everything monthly.</div>
+      </div>
+    </div>
+    <div class="hiw-cta rv">
+      <p style="color:var(--soft);font-size:16px;margin-bottom:20px">Ready to get your business online properly?</p>
+      <a href="#pricing" class="btn btn-dark btn-lg">See pricing — from $79/mo</a>
+    </div>
   </div>
 </section>
 
@@ -991,9 +916,9 @@ ul{list-style:none}
 <section class="sec pricing" id="pricing">
   <div class="container">
     <div class="tc">
-      <span class="tag-lbl rv">Unbeatable pricing</span>
+      <span class="tag-lbl rv">Honest pricing</span>
       <h2 class="sec-title rv">No agency rates. No surprises.</h2>
-      <p class="sec-sub rv">All plans include hosting, unlimited updates, and basic on-site SEO setup. Cancel anytime after 6 months.</p>
+      <p class="sec-sub rv">All plans include hosting, unlimited updates, and local SEO setup. Cancel anytime after 6 months.</p>
     </div>
     <div class="price-grid">
       <div class="price-card rv">
@@ -1012,7 +937,7 @@ ul{list-style:none}
           <div class="pf"><span class="pf-ck">✓</span>Live in 3 business days</div>
         </div>
         <a href="https://tally.so" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center">Get started</a>
-        <div class="price-excl">Terms and conditions apply.</div>
+        <div class="price-excl">Domain purchase not included. Can be added for $35/yr.</div>
       </div>
       <div class="price-card feat rv d1">
         <div class="price-badge">⭐ Most popular</div>
@@ -1032,7 +957,7 @@ ul{list-style:none}
           <div class="pf"><span class="pf-ck">✓</span>Monthly performance check-in</div>
         </div>
         <a href="https://tally.so" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Get started</a>
-        <div class="price-excl">Terms and conditions apply.</div>
+        <div class="price-excl">Domain purchase not included. Can be added for $35/yr.</div>
       </div>
       <div class="price-card rv d2">
         <div class="price-tier">Organic</div>
@@ -1050,16 +975,49 @@ ul{list-style:none}
           <div class="pf"><span class="pf-ck">✓</span>Quarterly website review call</div>
         </div>
         <a href="https://tally.so" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center">Get started</a>
-        <div class="price-excl">Terms and conditions apply.</div>
+        <div class="price-excl">Domain purchase not included. Can be added for $35/yr.</div>
       </div>
     </div>
     <div class="price-footer rv">
-      <p><strong>Looking for something more?</strong> upgrade with add-ons</p>
-      <p style="margin-top:5px;color:var(--soft)">Domain ($35/yr) · Business email ($15/mo per mailbox) · Custom feature requests</p>
+      <p><strong>Thinking about buying your site outright?</strong> After 12 months you can purchase the code. <a href="#faq" style="color:var(--text);font-weight:600;border-bottom:1px solid var(--border)">See FAQ</a></p>
+      <p style="margin-top:5px;color:var(--soft)">Add-ons: Domain ($35/yr) · Business email ($15/mo per mailbox)</p>
     </div>
   </div>
 </section>
 
+<!-- ── TESTIMONIALS ──────────────────────── -->
+
+<!-- ── WHO IT'S FOR ──────────────────────── -->
+<section class="sec who" id="who">
+  <div class="container">
+    <div class="tc">
+      <span class="tag-lbl rv">Right fit?</span>
+      <h2 class="sec-title rv">We're honest about who this suits</h2>
+      <p class="sec-sub rv">FreeRange Websites works brilliantly for the right businesses — and we'd rather be upfront than waste your time.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-card yes rv">
+        <div class="who-title">✅ Perfect if you're a…</div>
+        <div class="who-list">
+          <div class="who-item"><span class="who-ico">⚡</span>Tradie or sole trader wanting to get found online without the agency price tag</div>
+          <div class="who-item"><span class="who-ico">🆕</span>New business that wants to look professional from day one</div>
+          <div class="who-item"><span class="who-ico">📱</span>Small local business that gets word-of-mouth work but wants to unlock online leads too</div>
+          <div class="who-item"><span class="who-ico">🔧</span>Too busy on the tools to deal with updating your own website</div>
+          <div class="who-item"><span class="who-ico">💰</span>Sick of paying $3k+ upfront or $150/hr for every small change</div>
+        </div>
+      </div>
+      <div class="who-card no rv d1">
+        <div class="who-title">❌ Probably not right if you…</div>
+        <div class="who-list">
+          <div class="who-item"><span class="who-ico">🏢</span>Need a large multi-location enterprise site with complex integrations</div>
+          <div class="who-item"><span class="who-ico">🛒</span>Need a full e-commerce store with hundreds of products</div>
+          <div class="who-item"><span class="who-ico">🎨</span>Want to own the code from day one and self-host without support</div>
+          <div class="who-item"><span class="who-ico">📊</span>Need custom web app features or member portals</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ── FAQ ───────────────────────────────── -->
 <section class="faq-sec" id="faq">
@@ -1107,10 +1065,17 @@ ul{list-style:none}
   <div class="container">
     <div class="fcta-inner">
       <h2 class="fcta-title rv">Your competitors are already online.<br>Let's get you <em>sorted.</em></h2>
-      <p class="fcta-sub rv">&nbsp;</p>
+      <p class="fcta-sub rv">Professional website, live in 3 business days. No lock-in after 6 months. No tech headaches.</p>
       <div class="fcta-btns rv">
         <a href="#pricing" class="btn btn-primary btn-lg">See pricing — from $79/mo</a>
-        <!-- <a href="mailto:hello@freerangewebsites.com.au" class="btn btn-outline-white btn-lg">Ask us a question first</a> -->
+        <a href="mailto:hello@freerangewebsites.com.au" class="btn btn-outline-white btn-lg">Ask us a question first</a>
+      </div>
+      <div class="fcta-gts rv">
+        <div class="gt"><span class="gt-ck">✓</span>Live in 3 business days</div>
+        <div class="gt"><span class="gt-ck">✓</span>Hosting included</div>
+        <div class="gt"><span class="gt-ck">✓</span>No lock-in after 6 months</div>
+        <div class="gt"><span class="gt-ck">✓</span>Local SEO built in</div>
+        <div class="gt"><span class="gt-ck">✓</span>Unlimited updates</div>
       </div>
     </div>
   </div>
@@ -1157,7 +1122,7 @@ ul{list-style:none}
           </div>
         </div>
         <p class="ack-text">
-         FreeRange Websites acknowledges the Traditional Custodians of Country throughout Australia and their connections to land, sea and community. We pay our respects to Elders past and present, and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
+          <strong>Acknowledgement of Country.</strong> FreeRange Websites acknowledges the Traditional Custodians of Country throughout Australia and their connections to land, sea and community. We pay our respects to Elders past and present, and extend that respect to all Aboriginal and Torres Strait Islander peoples today.
         </p>
       </div>
     </div>
