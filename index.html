@@ -342,8 +342,7 @@ ul{list-style:none}
 .htc-hl{display:none;font-family:var(--fb);font-weight:700;font-size:12px;color:var(--text);line-height:1.45}
 .htc-qt{font-size:12px;color:var(--mid);line-height:1.6}
 
-/* ── SCROLL PEEK HINT ───────────────────── */
-/* No arrow indicator — the next section peeks below the fold naturally via hero max-height */
+
 
 /* ── REVEAL SYSTEM ──────────────────────── */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
@@ -427,11 +426,11 @@ ul{list-style:none}
 
 /* Unified Main Content Container Box */
 .diff-card-panel {
-  background: #ffffff;
   border-radius: 28px;
-  padding: 64px 48px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.03);
-  margin-top: 40px;
+  padding: 30px 48px;
+  margin-top: 0px;
+  /* box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+  background: #ffffff; */
 }
 
 .diff-carousel-outer{position:relative;overflow:hidden;width:100%;cursor:grab;user-select:none;margin-top:56px;margin-bottom:24px}
@@ -441,31 +440,190 @@ ul{list-style:none}
 .diff-carousel-outer::after{right:0;background:linear-gradient(-90deg,#ffffff,transparent)}
 .diff-track{display:flex;gap:16px;width:max-content;will-change:transform}
 
+.sc-row-title {
+  display: block;
+  font-family: var(--fb);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.sc-row-sub {
+  display: block;
+  font-family: var(--fb);
+  font-weight: 400;
+  font-size: 14px !important;
+  color: var(--soft);
+  line-height: 1.5;
+}
+
 /* Carousel Cards updated to a soft light grey tone to pop out from the main white box */
 .myth-c{flex-shrink:0;width:296px;border-radius:18px;padding:24px 26px;min-height:160px;display:flex;flex-direction:column;gap:10px;background:#f8f9fa !important;border:1px solid rgba(0,0,0,0.04)}
 .myth-bust-lbl{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:5px}
 .myth-old-txt{font-size:13px;color:var(--mid);text-decoration:line-through;line-height:1.55}
 .myth-new-txt{font-size:1rem;font-weight:600;color:var(--text);line-height:1.5}
 
-.sc-wrap{max-width:900px;margin:0 auto}
-.sc-table{width:100%;border-collapse:separate;border-spacing:0}
-.sc-table th:first-child,.sc-table td:first-child{border:none;font-family:var(--fh);font-weight:700;font-size:17px;color:var(--text);text-align:left;padding:16px 18px;background:#fff}
-.sc-table thead th:not(:first-child){padding:18px 18px;font-family:var(--fh);font-weight:700;font-size:19px;color:var(--soft);text-align:center;background:#fff;border-top:1.5px solid var(--border);border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.sc-table thead th:nth-child(2){border-left:1.5px solid var(--border);border-top-left-radius:18px}
-.sc-table thead th:last-child{border-left:2px solid var(--black);border-right:2px solid var(--black);border-top:2px solid var(--black);border-top-right-radius:18px;background:var(--black);color:#fff}
-.sc-table tbody td:not(:first-child){padding:16px 18px;font-size:15px;color:var(--mid);text-align:center;background:#fff;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
-.sc-table tbody td:nth-child(2){border-left:1.5px solid var(--border)}
-.sc-table tbody td:last-child{border-left:2px solid var(--black);border-right:2px solid var(--black);background:rgba(144,183,102,.06);font-weight:600;color:var(--text)}
-.sc-table tbody tr:last-child td:not(:first-child){border-bottom:1.5px solid var(--border)}
-.sc-table tbody tr:last-child td:nth-child(2){border-bottom-left-radius:18px}
-.sc-table tbody tr:last-child td:last-child{border-bottom:2px solid var(--orange);border-bottom-right-radius:18px}
-.sc-table tbody tr:hover td:not(:first-child){background:var(--grey)}
-.sc-table tbody tr:hover td:last-child{background:rgba(144,183,102,.14)}
-.sc-bad{color:#c0392b}
+.sc-wrap{max-width:1100px;margin:0 auto;padding:20px 10px;overflow-x:auto}
+.sc-table{width:100%;border-collapse:separate;border-spacing:0;position:relative}
+
+/* Left-most row labels (Added bottom border to match reference layout) */
+.sc-table th:first-child, .sc-table td:first-child{
+  font-family:var(--fb);
+  font-weight:800;
+  font-size:16px;
+  color:var(--text);
+  text-align:left;
+  padding:22px 24px;
+  background:transparent !important;
+  border:none;
+  border-bottom:1px solid var(--border); /* Adds the bottom border to each feature row */
+}
+/* Ensure the top left empty corner doesn't have a stray bottom line */
+.sc-table thead th:first-child {
+  border-bottom:none;
+}
+
+/* Competitor Columns (Standard widths) */
+.sc-table thead th:nth-child(2), .sc-table thead th:nth-child(3),
+.sc-table tbody td:nth-child(2), .sc-table tbody td:nth-child(3) {
+  background:#ffffff !important;
+  border-bottom:1px solid #f0ede9;
+  padding:22px 18px;
+  font-size:15px;
+  color:var(--mid);
+  text-align:center;
+  width: 22%; /* Restricts competitor column widths */
+}
+.sc-table thead th:nth-child(2), .sc-table thead th:nth-child(3) {
+  font-family:var(--fb);
+  font-weight:800;
+  font-size:18px;
+  color:var(--text);
+  border-top:1px solid var(--border);
+}
+
+/* Border frameworks to form a cohesive inner grid container */
+.sc-table thead th:nth-child(2) { border-left:1px solid var(--border); border-top-left-radius:16px; }
+.sc-table thead th:nth-child(3) { border-right:1px solid var(--border); }
+.sc-table tbody td:nth-child(2) { border-left:1px solid var(--border); }
+.sc-table tbody td:nth-child(3) { border-right:1px solid var(--border); }
+
+/* Apply lower border layout curves to competitors */
+.sc-table tbody tr:last-child td:nth-child(2) { border-bottom:1px solid var(--border); border-bottom-left-radius:16px; }
+.sc-table tbody tr:last-child td:nth-child(3) { border-bottom:1px solid var(--border); border-bottom-right-radius:16px; }
+
+/* Right-most Focus Column (Solid Framework without Gaps) */
+.sc-table thead th:last-child, .sc-table tbody td:last-child {
+  border-left: 2px solid var(--orange);
+  border-right: 2px solid var(--orange);
+  text-align: center;
+  width: 28%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Cell Panel */
+.sc-table thead th:last-child {
+  background: var(--orange) !important;
+  color: #ffffff !important;
+  font-family: var(--fb);
+  font-weight: 900;
+  font-size: 20px;
+  border-top: 2px solid var(--orange);
+  border-top-right-radius: 16px;
+}
+
+/* Body Cell Panel */
+.sc-table tbody td:last-child {
+  background: #fff9f2 !important;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 1px solid rgba(254,155,36,.15);
+  padding: 22px 24px;
+}
+
+/* Last Row Bottom Drop Frame */
+.sc-table tbody tr:last-child td:last-child {
+  border-bottom: 2px solid var(--orange) !important;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  /* Creates the deeper bottom illusion natively through internal padding */
+  padding: 22px 24px 38px 24px;
+
+  /* Drop shadow accents the lower visual extension */
+  box-shadow: 0 12px 24px rgba(254,155,36,0.05);
+}
+
+  /* ── MOBILE RESPONSIVENESS FOR THE COMPARISON TABLE ──────────────── */
+@media (max-width: 768px) {
+  /* Turn the table grid structure into a block layout stack */
+  .sc-table, .sc-table thead, .sc-table tbody, .sc-table tr, .sc-table th, .sc-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Hide the desktop header row completely */
+  .sc-table thead {
+    display: none;
+  }
+
+  /* Separate each horizontal row item with layout space */
+  .sc-table tbody tr {
+    margin-bottom: 32px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 16px;
+    box-shadow: var(--sh);
+  }
+
+  /* Style the left-most column feature labels to sit on top */
+  .sc-table td:first-child {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text);
+    padding: 8px 0 16px 0;
+    border-bottom: 2px solid var(--orange);
+    text-align: center;
+  }
+
+  /* Structure internal text alignments for standard columns and the orange highlight column */
+  .sc-table tbody td:nth-child(2),
+  .sc-table tbody td:nth-child(3),
+  .sc-table tbody td:last-child {
+    padding: 12px 0;
+    text-align: left;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Inject data labels onto mobile screens to maintain readable structural columns */
+  .sc-table tbody td:nth-child(2)::before { content: "Other Templates:"; font-weight: 600; color: var(--soft); }
+  .sc-table tbody td:nth-child(3)::before { content: "Custom Agencies:"; font-weight: 600; color: var(--soft); }
+  .sc-table tbody td:last-child::before { content: "FreeRange Websites:"; font-weight: 800; color: var(--orange); }
+
+  /* Add extra focus emphasis to the final target column row value */
+  .sc-table tbody td:last-child {
+    background: rgba(144, 183, 102, 0.08) !important;
+    padding: 12px 10px;
+    margin-top: 6px;
+    border-radius: 8px !important;
+  }
+}
+
+
+.sc-bad{color:#707070}
 .sc-good{color:var(--green2);font-weight:600}
 
 /* Adjusted lower CTA block to remove redundant cream backgrounds inside the white box */
-.diff-cta-wrap{text-align:center;margin-top:48px;padding-top:40px;padding-bottom:10px;background:transparent;border:none}
+.diff-cta-wrap{text-align:center;margin-top:30px;padding-top:10px;padding-bottom:10px;background:transparent;border:none}
 .diff-cta-hl{font-family:var(--fh);font-weight:900;font-size:32px;color:var(--text);margin-bottom:10px}
 .diff-cta-hl em{font-style:normal;color:var(--orange)}
 .diff-cta-sub{font-size:16px;color:var(--mid);margin-bottom:26px;line-height:1.65}
@@ -477,7 +635,7 @@ ul{list-style:none}
 .price-card:hover{transform:translateY(-4px);box-shadow:var(--shl)}
 .price-card.feat{border-color:var(--black);background:var(--white);box-shadow:var(--shl);transform:scale(1.025)}
 .price-card.feat:hover{transform:scale(<!-- ── BEFORE / AFTER ──1.025) translateY(-4px)}
-.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:var(--fh);font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:50px;white-space:nowrap}
+.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--green);color:#fff;font-family:var(--fh);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:5px 16px;border-radius:50px;white-space:nowrap}
 .price-tier{font-family:var(--fh);font-weight:900;font-size:23px;color:var(--text);margin-bottom:6px}
 .price-tag{font-size:13px;color:var(--soft);margin-bottom:20px;line-height:1.45}
 .price-amt{display:flex;align-items:baseline;gap:2px;margin-bottom:3px}
@@ -491,7 +649,7 @@ ul{list-style:none}
 .pf{display:flex;gap:9px;align-items:flex-start;font-size:1rem;color:var(--mid);line-height:1.45}
 .pf-ck{color:var(--green2);font-weight:700;flex-shrink:0;font-size:15px}
 .price-excl{font-size:11.5px;color:var(--soft);margin-top:12px;padding-top:12px;border-top:1px dashed var(--border);line-height:1.55}
-.price-footer{margin-top:48px;text-align:center;padding:28px;background:var(--cream);border-radius:16px;border:1px solid var(--border)}
+.price-footer{margin-top:48px;text-align:center;padding:28px;background:var(--white);border-radius:16px;border:1px solid var(--white)}
 .price-footer p{font-size:1rem;color:var(--mid);margin-bottom:4px}
 
 /* ── TESTIMONIALS ───────────────────────── */
@@ -549,8 +707,8 @@ ul{list-style:none}
 .faq-item.open{border-color:var(--orange);box-shadow: var(--sh);}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
 .faq-qt{font-family:var(--fh);font-weight:700;font-size:17px;color:var(--text);line-height:1.3}
-.faq-ico{width:28px;height:28px;border-radius:50%;background:var(--grey);color:var(--text);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;transition:all .25s;font-weight:300}
-.faq-item.open .faq-ico{background:var(--orange);color:#fff;transform:rotate(45deg)}
+.faq-ico{width:30px;height:30px;border-radius:50%;background:var(--grey);color:var(--text);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;transition:all .25s;font-weight:300}
+.faq-item.open .faq-ico{background:var(--orange);color:#000;transform:rotate(45deg)}
 .faq-ans{display:none;padding:0 22px 20px;font-size:15px;color:var(--mid);line-height:1.75}
 .faq-item.open .faq-ans{display:block}
 .faq-more{text-align:center;margin-top:32px}
@@ -627,6 +785,16 @@ ul{list-style:none}
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
 }
+
+/* ── PRICING TOOLTIPS ───────────────────── */
+.pf{position:relative}
+.pf:has(.pf-tip){cursor:pointer}
+.pf-info{display:none}
+.pf-tip{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);right:0;left:auto;background:#1a1a1a;color:#fff;font-size:12px;font-weight:400;line-height:1.55;padding:10px 13px;border-radius:10px;width:240px;z-index:99;pointer-events:none;transition:opacity .18s;font-family:var(--fb)}
+.pf-tip::after{content:'';position:absolute;top:100%;left:18px;right:auto;border:5px solid transparent;border-top-color:#1a1a1a}
+.pf:hover .pf-tip{visibility:visible;opacity:1}
+@media(max-width:560px){.pf-tip{width:200px;right:0}}
+
 </style>
 </head>
 <body>
@@ -770,85 +938,93 @@ ul{list-style:none}
   <div class="container">
     <div class="tc">
       <span class="tag-lbl rv">Why Free Range Websites?</span>
-      <h2 class="sec-title rv">Let's <em>bust</em> a few myths</h2>
-      <p class="sec-sub rv">A lot of tradies have been burnt by agencies or freelancers. Here's the honest truth.</p>
+      <h2 class="sec-title rv">We are different, good different</h2>
+      <p class="sec-sub rv">A lot of local small businesses have been burnt by agencies or freelancers. Here’s how we make things better for you</p>
     </div>
 
     <!-- Opening White Panel Wrapper -->
     <div class="diff-card-panel rv">
-
-
 
       <div class="sc-wrap">
   <table class="sc-table">
     <thead>
       <tr>
         <th></th>
-        <th>An agency</th>
-        <th>A freelancer</th>
-        <th>⚡ FreeRange</th>
+        <th>Agencies</th>
+        <th>Freelancers</th>
+        <th style="padding: 0;border-radius: 0px 16px 0 0">Our way</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Upfront cost</td>
-        <td><span class="sc-bad">$5k – $20k</span></td>
-        <td><span class="sc-bad">$600 – $5k</span></td>
-        <td><span class="sc-good">✓ $0</span></td>
+        <td><span class="sc-row-title">Upfront cost</span><span class="sc-row-sub">What you pay before your site even goes live</span></td>
+        <td><span class="sc-bad">$5,000 – $20,000</span></td>
+        <td><span class="sc-bad">$500 – $5,000</span></td>
+        <td><span class="sc-good">$0</span></td>
       </tr>
       <tr>
-        <td>Time to go live</td>
+        <td><span class="sc-row-title">Custom built website</span><span class="sc-row-sub">A site made for your business — not a recycled template</span></td>
+        <td><span class="sc-bad">Depends on the budget</span></td>
+        <td><span class="sc-bad">Often pre-made cookie-cutter templates</span></td>
+        <td><span class="sc-good">Included</span></td>
+      </tr>
+      <tr>
+      <tr>
+        <td><span class="sc-row-title">Time to go live</span><span class="sc-row-sub">How long before your site is actually live and taking enquiries</span></td>
         <td><span class="sc-bad">4 – 12 weeks</span></td>
         <td><span class="sc-bad">2 – 6 weeks</span></td>
-        <td><span class="sc-good">✓ 3 business days</span></td>
+        <td><span class="sc-good">Just days</span></td>
       </tr>
       <tr>
-        <td>Content updates</td>
+        <td><span class="sc-row-title">Website content changes</span><span class="sc-row-sub">Adding or changing your services, prices, photos etc</span></td>
         <td><span class="sc-bad">$120 – $250/hr</span></td>
         <td><span class="sc-bad">$60 – $150/hr</span></td>
-        <td><span class="sc-good">Unlimited, free</span></td>
+        <td><span class="sc-good">Unlimited, FREE!</span></td>
       </tr>
       <tr>
-        <td>Hosting included</td>
-        <td><span class="sc-bad">Rarely</span></td>
-        <td><span class="sc-bad">No</span></td>
-        <td><span class="sc-good">Always</span></td>
+        <td><span class="sc-row-title">Aftercare & maintenance</span><span class="sc-row-sub">Who's looking after your site once it's built?</span></td>
+        <td><span class="sc-bad">Additional cost</span></td>
+        <td><span style="caret-color: rgb(112, 112, 112); color: rgb(112, 112, 112);">Nobody, they disappear. One and done model</span><br></td>
+        <td><span class="sc-good">Included</span></td>
       </tr>
       <tr>
-        <td>Local SEO built in</td>
-        <td><span class="sc-bad">Expensive add-on</span></td>
-        <td><span class="sc-bad">Rarely</span></td>
-        <td><span class="sc-good">Always included</span></td>
+        <td><span class="sc-row-title">Website hosting</span><span class="sc-row-sub">The ongoing service and cost to keep your site online 24/7</span></td>
+        <td><span class="sc-bad">Additional cost</span></td>
+        <td><span class="sc-bad">Not included</span></td>
+        <td><span class="sc-good">Included</span></td>
       </tr>
       <tr>
-      </tr><tr>
-        <td>Security &amp; SSL</td>
-        <td><span class="sc-bad">Extra cost</span></td>
+        <td><span class="sc-row-title">On-site SEO</span><span class="sc-row-sub">Getting Google to actually know you exist and rank you for local searches</span></td>
+        <td><span class="sc-bad">Additional cost<br></span></td>
         <td><span class="sc-bad">Your problem</span></td>
         <td><span class="sc-good">Included</span></td>
       </tr>
       <tr>
-        <td>Site performance</td>
-        <td><span class="sc-bad">Not guaranteed</span></td>
-        <td><span class="sc-bad">Varies</span></td>
-        <td><span class="sc-good">Fast, always</span></td>
+        <td><span class="sc-row-title">Google Business setup</span><span class="sc-row-sub">Your listing on Google Maps so locals can find and call you</span></td>
+        <td><span class="sc-bad">Additional cost<br></span></td>
+        <td style="border-radius:0"><span class="sc-bad">Not offered</span></td>
+        <td style="border-radius: 0"><span class="sc-good">Included</span></td>
       </tr>
       <tr>
-        <td>Handbuilt websites</td>
-        <td><span class="sc-bad">Depends on the budget</span></td>
-        <td><span class="sc-bad">Often templates</span></td>
-        <td><span class="sc-good">Every time</span></td>
       </tr>
       <tr>
-        <td>Google Business setup</td>
-        <td><span class="sc-bad">Extra cost</span></td>
-        <td><span class="sc-bad">Not offered</span></td>
+        <td style="border-bottom: none;"><span class="sc-row-title">Security & SSL</span><span class="sc-row-sub">The padlock in the browser bar — and keeping hackers out</span></td>
+        <td><span class="sc-bad">Additional cost<br></span></td>
+        <td><span class="sc-bad">Your problem</span></td>
         <td><span class="sc-good">Included</span></td>
       </tr>
+      <tr>
+        <td style="border-bottom: none;"><span class="sc-row-title">Site speed & performance</span><span class="sc-row-sub">Fast-loading site verified against Google benchmarks — because slow sites lose jobs</span></td>
+        <td><span class="sc-bad">Not monitored</span></td>
+        <td style="border-radius: 0"><span class="sc-bad" >Not monitored</span></td>
+        <td style="border-radius: 0 0 16px 0"><span class="sc-good">Included</span></td>
+      </tr>
+
     </tbody>
   </table>
+    <p style="font-size:11px;color:var(--soft);margin-top:24px;text-align:center;line-height:1.6;">* Inclusions vary by plan. See plan and <a href="#pricing" style="color:var(--soft);border-bottom:1px solid var(--border);">pricing</a> details.<a href="#faq" style="color:var(--soft);border-bottom:1px solid var(--border);">Terms & Conditions</a> apply</p>
 </div>
-      <div class="diff-carousel-outer" id="diffOuter">
+      <!-- <div class="diff-carousel-outer" id="diffOuter">
         <div class="diff-track" id="diffTrack">
           <div class="myth-c">
             <div class="myth-bust-lbl" style="color:#534ab7">✕ the myth</div>
@@ -929,7 +1105,7 @@ ul{list-style:none}
             <div class="myth-old-txt">"You need a developer to keep a website running."</div>
             <div class="myth-new-txt">We handle everything. You just run your business.</div>
           </div></div>
-      </div>
+      </div></-->
       <div class="diff-cta-wrap">
         <div class="diff-cta-hl">Reckon you've <em>seen enough?</em></div>
         <p class="diff-cta-sub">Most of our clients wish they'd found us sooner.</p>
@@ -991,71 +1167,100 @@ ul{list-style:none}
 <section class="sec pricing" id="pricing">
   <div class="container">
     <div class="tc">
-      <span class="tag-lbl rv">Unbeatable pricing</span>
+      <span class="tag-lbl rv">Introductory pricing</span>
       <h2 class="sec-title rv">No agency rates. No surprises.</h2>
       <p class="sec-sub rv">All plans include hosting, unlimited updates, and basic on-site SEO setup. Cancel anytime after 6 months.</p>
     </div>
-    <div class="price-grid">
-      <div class="price-card rv">
-        <div class="price-tier">Pasture</div>
-        <div class="price-tag">Great for brand-new businesses getting their first website sorted.</div>
-        <div class="price-amt"><span class="pa-sym">$</span><span class="pa-num">49</span><span class="pa-per">/mo</span></div>
-        <div class="price-note">6-month minimum, then month-to-month</div>
-        <div class="price-div"></div>
-        <div class="price-inc">Includes</div>
-        <div class="price-feats">
-          <div class="pf"><span class="pf-ck">✓</span>3-page website (Home, Services, Contact)</div>
-          <div class="pf"><span class="pf-ck">✓</span>Fast, secure hosting + SSL</div>
-          <div class="pf"><span class="pf-ck">✓</span>Mobile-optimised design</div>
-          <div class="pf"><span class="pf-ck">✓</span>Basic local SEO setup</div>
-          <div class="pf"><span class="pf-ck">✓</span>2 content updates per month</div>
-          <div class="pf"><span class="pf-ck">✓</span>Live in 3 business days</div>
-        </div>
-        <a href="https://tally.so" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center">Get started</a>
-        <div class="price-excl">Terms and conditions apply.</div>
-      </div>
-      <div class="price-card feat rv d1">
-        <div class="price-badge">⭐ Most popular</div>
-        <div class="price-tier">Free Range</div>
-        <div class="price-tag">The full setup for tradies wanting to dominate local search.</div>
-        <div class="price-amt"><span class="pa-sym">$</span><span class="pa-num">79</span><span class="pa-per">/mo</span></div>
-        <div class="price-note">6-month minimum, then month-to-month</div>
-        <div class="price-div"></div>
-        <div class="price-inc">Everything in Pasture, plus</div>
-        <div class="price-feats">
-          <div class="pf"><span class="pf-ck">✓</span>5-page website (full setup)</div>
-          <div class="pf"><span class="pf-ck">✓</span>Unlimited content updates</div>
-          <div class="pf"><span class="pf-ck">✓</span>Google Business Profile setup</div>
-          <div class="pf"><span class="pf-ck">✓</span>Full local SEO + schema markup</div>
-          <div class="pf"><span class="pf-ck">✓</span>Contact form + click-to-call button</div>
-          <div class="pf"><span class="pf-ck">✓</span>Google Analytics setup</div>
-          <div class="pf"><span class="pf-ck">✓</span>Monthly performance check-in</div>
-        </div>
-        <a href="https://tally.so" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Get started</a>
-        <div class="price-excl">Terms and conditions apply.</div>
-      </div>
-      <div class="price-card rv d2">
-        <div class="price-tier">Organic</div>
-        <div class="price-tag">For businesses ready to seriously grow their online presence.</div>
-        <div class="price-amt"><span class="pa-sym">$</span><span class="pa-num">109</span><span class="pa-per">/mo</span></div>
-        <div class="price-note">6-month minimum, then month-to-month</div>
-        <div class="price-div"></div>
-        <div class="price-inc">Everything in Free Range, plus</div>
-        <div class="price-feats">
-          <div class="pf"><span class="pf-ck">✓</span>Monthly GBP management</div>
-          <div class="pf"><span class="pf-ck">✓</span>Review generation system</div>
-          <div class="pf"><span class="pf-ck">✓</span>Monthly keyword ranking report</div>
-          <div class="pf"><span class="pf-ck">✓</span>2 extra suburb landing pages</div>
-          <div class="pf"><span class="pf-ck">✓</span>Priority 1-day update turnaround</div>
-          <div class="pf"><span class="pf-ck">✓</span>Quarterly website review call</div>
-        </div>
-        <a href="https://tally.so" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center">Get started</a>
-        <div class="price-excl">Terms and conditions apply.</div>
-      </div>
+
+<div class="price-grid">
+
+  <!-- STARTER -->
+  <div class="price-card rv">
+    <div class="price-tier">Starter</div>
+    <div class="price-tag">Get your business online fast with a clean, professional website that works.</div>
+    <div class="price-amt"><span class="pa-sym">$</span><span class="pa-num">99</span><span class="pa-per">/mo</span></div>
+    <div class="price-note">6-month minimum, then month-to-month</div>
+    <div class="price-div"></div>
+    <div class="price-inc">What's included:</div>
+    <div class="price-feats">
+
+      <div class="pf"><span class="pf-ck">✓</span>3-page website<span class="pf-tip">Home, Services and Contact — everything you need to get started.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>2 content update rounds/mo<span class="pf-tip">Send us changes twice a month — swap a photo, update your prices, whatever you need. See our FAQs and TnCs.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Fast hosting + SSL<span class="pf-tip">Your site lives on our servers and has the padlock in the browser bar — which means it's secure from hackers. No extra bills, ever.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Mobile-optimised design<span class="pf-tip">Looks great on phones, tablets and desktop — since most of your customers are browsing on mobile.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Basic on-site SEO<span class="pf-tip">We set up your site so Google can find and understand it — the essential foundation for being found locally.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Contact form + click-to-call<span class="pf-tip">Visitors can tap a button to call you, or send an enquiry straight from your site to your email.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Domain pointing<span class="pf-tip">Already got a domain? We'll connect it to your new site for free. Don't have one? We can register it for $35/yr.</span></div>
+
     </div>
+    <a href="https://tally.so" target="_blank" class="btn btn-outline" style="width:100%;justify-content:center">Get started</a>
+    <div class="price-excl">6-month minimum, then month-to-month.<br>Terms and conditions apply.</div>
+  </div>
+
+  <!-- STANDARD (featured/highlighted) -->
+  <div class="price-card feat rv d1">
+    <div class="price-badge">Most popular</div>
+    <div class="price-tier">Standard</div>
+    <div class="price-tag">Everything you need to get found on Google and start generating real enquiries.</div>
+    <div class="price-amt"><span class="pa-sym">$</span><span class="pa-num">149</span><span class="pa-per">/mo</span></div>
+    <div class="price-note">Best value for money</div>
+    <div class="price-div"></div>
+    <div class="price-inc">Everything in Starter, plus:</div>
+    <div class="price-feats">
+
+      <div class="pf"><span class="pf-ck">✓</span>5-page website<span class="pf-tip">Home, About, Services, Contact, plus a page of your choice — like a suburb landing page or a quote request page.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span><b>Unlimited</b> content updates<span class="pf-tip">Tell us what needs changing and we'll sort it — no limits, no charges. Fair use applies. See our FAQs and TnCs.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Google Business Profile setup<span class="pf-tip">We create and optimise your Google Business Profile — your listing on Google Maps. Opening hours, services, photos, the lot. Need it updated later? Just ask us.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Full local SEO + schema markup<span class="pf-tip">Suburb-targeted copy, structured data markup, and proper page structure so Google knows exactly who to show you to.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Google Reviews widget<span class="pf-tip">Your real Google reviews displayed on your site automatically — builds trust with new visitors without you lifting a finger.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>WhatsApp click-to-chat button<span class="pf-tip">A button on your site that opens a WhatsApp chat straight to your phone — great for customers who prefer to message.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Google Search Console + sitemap<span class="pf-tip">We submit your site directly to Google so it gets found and indexed faster — like putting your hand up and saying "we're here."</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Social share preview (Open Graph)<span class="pf-tip">When someone shares your site on Facebook or WhatsApp, it shows a proper image and title instead of a blank broken link.</span></div>
+
+      <div class="pf"><span class="pf-ck">✓</span>Monthly performance report<span class="pf-tip">A monthly snapshot of how your site is performing — load speed, mobile score, and Google indexing status. Nothing to stress about, just keeping you in the loop.</span></div>
+
+    </div>
+    <a href="https://tally.so" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Get started</a>
+    <div class="price-excl">6-month minimum, then month-to-month.<br>Terms and conditions apply.</div>
+  </div>
+
+  <!-- MADE TO ORDER -->
+  <div class="price-card rv d2" style="background:var(--grey);border-color:var(--border);">
+    <div class="price-tier">Made to Order</div>
+    <div class="price-tag">Need something more? Custom features built around your specific business needs.</div>
+    <div class="price-amt" style="margin-bottom:6px;"><span style="font-family:var(--fh);font-weight:900;font-size:28px;color:var(--text);">Custom pricing</span></div>
+    <div class="price-note">Quoted per project</div>
+    <div class="price-div"></div>
+    <div class="price-inc">Examples of what's possible:</div>
+    <div class="price-feats">
+      <div class="pf"><span class="pf-ck">✓</span>Everything in Standard</div>
+      <div class="pf"><span class="pf-ck">✓</span>AI chat widget</div>
+      <div class="pf"><span class="pf-ck">✓</span>Online booking system</div>
+      <div class="pf"><span class="pf-ck">✓</span>Facebook feed integration</div>
+      <div class="pf"><span class="pf-ck">✓</span>E-commerce / online shop</div>
+      <div class="pf"><span class="pf-ck">✓</span>Anything else — just ask</div>
+    </div>
+    <a href="/contact" class="btn btn-dark" style="width:100%;justify-content:center">Let's talk</a>
+    <div class="price-excl">Pricing varies based on requirements.<br>We'll give you a straight quote upfront.</div>
+  </div>
+
+</div>
     <div class="price-footer rv">
-      <p><strong>Looking for something more?</strong> upgrade with add-ons</p>
-      <p style="margin-top:5px;color:var(--soft)">Domain ($35/yr) · Business email ($15/mo per mailbox) · Custom feature requests</p>
+      <h3><strong>Looking for something more?</strong></h3>
+       <div class="faq-more rv">Domain ($35/yr) · Business email ($15/mo per mailbox) <br>For custom feature requests like an appoinment booking system or a shopping cart. <br><a style="color:var(--orange)" href="/contact">Contact us for a free quote</a></div>
     </div>
   </div>
 </section>
@@ -1065,37 +1270,38 @@ ul{list-style:none}
 <section class="faq-sec" id="faq">
   <div class="container">
     <div class="tc">
-      <span class="tag-lbl rv">Questions answered</span>
+      <span class="tag-lbl rv">Frequently asked questions</span>
       <h2 class="sec-title rv">Fair questions, straight answers</h2>
     </div>
     <div class="faq-list">
+      <div class="faq-item rv d2" onclick="toggleFaq(this)">
+        <div class="faq-q"><span class="faq-qt">How long will it take to get my website made?</span><span class="faq-ico">+</span></div>
+        <div class="faq-ans">Every site starts with a short intake form — about 5 minutes to fill in. You'll share your logo, services, suburb, photos, and a feel for what you're after. From there, we put together a draft and send it to you for a look. Happy with it? We go live. Want something changed? We sort it. Most sites are live within 7–14 business days from when we have everything we need from you — the main thing that affects timing is how quickly we can agree on what goes on the site. We'll keep you in the loop the whole way, and nothing goes live without your thumbs up.</div>
+      </div>
       <div class="faq-item rv" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-qt">Do I own my website?</span><span class="faq-ico">+</span></div>
-        <div class="faq-ans">The website code remains ours while you're on a subscription — that's how we keep the monthly cost low. Think of it like leasing a ute instead of buying one outright. You get full use of it, we handle the maintenance. After 12 months on a plan you can purchase the code outright if you want to self-host.</div>
+        <div class="faq-ans">While you're on a subscription, the website code stays with us — that's part of how we keep the monthly cost low and the quality high. You get full use of your site, we handle everything behind the scenes.<br><br>Think of it like leasing a ute instead of buying one outright. After your 6-month minimum, you have the option to buy the code outright for $1,800. If you ever want to move to self-hosting or hand it to another developer, it's yours to take. <a href="/contact" style="color:var(--orange);border-bottom:1px solid rgba(254,155,36,.3);">Get in touch</a> and we'll sort it out.</div>
       </div>
       <div class="faq-item rv d1" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-qt">What does "unlimited content updates" actually mean?</span><span class="faq-ico">+</span></div>
-        <div class="faq-ans">Text changes, photo swaps, new services, updated pricing, changed phone number — as many times as you like. What it doesn't include is building completely new pages, redesigning the site, or logo work. We'll always be clear about what's in scope.</div>
+        <div class="faq-ans">It depends on your plan. On Pasture, you get 2 content update rounds per month — meaning you can send us a batch of changes twice a month (e.g. update your services, swap a photo, and change your phone number all in one go). <br><br>On Free Range and Organic plans, updates are unlimited and we mean it — but fair use applies. What's not included on any plan is building new pages, redesigning the site, restructuring layouts, or logo and graphic design work. If something's outside scope, we'll tell you upfront before touching anything.</div>
       </div>
       <div class="faq-item rv d2" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-qt">Is my domain included?</span><span class="faq-ico">+</span></div>
-        <div class="faq-ans">Domain pointing is included — if you already own a domain, we'll connect it to your new site for free. If you don't have a domain yet, we can register one for you for $35/yr. You always stay in control of your domain name.</div>
+        <div class="faq-ans">Domain pointing is included — if you already own a domain, we'll connect it to your new site for free. If you don't have a domain yet, we can register one for you for $35/yr. You own your registered domain name.</div>
       </div>
       <div class="faq-item rv d1" onclick="toggleFaq(this)">
         <div class="faq-q"><span class="faq-qt">Can I cancel? What happens to my site?</span><span class="faq-ico">+</span></div>
-        <div class="faq-ans">After your initial 6-month period, you can cancel with 30 days notice — no hard feelings, no interrogation. When you cancel, we give you a copy of all the files so nothing is ever lost.</div>
+        <div class="faq-ans">After your initial 6-month minimum, you can cancel anytime with 30 days notice — no hard feelings, no lock-ins. Your site code remains with us for 30 days from the date of cancellation. If you'd like to keep the code after cancelling, you can buy it outright for $1,800. <a href="/contact" style="color:var(--orange);border-bottom:1px solid rgba(254,155,36,.3);">Get in touch</a> and we'll sort it out.</div>
       </div>
-      <div class="faq-item rv d2" onclick="toggleFaq(this)">
-        <div class="faq-q"><span class="faq-qt">How long does setup actually take?</span><span class="faq-ico">+</span></div>
-        <div class="faq-ans">From the moment you fill in our intake form, your site is live within 3 business days. The form takes about 5 minutes — we ask for your logo, services, suburb, a few photos, and your contact details. We'll send you a link to review before it goes live.</div>
-      </div>
+
       <div class="faq-item rv d1" onclick="toggleFaq(this)">
-        <div class="faq-q"><span class="faq-qt">Why not just use Wix or build it myself?</span><span class="faq-ico">+</span></div>
-        <div class="faq-ans">You can — plenty of tradies do. But building something that looks decent takes 15–20 hours of your time. At your hourly rate on the tools, that's a lot of money. DIY templates also aren't built for local SEO. And who's updating it when you're on the job? With FreeRange you send a message and it's sorted.</div>
+        <div class="faq-q"><span class="faq-qt">Why don't I just use tools like Wordpress, Wix etc to build it myself?</span><span class="faq-ico">+</span></div>
+        <div class="faq-ans">You can — many people do. But here's the honest truth: getting a DIY site to look professional takes experience and 15–20 hours minimum, and that's before you figure out why Google isn't showing it to anyone. YOu'd probably emd up using ready-made templates that aren't built for local SEO, they're built to look pretty in screenshots. And once it's live, who's keeping it updated while you're focusing on your core business? <br><br>Every hour you spend wrestling with a website is an hour you're not putting in your business. With Free Range Websites, you fill in a form and we handle the rest for much cheaper and more professional</div>
       </div>
       <div class="faq-item rv d2" onclick="toggleFaq(this)">
-        <div class="faq-q"><span class="faq-qt">Will my site actually show up on Google?</span><span class="faq-ico">+</span></div>
-        <div class="faq-ans">We build every site with local SEO baked in — suburb-targeted copy, structured data markup, fast load times, and Google Business Profile setup included. Most clients see ranking improvements within 6–12 weeks. We'll also set up Google Analytics so you can see exactly where your traffic comes from.</div>
+        <div class="faq-q"><span class="faq-qt">What's included in SEO. Will my site actually show up on Google?</span><span class="faq-ico">+</span></div>
+        <div class="faq-ans">All our websites are built technically healthy and Google-friendly from day one. That means fast load times, suburb-targeted copy, proper page structure, and Google Business Profile setup included in some plans. This is called on-site SEO — think of it as making sure your site is ready and visible to Google. <br><br>What it doesn't include is off-site SEO — things like link building and ongoing ranking campaigns that push you to Google's page one for competitive searches. That's a separate service entirely, and anyone who promises you page one rankings without asking for serious amount of money is not being straight with you. What we create is a properly built site that is an essential foundation to search engine ranking activities — without it, nothing else works.</div>
       </div>
     </div>
     <div class="faq-more rv"><a href="/contact">Still got questions? Drop us a line</a></div>
