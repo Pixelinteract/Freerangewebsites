@@ -44,7 +44,7 @@ a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
 /* ── UTILS ──────────────────────────────── */
-.container{width: 90vw;max-width: 1504px;margin:0 auto;padding:0 32px}
+.container{width: 90vw;max-width: 1504px;margin:0 auto;padding:0 0px}
 .sec{padding:112px 0}
 .sec-sm{padding:64px 0}
 .tag-lbl{display:inline-flex;align-items:center;gap:6px;font-family:var(--fb);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
@@ -245,6 +245,9 @@ ul{list-style:none}
 .mob-nav.open{display:flex}
 .mob-nav a{font-size:16px;font-weight:500;color:var(--mid);padding:12px 0;border-bottom:1px solid var(--border)}
 .mob-nav a:last-child{border:none}
+/* ── MOBILE NAV GET STARTED BUTTON ─────── */
+.mob-nav .btn-primary{color:#fff !important}
+.mob-nav .btn-primary:hover{color:#fff !important}
 
 /* scroll progress - inside pill, clipped by overflow:hidden */
 .nav-progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(0,0,0,.06)}
@@ -348,6 +351,24 @@ ul{list-style:none}
 .rv{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:translateY(0)}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+
+/* ── HERO UNDERLINE — HIDE ON MOBILE ───── */
+@media(max-width:767px){
+  #sketchLine1, #sketchLine2{display:none}
+  .hero-hl em{padding-bottom:0 !important}
+  .hero-hl em svg{display:none}
+}
+/* ── HERO PADDING — DESKTOP + MOBILE ───── */
+.hero-top{padding: 250px 0 64px}
+@media(max-width:767px){
+  .hero-top{padding: 180px 0 48px}
+}
+  @media(max-width:767px){
+  .hero-hl{font-size:32px !important;letter-spacing:-.01em !important}
+  .hero-usps{flex-direction:column !important;align-items:flex-start !important;justify-content:flex-start !important;gap:10px !important;margin-bottom:36px !important;padding:0 4px !important}
+  .usp-row{text-align:left !important;align-items:flex-start !important}
+  .hero-copy{padding:0 !important}
+}
 
 /* ── PROBLEM ────────────────────────────── */
 .prob{background:var(--white)}
@@ -556,6 +577,12 @@ ul{list-style:none}
   box-shadow: 0 12px 24px rgba(254,155,36,0.05);
 }
 
+/* ── RECKON SEEN ENOUGH BANNER — MOBILE ── */
+@media(max-width:767px){
+  .hiw{padding-top:30px}
+  .hiw > section > div{margin-top:0 !important}
+}
+
   /* ── MOBILE RESPONSIVENESS FOR THE COMPARISON TABLE ──────────────── */
 @media (max-width: 768px) {
   /* Turn the table grid structure into a block layout stack */
@@ -627,7 +654,7 @@ ul{list-style:none}
 .diff-cta-wrap{width:100%;text-align:center;margin-top:0px;padding-top:10px;padding-bottom:10px;background:transparent;border:none}
 .diff-cta-hl{font-family:var(--fh);font-weight:900;font-size:32px;color:var(--text);margin-bottom:10px}
 .diff-cta-hl em{font-style:normal;color:var(--orange)}
-.diff-cta-sub{font-size:16px;color:var(--mid);margin-bottom:26px;line-height:1.65}
+.diff-cta-sub{font-size:16px;color:var(--mid);margin-bottom:26px;padding: 0 20px; line-height:1.65}
 
 /* ── PRICING ────────────────────────────── */
 .pricing{background:var(--white)}
@@ -707,7 +734,7 @@ ul{list-style:none}
 .faq-item{border:1px solid var(--border);border-radius:13px;overflow:hidden;background:var(--white);transition:border-color .2s, box-shadow .2s}
 .faq-item.open{border-color:var(--orange);box-shadow: var(--sh);}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px;cursor:pointer;user-select:none}
-.faq-qt{font-family:var(--fh);font-weight:700;font-size:17px;color:var(--text);line-height:1.3}
+.faq-qt{font-family:var(--fb);font-weight:700;font-size:17px;color:var(--text);line-height:1.3}
 .faq-ico{width:30px;height:30px;border-radius:50%;background:var(--grey);color:var(--text);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;transition:all .25s;font-weight:300}
 .faq-item.open .faq-ico{background:var(--orange);color:#000;transform:rotate(45deg)}
 .faq-ans{display:none;padding:0 22px 20px;font-size:15px;color:var(--mid);line-height:1.75}
@@ -796,17 +823,76 @@ ul{list-style:none}
 .pf:hover .pf-tip{visibility:visible;opacity:1}
 @media(max-width:560px){.pf-tip{width:200px;right:0}}
 
+/* ── AFTER GO-LIVE BANNER ───────────────── */
+.golive-banner{background:#fffdeb;border-radius:16px;margin-top:32px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1.5px solid rgba(144,183,102,.25)}
+.golive-inner{display:flex;align-items:center;gap:16px}
+.golive-icon{width:44px;height:44px;min-width:44px;background:rgb(255,240,203);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.golive-text .golive-hl{font-family:var(--fb);font-weight:700;font-size:20px;color:var(--text);line-height:1.3}
+.golive-text .golive-sub{font-size:15px;color:var(--mid);margin-top:4px;line-height:1.6}
+
+@media(max-width:560px){
+  .golive-banner{flex-direction:column;align-items:flex-start;padding:22px 20px;gap:16px}
+  .golive-inner{flex-direction:column;align-items:flex-start;gap:12px}
+  .golive-icon{width:38px;height:38px;font-size:20px}
+  .golive-text .golive-hl{font-size:17px}
+  .golive-text .golive-sub{font-size:14px;margin-top:6px}
+  .golive-banner .btn{width:100%;justify-content:center}
+}
+
+/* ── PRICING SECTION TOP PADDING ────────── */
+@media(max-width:767px){
+  .pricing{padding-top:4px !important}
+}
+
+/* ── HOW IT WORKS — MOBILE COMPACT ─────── */
+@media(max-width:767px){
+  .hiw-steps{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    padding:0 4px;
+  }
+  .hiw-path{display:none}
+  .step{
+    display:grid;
+    grid-template-columns:42px 1fr;
+    grid-template-rows:auto auto;
+    column-gap:14px;
+    row-gap:4px;
+    text-align:left;
+    padding:16px;
+    background:var(--cream);
+    border-radius:14px;
+    border:1px solid var(--border);
+  }
+  .step-num{
+    grid-column:1;
+    grid-row:1 / 3;
+    align-self:start;
+    width:38px;
+    height:38px;
+    font-size:18px;
+    margin:0;
+  }
+  .step-title{
+    grid-column:2;
+    grid-row:1;
+    font-size:16px;
+    margin-top:2px;
+  }
+  .step-desc{
+    grid-column:2;
+    grid-row:2;
+    font-size:14px;
+    line-height:1.55;
+  }
+}
+
 /* Comparison table — mobile/desktop toggle */
 @media(max-width:767px){ .sc-desktop{display:none} }
 @media(min-width:768px){ .sc-mobile{display:none} }
 
-@media(max-width:767px){
-  .hero{padding:120px 0 48px !important}
-  .hero-hl{font-size:32px !important;letter-spacing:-.01em !important}
-  .hero-usps{flex-direction:column !important;align-items:flex-start !important;justify-content:flex-start !important;gap:10px !important;margin-bottom:36px !important;padding:0 4px !important}
-  .usp-row{text-align:left !important;align-items:flex-start !important}
-  .hero-copy{padding:0 !important}
-}
+
 
 </style>
 </head>
@@ -838,7 +924,7 @@ ul{list-style:none}
 </div>
 
 <!-- ── HERO ──────────────────────────────── -->
-<section class="hero" id="top" style="max-height: none; min-height: auto; padding: 250px 0 64px; background: var(--dark2);">
+<section class="hero hero-top" id="top" style="max-height: none; min-height: auto; background: var(--dark2);">
   <!-- Subtle ambient soft glows for a light background layout -->
   <div class="blob blob1" style="background: radial-gradient(circle, rgba(254,155,36,0.08) 0%, transparent 70%);"></div>
   <div class="blob blob2" style="background: radial-gradient(circle, rgba(144,183,102,0.06) 0%, transparent 70%);"></div>
@@ -1042,7 +1128,7 @@ ul{list-style:none}
 </div>
 
 <div class="sc-mobile">
-<p style="font-size:11px;font-weight:600;color:var(--soft);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">What's included with FreeRange — that others charge extra for</p>
+<p style="font-size:10px;font-weight:600;color:var(--soft);margin-bottom:16px; text-align: center;">What's included with FreeRange — that others charge extra for</p>
 <div style="display:flex;flex-direction:column;gap:0;background:var(--white);border-radius:var(--rl);border:1.5px solid var(--border);overflow:hidden;">
   <div style="background:var(--white);border-bottom:1px solid var(--border);padding:14px 16px;display:flex;gap:12px;align-items:flex-start;">
     <span style="color:var(--green);font-size:18px;line-height:1;">✓</span>
@@ -1069,7 +1155,7 @@ ul{list-style:none}
     <div><strong style="font-size:15px;">Google Business Profile setup</strong><p style="font-size:13px;color:var(--mid);margin-top:2px;">Get on Google Maps so locals can find and call you.</p></div>
   </div>
 </div>
-  <p style="font-size:11px;color:var(--soft);margin-top:16px;line-height:1.6;">* Inclusions vary by plan. <a href="#pricing" style="color:var(--soft);border-bottom:1px solid var(--border);">See pricing</a> for full details.</p>
+  <p style="font-size:10px;color:var(--soft);margin-top:16px; padding: 10px; line-height:1.6;">* Inclusions vary by plan. <a href="#pricing" style="color:var(--soft);border-bottom:1px solid var(--border);">See pricing</a> for full details.</p>
 </div>
 
 
@@ -1132,16 +1218,16 @@ ul{list-style:none}
 </div>
 
       <!-- After go-live banner strip -->
-<div style="background:#fffdeb;border-radius:16px;margin-top:32px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border:1.5px solid rgba(144,183,102,.25);">
-        <div style="display:flex;align-items:center;gap:16px;">
-          <div style="width:44px;height:44px;background:rgb(255, 240, 203);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px;">🎉</div>
-          <div>
-            <div style="font-family:var(--fb);font-weight:700;font-size:20px;color:var(--text);">And once you're live? We've got your back.</div>
-            <div style="font-size:15px;color:var(--mid);margin-top:3px;">New service, new photos, changed your rates? Just send us a message — we'll handle it. No extra charges, ever.</div>
-          </div>
-        </div>
-        <a href="#pricing" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0;">Get started</a>
-      </div>
+<div class="golive-banner">
+  <div class="golive-inner">
+    <div class="golive-icon">🎉</div>
+    <div class="golive-text">
+      <div class="golive-hl">And once you're live? We've got your back.</div>
+      <div class="golive-sub">New service, new photos, changed your rates? Just send us a message — we'll handle it. No extra charges, ever.</div>
+    </div>
+  </div>
+  <a href="#pricing" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0;">Get started</a>
+</div>
 
     </div>
   </div>
@@ -1360,8 +1446,8 @@ ul{list-style:none}
 <script>
 /* ── HERO TESTIMONIAL TICKER ─────────────────── */
 var heroTmCards=[
-  {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop&auto=format',alt:'Electrician on the job',tall:false},
-  {type:'quote',row:'a',size:'',av:'DM',ac:'#5a8a35',name:'Dave M.',role:'Electrician · Sydney',hl:'3–4 new leads a week',qt:'"I was worried I would get garbage for $99/. Turns out these guys are really good."'},
+  {type:'photo',row:'a',url:'images/dan-owner-of-DG-Bentleigh.jpeg',alt:'Dan the owner of DG stadning in front of his cafe in Bentleigh',tall:false},
+  {type:'quote',row:'a',size:'',av:'DM',ac:'#5a8a35',name:'Dan M.',role:'Electrician · Melbourne',hl:'3–4 new leads a week',qt:'"I was worried I would get garbage for $99/. Turns out these guys are really good."'},
   {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=380&fit=crop&auto=format',alt:'Plumber working',tall:true},
   {type:'quote',row:'a',size:'wide',av:'SK',ac:'#7c5cbf',name:'Sarah K.',role:'Bookkeeper · Brisbane',hl:'Finally looks like a real business',qt:'"Paid an agency $5K for a site that looked like 2009. Free Range guys sorted me out in two weeks for a fraction."'},
   {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop&auto=format',alt:'Builder on site',tall:false},
