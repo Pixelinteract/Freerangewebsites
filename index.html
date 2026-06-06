@@ -1043,18 +1043,25 @@ ul{list-style:none}
 <script>
 /* ── HERO TESTIMONIAL TICKER ─────────────────── */
 var heroTmCards=[
-  {type:'photo',row:'a',url:'images/dan-owner-of-DG-Bentleigh.jpeg',alt:'Dan the owner of DG stadning in front of his cafe in Bentleigh',tall:false},
-  {type:'quote',row:'a',size:'',av:'DM',ac:'#5a8a35',name:'Dan M.',role:'Electrician · Melbourne',hl:'3–4 new leads a week',qt:'"I was worried I would get garbage for $99/. Turns out these guys are really good."'},
-  {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=380&fit=crop&auto=format',alt:'Plumber working',tall:true},
-  {type:'quote',row:'a',size:'wide',av:'SK',ac:'#7c5cbf',name:'Sarah K.',role:'Bookkeeper · Brisbane',hl:'Finally looks like a real business',qt:'"Paid an agency $5K for a site that looked like 2009. Free Range guys sorted me out in two weeks for a fraction."'},
-  {type:'photo',row:'a',url:'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop&auto=format',alt:'Builder on site',tall:false},
-  {type:'quote',row:'a',size:'',av:'MT',ac:'#fe9b24',name:'Mick T.',role:'Plumber · Melbourne',hl:null,qt:'"Calls from Google every week now. Pays for itself easily."'},
-  {type:'quote',row:'b',size:'wide',av:'AP',ac:'#7c5cbf',name:'Angela P.',role:'Bookkeeper · Gold Coast',hl:'Looked established from day one',qt:'"Just started my new business on a tight budget, Got an awesome website done here for real cheap. Thanks team!"'},
-  {type:'photo',row:'b',url:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=320&fit=crop&auto=format',alt:'Cleaner at work',tall:true},
+  {type:'photo',row:'a',url:'images/dan-electrician.jpeg',alt:'Electrician',tall:false},
+  {type:'quote',row:'a',size:'',av:'DM',ac:'#5a8a35',name:'Dan M.',role:'Benleigh Electrics',hl:'1-2 new leads a week',qt:'"I was worried I would get garbage for $99/. Turns out these guys are really good."'},
+
+  {type:'photo',row:'a',url:'images/sarah-bookkeeper.jpeg',alt:'Plumber working',tall:true},
+  {type:'quote',row:'a',size:'wide',av:'SK',ac:'#7c5cbf',name:'Sarah K.',role:'Owner, Practa Tax · Clayton',hl:'Finally looks like a real business',qt:'"Paid an agency $5K for a site that looked like 2009. Free Range guys sorted me out in 9 days for a fraction."'},
+
+{type:'photo',row:'a',url:'images/fishnchips-moorabbin.jpeg',alt:'The storefront of The Corals Fish \'N\' Chips shop with its main turquoise signage',tall:false},
+  {type:'quote',row:'a',size:'',av:'MT',ac:'#fe9b24',name:'Mick T.',role:'Corals · Moorabbin',hl:null,qt:'"Calls from Google every week now. Pays for itself easily."'},
+
+  {type:'photo',row:'b',url:'images/sumi-lashplus.jpeg',alt:'Sumi, owner of Lash Plus Hair Carnegie, at the salon reception desk',tall:true},
+  {type:'quote',row:'b',size:'wide',av:'S',ac:'#d4af37',name:'Sumi',role:'Lash Plus Hair Carnegie',hl:'Transformed my online presence completely',qt:'"As a small business owner, I needed a website that truly represented my salon without looking like a generic template. The team delivered exactly what I wanted quickly and affordably. Highly recommend!"'},
+
+  {type:'photo',row:'b',url:'images/tony-builder.jpeg',alt:'Cleaner at work',tall:true},
   {type:'quote',row:'b',size:'',av:'TW',ac:'#3a7bd5',name:'Tony W.',role:'Builder · Adelaide',hl:null,qt:'"Showing up in Google Maps now. the freelancer i worked with before didnt even bother"'},
-  {type:'photo',row:'b',url:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop&auto=format',alt:'Landscaper working',tall:false},
-  {type:'quote',row:'b',size:'',av:'JR',ac:'#e05c4b',name:'Jake R.',role:'Painter · Perth',hl:'No drama, just done',qt:'"Sent my details Monday, site was live next Monday. I thought it would take months"'}
+
+  {type:'photo',row:'b',url:'images/jake-driving-school.jpeg',alt:'Mahnoj got his license and is standing near Jake driving school car outside vicroads heatherton',tall:false},
+  {type:'quote',row:'b',size:'',av:'JR',ac:'#e05c4b',name:'Jake R.',role:'Jake driving schools, Heatherton',hl:'No drama, just done',qt:'"The best thing is that I dont have to chase them and pay more money to update reviews on my site"'}
 ];
+
 function buildHeroTmCard(d){
   var el=document.createElement('div');
   if(d.type==='photo'){
@@ -1067,13 +1074,31 @@ function buildHeroTmCard(d){
   }
   return el;
 }
+
 var heroA=document.getElementById('heroTmA');
 var heroB=document.getElementById('heroTmB');
-function shuffle(arr){return arr.slice().sort(function(){return Math.random()-.5})}
-var setHA=shuffle(heroTmCards.filter(function(d){return d.row==='a'}));
-var setHB=shuffle(heroTmCards.filter(function(d){return d.row==='b'}));
+
+// Alternator function to build strict sequential arrays [Photo, Quote, Photo, Quote]
+function alternateRowData(rowId) {
+  var rowData = heroTmCards.filter(function(d) { return d.row === rowId; });
+  var photos = rowData.filter(function(d) { return d.type === 'photo'; });
+  var quotes = rowData.filter(function(d) { return d.type === 'quote'; });
+  var alternated = [];
+  var maxLength = Math.max(photos.length, quotes.length);
+
+  for (var i = 0; i < maxLength; i++) {
+    if (i < photos.length) alternated.push(photos[i]);
+    if (i < quotes.length) alternated.push(quotes[i]);
+  }
+  return alternated;
+}
+
+var setHA = alternateRowData('a');
+var setHB = alternateRowData('b');
+
 [].concat(setHA,setHA,setHA).forEach(function(d){if(heroA)heroA.appendChild(buildHeroTmCard(d))});
 [].concat(setHB,setHB,setHB).forEach(function(d){if(heroB)heroB.appendChild(buildHeroTmCard(d))});
+
 var hSpA=0.6,hSpB=0.38,hXA=0,hXB=0;
 function animHeroTm(){
   hXA-=hSpA;hXB-=hSpB;
