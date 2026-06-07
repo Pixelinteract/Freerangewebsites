@@ -75,7 +75,7 @@ ul{list-style:none}
 
 /* ── NAV ────────────────────────────────── */
 .nav-wrap{position:fixed;top:0;left:0;right:0;z-index:200;pointer-events:none;display:flex;justify-content:center;padding-top:clamp(16px,2.5vw,48px);padding-bottom:12px}
-.nav-pill{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-sizing:border-box;border:1px solid rgba(0,0,0,.08);border-radius:999px;width:92%;max-width:1568px;margin:0 auto;height:clamp(74px,5.2vw,100px);padding-left:clamp(24px,4vw,52.8px);padding-right:24px;display:flex;align-items:center;justify-content:space-between;pointer-events:all;box-shadow:0 10px 40px rgba(42,78,83,.04);transform:translateY(-80px);opacity:0;transition:transform .35s cubic-bezier(.34,1.36,.64,1),opacity .3s ease,box-shadow .2s;position:relative;overflow:hidden}
+.nav-pill{background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-sizing:border-box;border:1px solid rgba(0,0,0,.08);border-radius:999px;width:92%;max-width:1568px;margin:0 auto;height:clamp(74px,5.2vw,100px);padding-left:clamp(24px,2.1vw,32px);padding-right:24px;display:flex;align-items:center;justify-content:space-between;pointer-events:all;box-shadow:0 10px 40px rgba(42,78,83,.04);transform:translateY(-80px);opacity:0;transition:transform .35s cubic-bezier(.34,1.36,.64,1),opacity .3s ease,box-shadow .2s;position:relative;overflow:hidden}
 .nav-pill.visible{transform:translateY(0);opacity:1}
 .nav-pill.hidden{transform:translateY(-110%);opacity:0}
 .nav-logo{font-family:var(--fh);font-weight:900;font-size:20px;letter-spacing:-.01em;margin-right:auto}
@@ -412,6 +412,12 @@ ul{list-style:none}
   .ack-inner{flex-direction:column}
   .ack-flags{flex-direction:row}
 }
+
+  /* ── NAV LOGO — MOBILE ──────────────────── */
+@media(max-width:767px){
+  .nav-logo img{height:28px}
+}
+
 @media(max-width:560px){
   .feat-grid{grid-template-columns:1fr}
   .hero-ctas,.fcta-btns{flex-direction:column;align-items:stretch}
@@ -983,10 +989,10 @@ ul{list-style:none}
 <section class="fcta">
   <div class="container">
     <div class="fcta-inner">
-      <h2 class="fcta-title rv">Your competitors are already online.<br>Let's get you <em>sorted.</em></h2>
+      <h2 class="fcta-title rv">Every day without a website is a job going to someone else.
       <p class="fcta-sub rv">&nbsp;</p>
       <div class="fcta-btns rv">
-        <a href="#pricing" class="btn btn-primary btn-lg">Get started</a>
+        <a href="#pricing" class="btn btn-primary btn-lg">Get tarted</a>
       </div>
     </div>
   </div>
