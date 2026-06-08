@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ── PRIMARY SEO ───────────────────────────────────────── -->
+    <title>Get Started | Free Range Websites</title>
+    <meta name="description" content="Get your Australian small business online fast. Choose your plan and get started with Free Range Websites today." />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="canonical" href="https://www.freerangewebsites.com.au/get-started.html" />
+
+    <!-- ── FAVICON ───────────────────────────────────────────── -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
+
+    <!-- ── GOOGLE ANALYTICS (GA4) ───────────────────────────── -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQDVWQN86F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VQDVWQN86F');
+    </script>
+
+    <!-- ── FONTS ─────────────────────────────────────────────── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500;600;700;800;900&family=Encode+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- ── STYLESHEET ────────────────────────────────────────── -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- ── PAGE-SPECIFIC STYLES — move to styles.css ─────────── -->
+    <style>
+      body {
+        background: linear-gradient(to bottom, var(--nav-bg, #f7f5f2) 0%, #fff 620px) no-repeat; /* #e8f3f0*/
+      }
+      .gs-section {
+        background: transparent;
+        min-height: calc(100vh - 120px);
+        display: flex;
+        align-items: center;
+        padding: 4rem 0 6rem;
+      }
+      .gs-wrap {
+        max-width: 520px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .gs-step { display: none; }
+      .gs-step.active { display: block; }
+
+      /* Progress dots */
+      .gs-progress {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .gs-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ddd;
+        transition: background 0.3s;
+      }
+      .gs-dot.active { background: var(--orange); }
+
+      /* Headings */
+      .gs-title {
+        font-family: 'Encode Sans', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--dark);
+        margin: 0.5rem 0 0.4rem;
+        line-height: 1.15;
+      }
+      .gs-sub {
+        color: #888;
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+      }
+
+      /* Business type option cards */
+      .gs-options {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .gs-opt {
+        display: flex;
+        align-items: center;
+        gap: 1.1rem;
+        padding: 1.35rem 1.5rem;
+        border: 2px solid #e8e8e8;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: border-color 0.2s, background 0.2s;
+        text-align: left;
+        background: #ffffff;
+      }
+      .gs-opt:hover {
+        border-color: var(--orange);
+        background: #fffaf4;
+      }
+      .gs-opt-icon { font-size: 1.8rem; flex-shrink: 0; }
+      .gs-opt-label {
+        font-family: 'Encode Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: var(--dark);
+      }
+      .gs-opt-desc {
+        font-size: 0.95rem;
+        color: #888;
+        margin-top: 0.2rem;
+      }
+
+      /* Plan cards */
+      .gs-plans {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.85rem;
+        margin-bottom: 1.5rem;
+      }
+      .gs-plan {
+        border: 2px solid #e8e8e8;
+        border-radius: 12px;
+        padding: 1.25rem 1.1rem;
+        cursor: pointer;
+        transition: border-color 0.2s, background 0.2s;
+        text-align: left;
+        background: #fff;
+        position: relative;
+      }
+      .gs-plan:hover { border-color: var(--orange); }
+      .gs-plan.selected {
+        border-color: var(--orange);
+        background: #fff8f0;
+      }
+      .gs-plan-badge {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.68rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #fff;
+        background: var(--green, #3a7d6e);
+        padding: 0.22rem 0.65rem;
+        border-radius: 20px;
+        white-space: nowrap;
+      }
+      .gs-plan-check {
+        position: absolute;
+        top: 0.7rem;
+        right: 0.7rem;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--orange);
+        color: #fff;
+        font-size: 0.7rem;
+        display: none;
+        align-items: center;
+        justify-content: center;
+      }
+      .gs-plan.selected .gs-plan-check { display: flex; }
+      .gs-plan-name {
+        font-family: 'Encode Sans', sans-serif;
+        font-weight: 800;
+        font-size: 1.35rem;
+        color: var(--dark);
+      }
+.gs-plan-name { margin-bottom: 0.4rem; }
+.gs-plan-price { margin-bottom: 0.5rem; }
+.gs-plan-setup { margin-bottom: 0; }
+.gs-plan-divider { margin: 0.9rem 0; border: none; border-top: 1px solid #c7c7c7; }
+.gs-plan-desc { margin-bottom: 0; }
+
+      .gs-plan-price {
+        font-family: 'Encode Sans', sans-serif;
+        font-weight: 700;
+        font-size: 1.9rem;
+        color: var(--orange);
+        margin: 0.3rem 0 0.35rem;
+      }
+      .gs-plan-price span {
+        font-size: 0.9rem;
+        color: #aaa;
+        font-weight: 400;
+      }
+      .gs-plan-desc {
+        font-size: 0.88rem;
+        color: #000;
+        line-height: 1.45;
+      }
+
+      .gs-plan-setup {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 0.55rem;
+        padding: 0.28rem 0.55rem;
+        background: #fff;
+        border: 1.5px solid #ddd;
+        border-radius: 100px;
+        display: inline-block;
+      }
+      .gs-plan.selected .gs-plan-setup {
+        border-color: var(--orange);
+        color: var(--dark);
+      }
+      .gs-cta-wrap { margin-top: 0.25rem; }
+      .gs-cta-wrap .btn {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+      }
+      .gs-note {
+        font-size: 0.78rem;
+        color: #aaa;
+        margin-top: 0.85rem;
+      }
+      .gs-back {
+        background: none;
+        border: none;
+        color: #bbb;
+        cursor: pointer;
+        font-size: 0.82rem;
+        margin-top: 1.25rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-family: 'Encode Sans', sans-serif;
+        transition: color 0.2s;
+      }
+      .gs-back:hover { color: var(--dark); }
+
+      @media (max-width: 480px) {
+        .gs-plans { grid-template-columns: 1fr; }
+        .gs-title { font-size: 1.6rem; }
+        .gs-section { padding: 3rem 0 5rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="site-header"></div>
+
+    <section class="gs-section">
+      <div class="container">
+        <div class="gs-wrap">
+
+          <!-- Progress indicator -->
+          <div class="gs-progress">
+            <div class="gs-dot active" id="dot1"></div>
+            <div class="gs-dot" id="dot2"></div>
+          </div>
+
+          <!-- ── STEP 1: Business type ──────────────────────── -->
+          <div class="gs-step active" id="step1">
+            <span class="tag-lbl">Step 1 of 2</span>
+            <h1 class="gs-title">What kind of business do you have?</h1>
+            <p class="gs-sub">Helps us make sure we're the right fit before you pay a cent.</p>
+
+            <div class="gs-options">
+              <div class="gs-opt" data-type="tradie" onclick="selectType(this)">
+                <div class="gs-opt-icon">🔧</div>
+                <div>
+                  <div class="gs-opt-label">Tradie</div>
+                  <div class="gs-opt-desc">Electrician, plumber, builder — any trade</div>
+                </div>
+              </div>
+              <div class="gs-opt" data-type="smallbiz" onclick="selectType(this)">
+                <div class="gs-opt-icon">🏪</div>
+                <div>
+                  <div class="gs-opt-label">Small local business</div>
+                  <div class="gs-opt-desc">Salon, café, consultant — any local service</div>
+                </div>
+              </div>
+              <div class="gs-opt" data-type="other" onclick="selectType(this)">
+                <div class="gs-opt-icon">💼</div>
+                <div>
+                  <div class="gs-opt-label">Corporate / other</div>
+                  <div class="gs-opt-desc">Organizations with more than 5-10 employees</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── STEP 2: Plan selection ─────────────────────── -->
+          <div class="gs-step" id="step2">
+            <span class="tag-lbl">Step 2 of 2</span>
+            <h2 class="gs-title">Choose your plan</h2>
+            <p class="gs-sub">Standard is our most popular pick — and our recommendation.</p>
+
+<div class="gs-plans">
+  <div class="gs-plan" id="plan-starter" data-plan="starter" onclick="selectPlan(this)">
+    <div class="gs-plan-check">✓</div>
+    <div class="gs-plan-name">Starter</div>
+    <div class="gs-plan-price">$99<span style="color:black">/mo</span></div>
+    <div class="gs-plan-setup">+ $299 one-time setup fee</div>
+    <hr class="gs-plan-divider">
+    <div class="gs-plan-desc">3-page site · 2 update rounds/mo · Basic on-site SEO &nbsp;·&nbsp; <a href="/#pricing" style="color:var(--orange);white-space:nowrap;" onclick="event.stopPropagation()">See full plan ↗</a></div>
+  </div>
+  <div class="gs-plan" id="plan-standard" data-plan="standard" onclick="selectPlan(this)">
+    <div class="gs-plan-badge">Most popular</div>
+    <div class="gs-plan-check">✓</div>
+    <div class="gs-plan-name">Standard</div>
+    <div class="gs-plan-price">$149<span style="color:black">/mo</span></div>
+    <div class="gs-plan-setup">+ $299 one-time setup fee</div>
+    <hr class="gs-plan-divider">
+    <div class="gs-plan-desc">5 pages · Unlimited updates · Full local SEO + Google setup &nbsp;·&nbsp; <a href="/#pricing" style="color:var(--orange);white-space:nowrap;" onclick="event.stopPropagation()">See full plan ↗</a></div>
+  </div>
+</div>
+
+            <div class="gs-cta-wrap">
+              <a id="gs-cta" href="#" class="btn btn-primary btn-lg">
+                Continue to payment →
+              </a>
+              <p class="gs-note">Secure checkout via Stripe &nbsp;·&nbsp; Cancel anytime</p>
+            </div>
+
+            <button class="gs-back" onclick="goBack()">← Back</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div id="site-footer"></div>
+    <script src="/assets/js/includes.js"></script>
+    <script>
+      // ── Stripe payment links — replace when ready ──────────────
+      const STRIPE_LINKS = {
+        starter:  'STRIPE_STARTER_LINK',
+        standard: 'STRIPE_STANDARD_LINK'
+      };
+
+      let selectedPlan = 'standard'; // default
+
+      // Pre-select plan from ?plan= query param
+      (function () {
+        const param = new URLSearchParams(window.location.search).get('plan');
+        if (param === 'starter' || param === 'standard') selectedPlan = param;
+      })();
+
+      function selectType(el) {
+        if (el.dataset.type === 'other') {
+          window.location.href = '/contact.html?ref=get-started';
+          return;
+        }
+        // Advance to step 2
+        document.getElementById('step1').classList.remove('active');
+        document.getElementById('step2').classList.add('active');
+        document.getElementById('dot1').classList.remove('active');
+        document.getElementById('dot2').classList.add('active');
+        setPlan(selectedPlan);
+      }
+
+      function selectPlan(el) {
+        setPlan(el.dataset.plan);
+      }
+
+      function setPlan(plan) {
+        selectedPlan = plan;
+        document.querySelectorAll('.gs-plan').forEach(p => p.classList.remove('selected'));
+        document.getElementById('plan-' + plan).classList.add('selected');
+        document.getElementById('gs-cta').href = STRIPE_LINKS[plan];
+      }
+
+      function goBack() {
+        document.getElementById('step2').classList.remove('active');
+        document.getElementById('step1').classList.add('active');
+        document.getElementById('dot2').classList.remove('active');
+        document.getElementById('dot1').classList.add('active');
+      }
+
+      // Guard: block CTA until real Stripe links are dropped in
+      document.getElementById('gs-cta').addEventListener('click', function (e) {
+        const link = STRIPE_LINKS[selectedPlan];
+        if (!link || link.startsWith('STRIPE_')) {
+          e.preventDefault();
+          alert('Payment setup coming soon!');
+        }
+      });
+    </script>
+  </body>
+</html>
