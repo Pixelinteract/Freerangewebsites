@@ -130,8 +130,8 @@ ul{list-style:none}
 /* ── TICKER ─────────────────────────────── */
 .hero-tm-wrap{position:relative;width:100%;overflow:hidden;display:flex;flex-direction:column;gap:1rem;padding:10px 0;opacity:0;animation:fadeUp .7s ease .45s both}
 .hero-tm-wrap::before,.hero-tm-wrap::after{content:'';position:absolute;top:0;bottom:0;width:140px;z-index:3;pointer-events:none}
-.hero-tm-wrap::before{left:0;background:linear-gradient(90deg,var(--dark2),transparent)}
-.hero-tm-wrap::after{right:0;background:linear-gradient(-90deg,var(--dark2),transparent)}
+.hero-tm-wrap::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.hero-tm-wrap::after{right:0;background:linear-gradient(-90deg,#fff,transparent)}
 .hero-tm-row{display:flex;gap:1rem;width:max-content;will-change:transform;align-items:flex-start}
 .htc{display:inline-flex;flex-direction:column;border-radius:16px;overflow:hidden;flex-shrink:0;box-shadow:0 2px 16px rgba(42,78,83,.09)}
 .htc-photo{width:200px;height:160px;object-fit:cover;display:block}
