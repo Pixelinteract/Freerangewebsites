@@ -339,8 +339,8 @@
     <script>
       // ── Stripe payment links — replace when ready ──────────────
       const STRIPE_LINKS = {
-        starter:  'STRIPE_STARTER_LINK',
-        standard: 'STRIPE_STANDARD_LINK'
+        starter:  'https://buy.stripe.com/8x2bJ14Sz4bBgeNcff0sU00',
+        standard: 'https://buy.stripe.com/7sYdR9bgXfUjd2B4MN0sU01'
       };
 
       let selectedPlan = 'standard'; // default
@@ -382,14 +382,6 @@
         document.getElementById('dot1').classList.add('active');
       }
 
-      // Guard: block CTA until real Stripe links are dropped in
-      document.getElementById('gs-cta').addEventListener('click', function (e) {
-        const link = STRIPE_LINKS[selectedPlan];
-        if (!link || link.startsWith('STRIPE_')) {
-          e.preventDefault();
-          alert('Payment setup coming soon!');
-        }
-      });
     </script>
   </body>
 </html>
