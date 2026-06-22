@@ -2,22 +2,22 @@
 
 /* ── HERO TESTIMONIAL TICKER ─────────────────── */
 var heroTmCards=[
-  {type:'photo',row:'a',url:'/assets/images/dan-electrician.jpeg',alt:'Electrician',tall:false},
-  {type:'quote',row:'a',size:'',av:'DM',ac:'#5a8a35',name:'Dan M.',role:'Bentleigh Electrics',hl:'1-2 new leads a week',qt:'"I was worried I would get garbage for $99/mo. Turns out these guys are really good."'},
+  {type:'photo',row:'a',url:'assets/images/dan-electrician.jpeg',alt:'Electrician',tall:false},
+  {type:'quote',row:'a',size:'',av:'DM',ac:'#5a8a35',name:'Dan M.',role:'Bentleigh Electrics',hl:'1-2 new leads a week',qt:'"I was worried I would get garbage for $149/mo. Turns out these guys are really good."'},
 
-  {type:'photo',row:'a',url:'/assets/images/sarah-bookkeeper.jpeg',alt:'Sarah K. at her desk handling accounting paperwork for Practa Tax',tall:true},
+  {type:'photo',row:'a',url:'assets/images/sarah-bookkeeper.jpeg',alt:'Sarah K. at her desk handling accounting paperwork for Practa Tax',tall:true},
   {type:'quote',row:'a',size:'wide',av:'SK',ac:'#7c5cbf',name:'Sarah K.',role:'Owner, Practa Tax · Clayton',hl:'Finally looks like a real business',qt:'"Paid an agency $5K for a site that looked like 2009. Free Range guys sorted me out in 9 days for a fraction."'},
 
-  {type:'photo',row:'a',url:'/assets/images/fishnchips-moorabbin.jpeg',alt:'The storefront of The Corals Fish \'N\' Chips shop with its main turquoise signage',tall:false},
+  {type:'photo',row:'a',url:'assets/images/fishnchips-moorabbin.jpeg',alt:'The storefront of The Corals Fish \'N\' Chips shop with its main turquoise signage',tall:false},
   {type:'quote',row:'a',size:'',av:'MT',ac:'#fe9b24',name:'Mick T.',role:'Corals · Moorabbin',hl:null,qt:'"Calls from Google every week now. Pays for itself easily."'},
 
-  {type:'photo',row:'b',url:'/assets/images/sumi-lashplus.jpeg',alt:'Sumi, owner of Lash Plus Hair Carnegie, at the salon reception desk',tall:true},
+  {type:'photo',row:'b',url:'assets/images/sumi-lashplus.jpeg',alt:'Sumi, owner of Lash Plus Hair Carnegie, at the salon reception desk',tall:true},
   {type:'quote',row:'b',size:'wide',av:'S',ac:'#d4af37',name:'Sumi',role:'Lash Plus Hair Carnegie',hl:'Transformed my online presence completely',qt:'"I got a beautiful website where my customers can book appointments. Thank you, FRW"'},
 
-  {type:'photo',row:'b',url:'/assets/images/tony-builder.jpeg',alt:'Tony showing the website free range website made on his mobile phone.',tall:true},
+  {type:'photo',row:'b',url:'assets/images/tony-builder.jpeg',alt:'Tony showing the website free range website made on his mobile phone.',tall:true},
   {type:'quote',row:'b',size:'',av:'TW',ac:'#3a7bd5',name:'Tony W.',role:'Partner, TW Builders · Melbourne',hl:null,qt:'"My website now shows up in Google Maps. The freelancer i worked with before didnt even bother"'},
 
-  {type:'photo',row:'b',url:'/assets/images/jake-driving-school.jpeg',alt:'Mahnoj got his license and is standing near Jake driving school car outside vicroads heatherton',tall:false},
+  {type:'photo',row:'b',url:'assets/images/jake-driving-school.jpeg',alt:'Mahnoj got his license and is standing near Jake driving school car outside vicroads heatherton',tall:false},
   {type:'quote',row:'b',size:'',av:'JR',ac:'#e05c4b',name:'Jake R.',role:'Jake driving schools, Heatherton',hl:'No drama, just done',qt:'"The best thing is that I dont have to chase them and pay more money to update reviews on my site"'}
 ];
 

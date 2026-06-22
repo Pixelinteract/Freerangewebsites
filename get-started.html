@@ -6,14 +6,14 @@
 
     <!-- ── PRIMARY SEO ───────────────────────────────────────── -->
     <title>Get Started | Free Range Websites</title>
-    <meta name="description" content="Get your Australian small business online fast. Choose your plan and get started with Free Range Websites today." />
+    <meta name="description" content="Get your Australian small business online fast. Get started with Free Range Websites today — one simple plan, live in days." />
     <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="https://www.freerangewebsites.com.au/get-started.html" />
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
 
     <!-- ── FAVICON ───────────────────────────────────────────── -->
-    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
-    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 
     <!-- ── GOOGLE ANALYTICS (GA4) ───────────────────────────── -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VQDVWQN86F"></script>
@@ -30,7 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500;600;700;800;900&family=Encode+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
     <!-- ── STYLESHEET ────────────────────────────────────────── -->
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- ── PAGE-SPECIFIC STYLES — move to styles.css ─────────── -->
     <style>
@@ -104,6 +104,14 @@
       .gs-opt:hover {
         border-color: var(--orange);
         background: #fffaf4;
+      }
+      .gs-opt.gs-opt-selected {
+        border-color: var(--orange);
+        background: #fff8f0;
+      }
+      .gs-cta-disabled {
+        opacity: 0.4;
+        pointer-events: none;
       }
       .gs-opt-icon { font-size: 1.8rem; flex-shrink: 0; }
       .gs-opt-label {
@@ -256,78 +264,43 @@
       <div class="container">
         <div class="gs-wrap">
 
-          <!-- Progress indicator -->
-          <div class="gs-progress">
-            <div class="gs-dot active" id="dot1"></div>
-            <div class="gs-dot" id="dot2"></div>
-          </div>
-
           <!-- ── STEP 1: Business type ──────────────────────── -->
-          <div class="gs-step active" id="step1">
-            <span class="tag-lbl">Step 1 of 2</span>
-            <h1 class="gs-title">What kind of business do you have?</h1>
+          <div class="gs-step active" id="step1" style="margin: 68px 0px 0px; width: 542px; text-align: center">
+            <span class="tag-lbl" style="text-align: center">Get started</span>
+            <h1 class="gs-title" style="width: 545px">What kind of business do you have?</h1>
             <p class="gs-sub">Helps us make sure we're the right fit before you pay a cent.</p>
 
             <div class="gs-options">
               <div class="gs-opt" data-type="tradie" onclick="selectType(this)">
                 <div class="gs-opt-icon">🔧</div>
                 <div>
-                  <div class="gs-opt-label">Tradie</div>
+                  <div class="gs-opt-label" style="text-align: left">Tradie</div>
                   <div class="gs-opt-desc">Electrician, plumber, builder — any trade</div>
                 </div>
               </div>
               <div class="gs-opt" data-type="smallbiz" onclick="selectType(this)">
                 <div class="gs-opt-icon">🏪</div>
                 <div>
-                  <div class="gs-opt-label">Small local business</div>
+                  <div class="gs-opt-label" style="text-align: left">Small local business</div>
                   <div class="gs-opt-desc">Salon, café, consultant — any local service</div>
                 </div>
               </div>
               <div class="gs-opt" data-type="other" onclick="selectType(this)">
                 <div class="gs-opt-icon">💼</div>
                 <div>
-                  <div class="gs-opt-label">Corporate / other</div>
+                  <div class="gs-opt-label" style="text-align: left">Corporate / other</div>
                   <div class="gs-opt-desc">Organizations with more than 5-10 employees</div>
                 </div>
               </div>
             </div>
-            <div class="faq-more">Not ready yet? <a href="/book-a-call.html">Book a free call first →</a></div>
-          </div>
-
-          <!-- ── STEP 2: Plan selection ─────────────────────── -->
-          <div class="gs-step" id="step2">
-            <span class="tag-lbl">Step 2 of 2</span>
-            <h2 class="gs-title">Choose your plan</h2>
-            <p class="gs-sub">Standard is our most popular pick — and our recommendation.</p>
-
-<div class="gs-plans">
-  <div class="gs-plan" id="plan-starter" data-plan="starter" onclick="selectPlan(this)">
-    <div class="gs-plan-check">✓</div>
-    <div class="gs-plan-name">Starter</div>
-    <div class="gs-plan-price">$99<span style="color:black">/mo</span></div>
-    <div class="gs-plan-setup">+ $299 one-time setup fee</div>
-    <hr class="gs-plan-divider">
-    <div class="gs-plan-desc">3-page site · 2 update rounds/mo · Basic on-site SEO &nbsp;·&nbsp; <a href="/#pricing" style="color:var(--orange);white-space:nowrap;" onclick="event.stopPropagation()">See full plan ↗</a></div>
-  </div>
-  <div class="gs-plan" id="plan-standard" data-plan="standard" onclick="selectPlan(this)">
-    <div class="gs-plan-badge">Most popular</div>
-    <div class="gs-plan-check">✓</div>
-    <div class="gs-plan-name">Standard</div>
-    <div class="gs-plan-price">$149<span style="color:black">/mo</span></div>
-    <div class="gs-plan-setup">+ $299 one-time setup fee</div>
-    <hr class="gs-plan-divider">
-    <div class="gs-plan-desc">5 pages · Unlimited updates · Full local SEO + Google setup &nbsp;·&nbsp; <a href="/#pricing" style="color:var(--orange);white-space:nowrap;" onclick="event.stopPropagation()">See full plan ↗</a></div>
-  </div>
-</div>
-
-            <div class="gs-cta-wrap">
-              <a id="gs-cta" href="#" class="btn btn-primary btn-lg">
+            <div class="gs-cta-wrap" style="margin: 21px 0px 0px">
+              <a id="gs-cta" href="#" class="btn btn-primary btn-lg gs-cta-disabled" aria-disabled="true">
                 Continue to payment →
               </a>
-              <p class="gs-note">Secure checkout via Stripe &nbsp;·&nbsp; Cancel anytime</p>
+              <p class="gs-note">The Free Range plan · $149/mo + $299 one-time setup &nbsp;·&nbsp; Secure checkout via Stripe &nbsp;·&nbsp; Cancel anytime</p>
             </div>
 
-            <button class="gs-back" onclick="goBack()">← Back</button>
+            <div class="faq-more">Not ready yet? <a href="book-a-call.html">Book a free call first →</a></div>
           </div>
 
         </div>
@@ -335,51 +308,22 @@
     </section>
 
     <div id="site-footer"></div>
-    <script src="/assets/js/includes.js"></script>
+    <script src="assets/js/includes.js"></script>
     <script>
-      // ── Stripe payment links — replace when ready ──────────────
-      const STRIPE_LINKS = {
-        starter:  'https://buy.stripe.com/8x2bJ14Sz4bBgeNcff0sU00',
-        standard: 'https://buy.stripe.com/7sYdR9bgXfUjd2B4MN0sU01'
-      };
-
-      let selectedPlan = 'standard'; // default
-
-      // Pre-select plan from ?plan= query param
-      (function () {
-        const param = new URLSearchParams(window.location.search).get('plan');
-        if (param === 'starter' || param === 'standard') selectedPlan = param;
-      })();
+      // ── Stripe payment link — replace when ready ──────────────
+      const STRIPE_LINK = 'https://buy.stripe.com/7sYdR9bgXfUjd2B4MN0sU01';
 
       function selectType(el) {
         if (el.dataset.type === 'other') {
-          window.location.href = '/contact.html?ref=get-started';
+          window.location.href = 'contact.html?ref=get-started';
           return;
         }
-        // Advance to step 2
-        document.getElementById('step1').classList.remove('active');
-        document.getElementById('step2').classList.add('active');
-        document.getElementById('dot1').classList.remove('active');
-        document.getElementById('dot2').classList.add('active');
-        setPlan(selectedPlan);
-      }
-
-      function selectPlan(el) {
-        setPlan(el.dataset.plan);
-      }
-
-      function setPlan(plan) {
-        selectedPlan = plan;
-        document.querySelectorAll('.gs-plan').forEach(p => p.classList.remove('selected'));
-        document.getElementById('plan-' + plan).classList.add('selected');
-        document.getElementById('gs-cta').href = STRIPE_LINKS[plan];
-      }
-
-      function goBack() {
-        document.getElementById('step2').classList.remove('active');
-        document.getElementById('step1').classList.add('active');
-        document.getElementById('dot2').classList.remove('active');
-        document.getElementById('dot1').classList.add('active');
+        document.querySelectorAll('.gs-opt').forEach(o => o.classList.remove('gs-opt-selected'));
+        el.classList.add('gs-opt-selected');
+        const cta = document.getElementById('gs-cta');
+        cta.href = STRIPE_LINK;
+        cta.classList.remove('gs-cta-disabled');
+        cta.removeAttribute('aria-disabled');
       }
 
     </script>

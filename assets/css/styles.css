@@ -274,6 +274,14 @@ ul{list-style:none}
 .price-footer-hl{font-family:var(--fb);font-weight:600;font-size:15px;color:var(--text);margin-bottom:6px}
 .price-footer-sub{font-size:14px;color:var(--mid);margin-bottom:16px}
 .price-footer-note{font-size:13px;color:var(--soft)}
+/* ── PRICING — single-plan (Option C) ───── */
+.price-grid.single{display:block;margin-top:56px}
+.card-c{display:grid;grid-template-columns:336px 1fr;gap:48px;align-items:start;text-align:left;max-width:1040px;margin:0 auto}
+.card-c .c-left{position:sticky;top:24px}
+.card-c .price-feats{display:grid;grid-template-columns:1fr 1fr;gap:11px 32px;margin-bottom:0}
+.mto-strip{max-width:1040px;margin:20px auto 0;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:26px 34px;border:1.5px solid var(--border);border-radius:22px;background:var(--white)}
+.mto-strip .mts-r{display:flex;align-items:center;gap:28px;flex-shrink:0}
+@media(max-width:760px){.card-c{grid-template-columns:1fr;gap:28px}.card-c .c-left{position:static}.card-c .price-feats{grid-template-columns:1fr}.mto-strip{flex-direction:column;align-items:flex-start}}
 
 /* ── TESTIMONIALS ───────────────────────── */
 .testi{background:var(--cream)}

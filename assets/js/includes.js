@@ -12,12 +12,14 @@
       });
   }
 
-  load('site-header', '/assets/includes/header.html', function () {
+  load('site-header', 'assets/includes/header.html', function () {
 
     /* ── ACTIVE NAV LINK ───────────────────── */
-    var path = window.location.pathname;
+    var page = (window.location.pathname.split('/').pop() || 'index.html');
+    if (page === '') page = 'index.html';
     document.querySelectorAll('.nav-links a, .mob-nav a').forEach(function (a) {
-      if (a.getAttribute('href') === path) a.classList.add('active');
+      var href = (a.getAttribute('href') || '').split('#')[0];
+      if (href === page || (href === 'index.html' && page === 'index.html')) a.classList.add('active');
     });
 
     /* ── NAV SCROLL HIDE/SHOW ──────────────── */
@@ -63,6 +65,6 @@
 
   });
 
-  load('site-footer', '/assets/includes/footer.html');
+  load('site-footer', 'assets/includes/footer.html');
 
 })();
