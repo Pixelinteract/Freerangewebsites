@@ -114,6 +114,12 @@ ul{list-style:none}
 .hero-usps{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:16px 24px;margin-bottom:85px;max-width:100%;opacity:0;animation:fadeUp .6s ease .88s both}
 .usp-row{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--text);font-weight:400}
 .usp-tick{width:21px;height:21px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:#fff;font-weight:700}
+.hero-ticker-wrap{display:block;margin-bottom:56px;font-family:var(--fh);font-size:28px;font-weight:600;line-height:1.35;text-align:center;opacity:0;animation:fadeUp .6s ease .88s both}
+.hero-ticker-static{color:var(--text);display:block;margin-bottom:6px}
+.hero-ticker-window{display:block;overflow:hidden;height:1.35em;position:relative;width:100%}
+.hero-ticker-track{display:flex;flex-direction:column;animation:tickerSlide 12s cubic-bezier(.4,0,.2,1) infinite}
+.hero-ticker-item{display:block;height:1.35em;line-height:1.35em;color:var(--orange);white-space:nowrap;flex-shrink:0;text-align:center}
+@keyframes tickerSlide{0%,18%{transform:translateY(0)}25%,43%{transform:translateY(-1.35em)}50%,68%{transform:translateY(-2.7em)}75%,93%{transform:translateY(-4.05em)}100%{transform:translateY(-5.4em)}}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;width:100%;opacity:0;animation:fadeUp .5s ease 1.05s both}
 .hero-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);opacity:0;animation:fadeUp .5s ease 1.18s both}
 
@@ -448,6 +454,8 @@ ul{list-style:none}
   .hero-hl{font-size:32px !important;letter-spacing:-.01em !important}
   .hero-usps{flex-direction:column !important;align-items:flex-start !important;justify-content:flex-start !important;gap:10px !important;margin-bottom:36px !important;padding:0 4px !important}
   .usp-row{text-align:left !important;align-items:flex-start !important}
+  .hero-ticker-wrap{font-size:20px !important;margin-bottom:36px !important}
+  .hero-ticker-item{white-space:normal !important;height:auto !important;line-height:1.35 !important}
   .hero-copy{padding:0 !important}
   .pricing{padding-top:4px !important}
   .hiw{padding-top:30px}
