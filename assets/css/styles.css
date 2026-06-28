@@ -157,7 +157,7 @@ ul{list-style:none}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
 
 /* ── FEATURES ───────────────────────────── */
-.feats{background:var(--white)}
+.feats{background:var(--white); padding-top:80px;}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
 .feat-card{border:1px solid transparent;border-radius:20px;padding:28px;cursor:default;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
 .feat-card.f-blue{background-color:#f0f6ff}
