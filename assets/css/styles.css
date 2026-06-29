@@ -7,6 +7,10 @@
   --green:   #90b766;
   --green2:  #5a8a35;
   --greenlt: #f2f6f5;
+  --amber:   #f2a340;
+  --red:     #e24b4a;
+  --tint:    #fff9f2;
+  --tint2:   #ffefdc;
   --cream:   #f7f5f2;
   --grey:    #f3f3f4;
   --white:   #ffffff;
@@ -182,25 +186,45 @@ ul{list-style:none}
 .diff-card-panel{border-radius:28px;padding:30px 48px;margin-top:0}
 .sc-wrap{max-width:1100px;margin:0 auto;padding:20px 10px;overflow-x:auto}
 .sc-table{width:100%;border-collapse:separate;border-spacing:0;position:relative}
+
+/* Label column (blank header cell — no border, this is the open corner) */
 .sc-table th:first-child,.sc-table td:first-child{font-family:var(--fb);font-weight:800;font-size:16px;color:var(--text);text-align:left;padding:22px 24px;background:transparent !important;border:none;border-bottom:1px solid var(--border)}
 .sc-table thead th:first-child{border-bottom:none}
-.sc-table thead th:nth-child(2),.sc-table thead th:nth-child(3),.sc-table tbody td:nth-child(2),.sc-table tbody td:nth-child(3){background:#fff !important;border-bottom:1px solid #f0ede9;padding:22px 18px;font-size:15px;color:var(--mid);text-align:center;width:22%}
-.sc-table thead th:nth-child(2),.sc-table thead th:nth-child(3){font-family:var(--fb);font-weight:800;font-size:18px;color:var(--text);border-top:1px solid var(--border)}
-.sc-table thead th:nth-child(2){border-left:1px solid var(--border);border-top-left-radius:16px}
-.sc-table thead th:nth-child(3){border-right:1px solid var(--border)}
-.sc-table tbody td:nth-child(2){border-left:1px solid var(--border)}
-.sc-table tbody td:nth-child(3){border-right:1px solid var(--border)}
-.sc-table tbody tr:last-child td:nth-child(2){border-bottom:1px solid var(--border);border-bottom-left-radius:16px}
-.sc-table tbody tr:last-child td:nth-child(3){border-bottom:1px solid var(--border);border-bottom-right-radius:16px}
-.sc-table thead th:last-child,.sc-table tbody td:last-child{border-left:2px solid var(--orange);border-right:2px solid var(--orange);text-align:center;width:28%;position:relative;z-index:2}
-.sc-table thead th:last-child{background:var(--orange) !important;color:#fff !important;font-family:var(--fb);font-weight:900;font-size:20px;border-top:2px solid var(--orange);border-top-right-radius:16px;padding:0}
-.sc-table tbody td:last-child{background:#fff9f2 !important;font-weight:700;color:var(--text);border-bottom:1px solid rgba(254,155,36,.15);padding:22px 24px}
-.sc-table tbody tr:last-child td:last-child{border-bottom:2px solid var(--orange) !important;border-bottom-left-radius:16px;border-bottom-right-radius:16px;padding:22px 24px 38px;box-shadow:0 12px 24px rgba(254,155,36,.05)}
+
+/* Agencies / Freelancers columns */
+.sc-table thead th:nth-child(3),.sc-table thead th:nth-child(4){font-family:var(--fb);font-weight:700;font-size:15px;color:var(--soft);border-top:1px solid var(--border);padding:22px 14px;background-color:white;text-align:center;border-bottom:1px solid var(--border);}
+.sc-table thead th:nth-child(4){border-right:1px solid var(--border);border-top-right-radius:16px; border-bottom:1px solid var(--border); background-color: #fff;}
+.sc-table tbody td:nth-child(3),.sc-table tbody td:nth-child(4){background:#fff !important;border-bottom:1px solid #f0ede9;padding:14px;font-size:13px;font-weight:400;color:var(--mid);text-align:center;width:21%}
+.sc-table tbody td:nth-child(4){border-right:1px solid var(--border)}
+.sc-table tbody tr:last-child td:nth-child(4){border-bottom:1px solid var(--border);border-bottom-right-radius:16px}
+
+/* Free Range column — highlighted, second position */
+.sc-table thead th:nth-child(2),.sc-table tbody td:nth-child(2){width:24%;text-align:center;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+.sc-table thead th:nth-child(2){background:var(--tint);color:var(--orange2);font-family:var(--fb);font-weight:800;font-size:16px;border-top:1px solid var(--border);border-bottom:2px solid var(--orange);border-top-left-radius:16px;padding:18px 12px}
+.sc-table tbody td:nth-child(2){background:var(--tint) !important;padding:14px;font-size:13px;font-weight:400;color:var(--mid);border-bottom:1px solid #f3e9da}
+.sc-table tbody tr:last-child td:nth-child(2){border-bottom-left-radius:16px}
+
 .sc-row-title{display:block;font-family:var(--fb);font-weight:700;font-size:16px;color:var(--text);margin-bottom:4px}
-.sc-row-sub{display:block;font-family:var(--fb);font-weight:400;font-size:14px;color:var(--soft);line-height:1.5}
-.sc-bad{color:#707070}
-.sc-good{color:var(--green2);font-weight:600}
+.sc-row-sub{display:block;font-family:var(--fb);font-weight:400;font-size:13px;color:var(--soft);line-height:1.5}
 .sc-footnote{font-size:11px;color:var(--soft);margin-top:24px;text-align:center;line-height:1.6}
+
+/* Three-state icon + label, used inside Free Range / Agencies / Freelancers cells */
+.sc-state{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.sc-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sc-icon svg{width:11px;height:11px}
+.sc-icon span{color:#fff;font-weight:800;font-size:11px;line-height:1}
+.sc-icon.good{background:var(--green2)}
+.sc-icon.warn{background:var(--amber)}
+.sc-icon.bad{background:var(--red)}
+.sc-state-label{font-size:13px;color:var(--mid);text-align:center}
+
+/* Collapse + fade for the bottom half of the table */
+.sc-collapse-wrap{position:relative;max-height:560px;overflow:hidden}
+.sc-collapse-wrap.expanded{max-height:none}
+.sc-fade{position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to bottom, rgba(247,245,242,0) 0%, var(--greenlt) 92%);pointer-events:none}
+.sc-collapse-wrap.expanded .sc-fade{display:none}
+.sc-toggle-wrap{text-align:center;margin-top:6px}
+.sc-toggle-btn{background:none;border:none;color:var(--orange2);font-family:var(--fb);font-weight:700;font-size:14px;cursor:pointer;padding:14px 0 4px}
 .myth-c{flex-shrink:0;width:296px;border-radius:18px;padding:24px 26px;min-height:160px;display:flex;flex-direction:column;gap:10px;background:#f8f9fa !important;border:1px solid rgba(0,0,0,.04)}
 .myth-bust-lbl{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;display:flex;align-items:center;gap:5px}
 .myth-old-txt{font-size:13px;color:var(--mid);text-decoration:line-through;line-height:1.55}
@@ -251,7 +275,7 @@ ul{list-style:none}
 /* ── PRICING ────────────────────────────── */
 .pricing{background:var(--white)}
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;align-items:start}
-.price-card{border:1.5px solid var(--border);border-radius:22px;padding:32px;var(--cream);position:relative;transition:all .24s}
+.price-card{border:1.5px solid var(--border);border-radius:22px;padding:32px;background:var(--cream);position:relative;transition:all .24s}
 .price-card:hover{transform:translateY(-4px);box-shadow:var(--shl)}
 .price-card.feat{border-color:var(--orange);background:#fffbf4;box-shadow:var(--shl);transform:scale(1.025)}
 .price-card.feat:hover{transform:scale(1.025) translateY(-4px)}
@@ -482,17 +506,11 @@ ul{list-style:none}
 }
 
 /* ── DIFF SECTION — MOBILE ──────────────── */
+/* Note: .sc-desktop is hidden below 768px (see toggle rules below) and replaced
+   entirely by the .sc-mobile checklist, so the table itself needs no mobile
+   styling of its own. */
 @media(max-width:767px){
   .diff-card-panel{padding:16px 0;background:transparent;border-radius:0;box-shadow:none}
-  .sc-table,.sc-table thead,.sc-table tbody,.sc-table tr,.sc-table th,.sc-table td{display:block;width:100%}
-  .sc-table thead{display:none}
-  .sc-table tbody tr{margin-bottom:32px;background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden;padding:16px;box-shadow:var(--sh)}
-  .sc-table td:first-child{font-size:17px;font-weight:800;color:var(--text);padding:8px 0 16px;border-bottom:2px solid var(--orange);text-align:center}
-  .sc-table tbody td:nth-child(2),.sc-table tbody td:nth-child(3),.sc-table tbody td:last-child{padding:12px 0;text-align:left;border:none !important;border-radius:0 !important;background:transparent !important;font-size:15px;display:flex;justify-content:space-between;align-items:center}
-  .sc-table tbody td:nth-child(2)::before{content:"Other Templates:";font-weight:600;color:var(--soft)}
-  .sc-table tbody td:nth-child(3)::before{content:"Custom Agencies:";font-weight:600;color:var(--soft)}
-  .sc-table tbody td:last-child::before{content:"FreeRange Websites:";font-weight:800;color:var(--orange)}
-  .sc-table tbody td:last-child{background:rgba(144,183,102,.08) !important;padding:12px 10px;margin-top:6px;border-radius:8px !important}
 }
 
 /* ── MID CTA BANNER ─────────────────────── */
