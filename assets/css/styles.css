@@ -188,8 +188,11 @@ ul{list-style:none}
 .sc-table{width:100%;border-collapse:separate;border-spacing:0;position:relative}
 
 /* Label column (blank header cell — no border, this is the open corner) */
-.sc-table th:first-child,.sc-table td:first-child{font-family:var(--fb);font-weight:800;font-size:16px;color:var(--text);text-align:left;padding:22px 24px;background:transparent !important;border:none;border-bottom:1px solid var(--border)}
+.sc-table th:first-child,.sc-table td:first-child{font-family:var(--fb);font-weight:800;font-size:16px;color:var(--text);text-align:left;padding:16px 24px;background:transparent;border:none;border-bottom:1px solid var(--border)}
 .sc-table thead th:first-child{border-bottom:none}
+.sc-table tbody td:first-child{background:#fff !important}
+.sc-table tbody tr:first-child td:first-child{border-top-left-radius:16px}
+.sc-table tbody tr:last-child td:first-child{border-bottom-left-radius:16px}
 
 /* Agencies / Freelancers columns */
 .sc-table thead th:nth-child(3),.sc-table thead th:nth-child(4){font-family:var(--fb);font-weight:700;font-size:15px;color:var(--soft);border-top:1px solid var(--border);padding:22px 14px;background-color:white;text-align:center;border-bottom:1px solid var(--border);}
@@ -210,9 +213,8 @@ ul{list-style:none}
 
 /* Three-state icon + label, used inside Free Range / Agencies / Freelancers cells */
 .sc-state{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
-.sc-icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.sc-icon svg{width:11px;height:11px}
-.sc-icon span{color:#fff;font-weight:800;font-size:11px;line-height:1}
+.sc-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sc-icon svg{width:16px;height:16px}
 .sc-icon.good{background:var(--green2)}
 .sc-icon.warn{background:var(--amber)}
 .sc-icon.bad{background:var(--red)}
