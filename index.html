@@ -128,8 +128,7 @@
           <!-- Copy Container -->
           <div class="hero-copy">
             <h1 class="hero-hl rv">
-              <span class="line">Not just a cage-free
- website</span>
+              <span class="line">Not just a <em style="font-style:normal;position:relative;display:inline-block;padding-bottom:12px;color:var(--text);z-index:1;"><span style="position:relative;z-index:1;">cage-free</span><svg viewBox="0 0 100 16" preserveAspectRatio="none" style="position:absolute;left:-1%;bottom:4px;width:103%;height:1rem;pointer-events:none;z-index:0;overflow:visible;"><g fill="none" stroke="var(--orange)" stroke-linecap="round" stroke-linejoin="round"><path d="M 2,5 C 32,6.2 68,4.5 98,3.5" stroke-width="4.8" opacity="0.95" id="sketchLine1"/><path d="M 4,12 C 36,13.5 70,11.8 96,10.2" stroke-width="3.6" opacity="0.85" id="sketchLine2"/></g></svg></em> website</span>
               <span class="line">You need a business headquarter</span>
             </h1>
 
@@ -138,11 +137,14 @@
               <span class="hero-ticker-static">We help you win more local jobs by</span>
               <span class="hero-ticker-window">
                 <span class="hero-ticker-track">
-                  <span class="hero-ticker-item">bringing your scattered profiles under one roof.</span>
-                  <span class="hero-ticker-item">pulling your 5-star Google reviews into the spotlight.</span>
+                  <span class="hero-ticker-item">turning Google searches into booked jobs.</span>
+                  <span class="hero-ticker-item">getting you instant quote requests.</span>
                   <span class="hero-ticker-item">connecting WhatsApp so customers can book you instantly.</span>
+                  <span class="hero-ticker-item">bringing your scattered reviews and ratings under one roof.</span>
                   <span class="hero-ticker-item">making it dead simple for locals to find, trust, and call you.</span>
-                  <span class="hero-ticker-item">bringing your scattered profiles under one roof.</span>
+                  <span class="hero-ticker-item">making you look great, without the agency price tag.</span>
+                  <span class="hero-ticker-item">showing up across every suburb you work in.
+                  <span class="hero-ticker-item">turning Google searches into booked jobs.</span>
                 </span>
               </span>
             </div>
@@ -163,14 +165,24 @@
     ">
     <div class="container" style="width: auto">
       <div class="tc" style="text-align: center">
-        <h2 class="sec-title rv">Your business headquarter in action</h2>
+        <h2 class="sec-title rv" style="font-size: 32px; font-weight: 600; color: #42666b">Your business headquarter in action</h2>
       </div>
 
       <div class="rv" style="margin-top: 48px; display: flex; justify-content: center">
-        <img
-          src="assets/images/hq-in-action.png"
-          alt="Business HQ website example"
-          style="max-width: 100%; height: auto; display: block" />
+        <picture style="display: block; width: 100%;">
+          <source media="(max-width: 767px)" srcset="assets/images/hq-in-action-mobile.png" />
+          <img
+            src="assets/images/hq-in-action.png"
+            alt="Business HQ website example"
+            style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
+        </picture>
+        <style>
+          @media (max-width: 767px) {
+            #hq-in-action { padding: 48px 16px !important; }
+            #hq-in-action .container { max-width: 100% !important; padding: 0 !important; }
+            #hq-in-action picture img { width: 100% !important; }
+          }
+        </style>
       </div>
     </div>
   </section>
@@ -796,7 +808,7 @@
     <section class="fcta">
       <div class="container">
         <div class="fcta-inner">
-          <h2 class="fcta-title rv">Every day without a website is a job going to someone else.</h2>
+          <h2 class="fcta-title rv" style="text-align: center; margin: 0px 102px 37px; max-width: 1300px">Every day without a website is a customer going to someone else.</h2>
           <div class="fcta-btns rv">
             <a href="#pricing" class="btn btn-primary btn-lg">Get started</a>
           </div>
@@ -811,3 +823,18 @@
     <script src="assets/js/home.js"></script>
   </body>
 </html>
+
+<style id="__om-edit-overrides">
+#site-footer .container a:nth-child(4) { color: rgb(255, 255, 255) !important }
+#site-footer .container a:nth-child(5) { color: rgb(255, 255, 255) !important }
+#site-footer .container a:last-child { color: rgb(255, 255, 255) !important }
+#site-footer .container a:nth-child(3) { color: rgb(255, 255, 255) !important }
+#site-footer .container a:nth-child(2) { color: rgb(255, 255, 255) !important }
+#site-footer .container a:nth-child(1) { color: rgb(255, 255, 255) !important }
+#site-footer .container .foot-au { color: rgb(255, 255, 255) !important }
+#site-footer .container .foot-au { color: rgba(255, 255, 255, 0.61) !important }
+#site-footer .container .foot-au { color: rgb(255, 255, 255) !important }
+#site-footer .container .foot-au { color: rgb(149, 149, 149) !important }
+#site-footer .container .foot-au { color: rgb(153, 153, 153) !important }
+#site-footer .container .foot-legal { color: rgb(153, 153, 153) !important }
+</style>

@@ -117,9 +117,9 @@ ul{list-style:none}
 .hero-ticker-wrap{display:block;margin-bottom:56px;font-family:var(--fh);font-size:28px;font-weight:600;line-height:1.35;text-align:center;opacity:0;animation:fadeUp .6s ease .88s both}
 .hero-ticker-static{color:var(--text);display:block;margin-bottom:6px}
 .hero-ticker-window{display:block;overflow:hidden;height:1.35em;position:relative;width:100%}
-.hero-ticker-track{display:flex;flex-direction:column;animation:tickerSlide 12s cubic-bezier(.4,0,.2,1) infinite}
+.hero-ticker-track{display:flex;flex-direction:column;animation:tickerSlide 35s cubic-bezier(.4,0,.2,1) infinite}
 .hero-ticker-item{display:block;height:1.35em;line-height:1.35em;color:var(--orange);white-space:nowrap;flex-shrink:0;text-align:center}
-@keyframes tickerSlide{0%,18%{transform:translateY(0)}25%,43%{transform:translateY(-1.35em)}50%,68%{transform:translateY(-2.7em)}75%,93%{transform:translateY(-4.05em)}100%{transform:translateY(-5.4em)}}
+@keyframes tickerSlide{0%,11%{transform:translateY(0)}12.5%,23%{transform:translateY(-1.35em)}25%,36%{transform:translateY(-2.7em)}37.5%,48%{transform:translateY(-4.05em)}50%,61%{transform:translateY(-5.4em)}62.5%,73%{transform:translateY(-6.75em)}75%,86%{transform:translateY(-8.1em)}87.5%,99.9%{transform:translateY(-9.45em)}100%{transform:translateY(-9.45em)}}}}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;width:100%;opacity:0;animation:fadeUp .5s ease 1.05s both}
 .hero-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.35);opacity:0;animation:fadeUp .5s ease 1.18s both}
 
