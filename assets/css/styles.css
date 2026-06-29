@@ -381,7 +381,11 @@ ul{list-style:none}
 .fcta{background:var(--black);border-top:1px solid rgba(255,255,255,.05);padding:112px 0;text-align:center;position:relative;overflow:hidden}
 .fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(254,155,36,.16) 0%,transparent 55%);pointer-events:none}
 .fcta-inner{position:relative;z-index:1}
-.fcta-title{font-family:var(--fh);font-weight:900;font-size:clamp(38px,5.2vw,64px);line-height:1.04;color:#fff;margin-bottom:18px;letter-spacing:-.01em}
+.fcta-title-wide{margin:0 102px 37px;max-width:1300px; color: white;}
+
+@media(max-width:767px){
+  .fcta-title-wide{margin:0 16px 24px;max-width:100%;font-size:30px;line-height:1.2; color: white;}
+}
 .fcta-title em{font-style:normal;color:var(--orange)}
 .fcta-sub{font-size:18px;color:rgba(255,255,255,.55);margin-bottom:0;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7}
 .fcta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -455,8 +459,10 @@ ul{list-style:none}
 
 @media(max-width:560px){
   .feat-grid{grid-template-columns:1fr}
-  .hero-ctas,.fcta-btns{flex-direction:column;align-items:stretch}
-  .hero-ctas .btn,.fcta-btns .btn{justify-content:center}
+.hero-ctas,.fcta-btns{flex-direction:column;align-items:stretch}
+.hero-ctas .btn,.fcta-btns .btn{justify-content:center;width:100%}
+.hero-ctas .btn-primary{box-shadow:0 2px 8px rgba(254,155,36,.25)}
+.hero-ctas .btn + .btn,.fcta-btns .btn + .btn{margin-top:24px}
   .foot-inner{flex-direction:column;align-items:flex-start}
   .foot-au{text-align:left}
   .testi-grid{grid-template-columns:1fr}
