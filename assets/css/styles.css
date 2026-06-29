@@ -381,7 +381,7 @@ ul{list-style:none}
 .fcta{background:var(--black);border-top:1px solid rgba(255,255,255,.05);padding:112px 0;text-align:center;position:relative;overflow:hidden}
 .fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(254,155,36,.16) 0%,transparent 55%);pointer-events:none}
 .fcta-inner{position:relative;z-index:1}
-.fcta-title-wide{margin:0 102px 37px;max-width:1300px; color: white;}
+.fcta-title-wide{margin:0 102px 37px;max-width:1300px;color:#fff;font-size:clamp(34px,4vw,50px)}
 
 @media(max-width:767px){
   .fcta-title-wide{margin:0 16px 24px;max-width:100%;font-size:30px;line-height:1.2; color: white;}
