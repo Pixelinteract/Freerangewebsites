@@ -1,17 +1,30 @@
-<!-- ── NAV ──────────────────────────────── -->
+<!-- ── SPOTS BAR (G1) — sitewide, above nav ──────────────────── -->
+<!-- Text is computed + injected by includes.js from BUILD_SPOTS. -->
+<a class="spots-bar" id="spotsBar" href="index.html#pricing" data-ga-cta="spots_bar" aria-label="Free website spots remaining">
+  <span class="spots-bar-inner" id="spotsBarInner">⚡ Loading spots…</span>
+</a>
+
+<!-- ── NAV (G2) ─────────────────────────────── -->
+<!--
+  PHASE 4 GROWTH PLAN — map for future edits:
+  • Industries dropdown: add once 3+ trade landing pages exist (nest under nav-links).
+  • Case studies link: add when the first real case study publishes.
+  • /examples page: promote "Examples" from #examples anchor to /examples once 8+ showcase entries exist.
+-->
 <div class="nav-wrap">
   <nav class="nav-pill" id="navPill">
     <a href="index.html" class="nav-logo">
-      <img src="assets/images/logo.png" alt="FreeRange Websites" height="50" style="display:block;">
+      <img src="assets/images/logo.png" alt="Free Range Websites" height="40" style="display:block;">
     </a>
     <div class="nav-links">
       <a href="index.html#how-it-works">How it works</a>
+      <a href="index.html#examples">Examples</a>
       <a href="index.html#pricing">Pricing</a>
       <a href="index.html#faq">FAQ</a>
       <a href="contact.html">Contact</a>
     </div>
-    <a href="index.html#pricing" class="nav-cta-pill">Get started</a>
-    <div class="ham" id="ham" onclick="toggleMob()">
+    <a href="get-started.html" class="nav-cta-pill">Claim a free spot</a>
+    <div class="ham" id="ham" aria-label="Toggle menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
     <div class="nav-progress"><div class="nav-progress-fill" id="npFill"></div></div>
@@ -19,8 +32,9 @@
 </div>
 <div class="mob-nav" id="mobNav">
   <a href="index.html#how-it-works">How it works</a>
+  <a href="index.html#examples">Examples</a>
   <a href="index.html#pricing">Pricing</a>
   <a href="index.html#faq">FAQ</a>
   <a href="contact.html">Contact</a>
-  <a href="index.html#pricing" class="btn btn-primary btn-full">Get started</a>
+  <a href="get-started.html" class="btn btn-primary btn-full">Claim a free spot</a>
 </div>

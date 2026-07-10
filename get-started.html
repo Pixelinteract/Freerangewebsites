@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ── PRIMARY SEO ───────────────────────────────────────── -->
-    <title>Get Started | Free Range Websites</title>
-    <meta name="description" content="Get your Australian small business online fast. Get started with Free Range Websites today — one simple plan, live in days." />
+    <title>See if you qualify | Free Range Websites</title>
+    <meta name="description" content="Claim your free website spot. A 60-second qualifier, then a short form — no payment required, no lock-in. Free Range Websites." />
     <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="https://www.freerangewebsites.com.au/get-started.html" />
-    <link rel="sitemap" type="application/xml" href="sitemap.xml">
+    <link rel="sitemap" type="application/xml" href="sitemap.xml" />
 
     <!-- ── FAVICON ───────────────────────────────────────────── -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png" />
@@ -24,236 +24,52 @@
       gtag('config', 'G-VQDVWQN86F');
     </script>
 
+    <!-- ── TALLY ─────────────────────────────────────────────── -->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+
     <!-- ── FONTS ─────────────────────────────────────────────── -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500;600;700;800;900&family=Encode+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
     <!-- ── STYLESHEET ────────────────────────────────────────── -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260626" />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260731" />
 
-    <!-- ── PAGE-SPECIFIC STYLES — move to styles.css ─────────── -->
     <style>
-      body {
-        background: linear-gradient(to bottom, var(--nav-bg, #f7f5f2) 0%, #fff 620px) no-repeat; /* #e8f3f0*/
-      }
-      .gs-section {
-        background: transparent;
-        min-height: calc(100vh - 120px);
-        display: flex;
-        align-items: center;
-        padding: 4rem 0 6rem;
-      }
-      .gs-wrap {
-        max-width: 520px;
-        margin: 0 auto;
-        text-align: center;
-      }
+      body { background: linear-gradient(to bottom, var(--nav-bg, #f7f5f2) 0%, #fff 620px) no-repeat; }
+      .gs-section { background: transparent; min-height: calc(100vh - 120px); padding: 8rem 0 6rem; }
+      .gs-wrap { max-width: 560px; margin: 0 auto; text-align: center; }
       .gs-step { display: none; }
       .gs-step.active { display: block; }
+      .gs-title { font-family: var(--fh); font-size: var(--text-2xl); font-weight: 700; color: var(--text); margin: 0.5rem 0 0.4rem; line-height: 1.1; }
+      .gs-intro { color: var(--mid); margin-bottom: 2rem; font-size: var(--text-base); }
 
-      /* Progress dots */
-      .gs-progress {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-bottom: 2.5rem;
-      }
-      .gs-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #ddd;
-        transition: background 0.3s;
-      }
-      .gs-dot.active { background: var(--orange); }
-
-      /* Headings */
-      .gs-title {
-        font-family: 'Encode Sans', sans-serif;
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--dark);
-        margin: 0.5rem 0 0.4rem;
-        line-height: 1.15;
-      }
-      .gs-sub {
-        color: #888;
-        margin-bottom: 2rem;
-        font-size: 0.95rem;
-      }
-
-      /* Business type option cards */
-      .gs-options {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-      }
-      .gs-opt {
-        display: flex;
-        align-items: center;
-        gap: 1.1rem;
-        padding: 1.35rem 1.5rem;
-        border: 2px solid #e8e8e8;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: border-color 0.2s, background 0.2s;
-        text-align: left;
-        background: #ffffff;
-      }
-      .gs-opt:hover {
-        border-color: var(--orange);
-        background: #fffaf4;
-      }
-      .gs-opt.gs-opt-selected {
-        border-color: var(--orange);
-        background: #fff8f0;
-      }
-      .gs-cta-disabled {
-        opacity: 0.4;
-        pointer-events: none;
-      }
+      .gs-options { display: flex; flex-direction: column; gap: 0.75rem; text-align: left; }
+      .gs-opt { display: flex; align-items: center; gap: 1.1rem; padding: 1.25rem 1.4rem; border: 2px solid #e8e8e8; border-radius: 12px; cursor: pointer; transition: border-color .2s, background .2s; background: #fff; }
+      .gs-opt:hover, .gs-opt:focus-visible { border-color: var(--orange); background: #fffaf4; outline: none; }
       .gs-opt-icon { font-size: 1.8rem; flex-shrink: 0; }
-      .gs-opt-label {
-        font-family: 'Encode Sans', sans-serif;
-        font-weight: 600;
-        font-size: 1.2rem;
-        color: var(--dark);
-      }
-      .gs-opt-desc {
-        font-size: 0.95rem;
-        color: #888;
-        margin-top: 0.2rem;
-      }
+      .gs-opt-label { font-family: var(--fh); font-weight: 700; font-size: 1.2rem; color: var(--text); }
+      .gs-opt-desc { font-size: 0.95rem; color: var(--soft); margin-top: 0.2rem; }
 
-      /* Plan cards */
-      .gs-plans {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.85rem;
-        margin-bottom: 1.5rem;
-      }
-      .gs-plan {
-        border: 2px solid #e8e8e8;
-        border-radius: 12px;
-        padding: 1.25rem 1.1rem;
-        cursor: pointer;
-        transition: border-color 0.2s, background 0.2s;
-        text-align: left;
-        background: #fff;
-        position: relative;
-      }
-      .gs-plan:hover { border-color: var(--orange); }
-      .gs-plan.selected {
-        border-color: var(--orange);
-        background: #fff8f0;
-      }
-      .gs-plan-badge {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 0.68rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: #fff;
-        background: var(--green, #3a7d6e);
-        padding: 0.22rem 0.65rem;
-        border-radius: 20px;
-        white-space: nowrap;
-      }
-      .gs-plan-check {
-        position: absolute;
-        top: 0.7rem;
-        right: 0.7rem;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background: var(--orange);
-        color: #fff;
-        font-size: 0.7rem;
-        display: none;
-        align-items: center;
-        justify-content: center;
-      }
-      .gs-plan.selected .gs-plan-check { display: flex; }
-      .gs-plan-name {
-        font-family: 'Encode Sans', sans-serif;
-        font-weight: 800;
-        font-size: 1.35rem;
-        color: var(--dark);
-      }
-.gs-plan-name { margin-bottom: 0.4rem; }
-.gs-plan-price { margin-bottom: 0.5rem; }
-.gs-plan-setup { margin-bottom: 0; }
-.gs-plan-divider { margin: 0.9rem 0; border: none; border-top: 1px solid #c7c7c7; }
-.gs-plan-desc { margin-bottom: 0; }
+      .gs-tc { display: flex; align-items: flex-start; gap: 0.6rem; text-align: left; background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.15rem; margin: 0 auto 1.25rem; max-width: 560px; }
+      .gs-tc input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; accent-color: var(--orange); cursor: pointer; }
+      .gs-tc label { font-size: 0.95rem; color: var(--mid); line-height: 1.5; cursor: pointer; }
+      .gs-tc a { color: var(--orange2); border-bottom: 1px solid rgba(255,112,70,.35); }
 
-      .gs-plan-price {
-        font-family: 'Encode Sans', sans-serif;
-        font-weight: 700;
-        font-size: 1.9rem;
-        color: var(--orange);
-        margin: 0.3rem 0 0.35rem;
-      }
-      .gs-plan-price span {
-        font-size: 0.9rem;
-        color: #aaa;
-        font-weight: 400;
-      }
-      .gs-plan-desc {
-        font-size: 0.88rem;
-        color: #000;
-        line-height: 1.45;
-      }
+      .gs-embed { margin-top: 1rem; }
+      .gs-embed.locked { opacity: 0.4; pointer-events: none; filter: grayscale(0.3); }
+      .gs-clock { font-size: 0.9rem; color: var(--soft); margin-top: 1rem; }
+      .gs-clock strong { color: var(--text); font-weight: 700; }
 
-      .gs-plan-setup {
-        font-size: 0.82rem;
-        font-weight: 600;
-        color: #555;
-        margin-bottom: 0.55rem;
-        padding: 0.28rem 0.55rem;
-        background: #fff;
-        border: 1.5px solid #ddd;
-        border-radius: 100px;
-        display: inline-block;
-      }
-      .gs-plan.selected .gs-plan-setup {
-        border-color: var(--orange);
-        color: var(--dark);
-      }
-      .gs-cta-wrap { margin-top: 0.25rem; }
-      .gs-cta-wrap .btn {
-        width: 100%;
-        justify-content: center;
-        display: flex;
-      }
-      .gs-note {
-        font-size: 0.78rem;
-        color: #aaa;
-        margin-top: 0.85rem;
-      }
-      .gs-back {
-        background: none;
-        border: none;
-        color: #bbb;
-        cursor: pointer;
-        font-size: 0.82rem;
-        margin-top: 1.25rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.3rem;
-        font-family: 'Encode Sans', sans-serif;
-        transition: color 0.2s;
-      }
-      .gs-back:hover { color: var(--dark); }
+      .gs-back { background: none; border: none; color: var(--soft); cursor: pointer; font-size: 0.85rem; margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--fb); }
+      .gs-back:hover { color: var(--text); }
+      .gs-note { font-size: 0.82rem; color: var(--soft); margin-top: 1rem; }
 
-      @media (max-width: 480px) {
-        .gs-plans { grid-template-columns: 1fr; }
-        .gs-title { font-size: 1.6rem; }
-        .gs-section { padding: 3rem 0 5rem; }
-      }
+      /* Waitlist */
+      .gs-waitlist { display: none; }
+      .gs-waitlist.active { display: block; }
+
+      @media (max-width: 480px) { .gs-title { font-size: 1.6rem; } .gs-section { padding: 6rem 0 4rem; } }
     </style>
   </head>
 
@@ -264,43 +80,73 @@
       <div class="container">
         <div class="gs-wrap">
 
-          <!-- ── STEP 1: Business type ──────────────────────── -->
-          <div class="gs-step active" id="step1" style="margin: 68px 0px 0px; width: 542px; text-align: center">
-            <span class="tag-lbl" style="text-align: center">Get started</span>
-            <h1 class="gs-title" style="width: 545px">What kind of business do you have?</h1>
-            <p class="gs-sub">Helps us make sure we're the right fit before you pay a cent.</p>
+          <!-- ── STEP 1: Qualifier ─────────────────────────── -->
+          <div class="gs-step active" id="step1">
+            <span class="tag-lbl">Get started</span>
+            <h1 class="gs-title">See if you qualify</h1>
+            <p class="gs-intro">Claim your free website spot — 60 seconds, no payment required.</p>
 
-            <div class="gs-options">
-              <div class="gs-opt" data-type="tradie" onclick="selectType(this)">
+            <div class="gs-options" id="gsOptions">
+              <div class="gs-opt" data-type="tradie" role="button" tabindex="0">
                 <div class="gs-opt-icon">🔧</div>
                 <div>
-                  <div class="gs-opt-label" style="text-align: left">Tradie</div>
+                  <div class="gs-opt-label">Tradie</div>
                   <div class="gs-opt-desc">Electrician, plumber, builder — any trade</div>
                 </div>
               </div>
-              <div class="gs-opt" data-type="smallbiz" onclick="selectType(this)">
+              <div class="gs-opt" data-type="smallbiz" role="button" tabindex="0">
                 <div class="gs-opt-icon">🏪</div>
                 <div>
-                  <div class="gs-opt-label" style="text-align: left">Small local business</div>
+                  <div class="gs-opt-label">Local small business</div>
                   <div class="gs-opt-desc">Salon, café, consultant — any local service</div>
                 </div>
               </div>
-              <div class="gs-opt" data-type="other" onclick="selectType(this)">
+              <div class="gs-opt" data-type="other" role="button" tabindex="0">
                 <div class="gs-opt-icon">💼</div>
                 <div>
-                  <div class="gs-opt-label" style="text-align: left">Corporate / other</div>
-                  <div class="gs-opt-desc">Organizations with more than 5-10 employees</div>
+                  <div class="gs-opt-label">Corporate / other</div>
+                  <div class="gs-opt-desc">Larger organisations, or something more complex</div>
                 </div>
               </div>
             </div>
-            <div class="gs-cta-wrap" style="margin: 21px 0px 0px">
-              <a id="gs-cta" href="#" class="btn btn-primary btn-lg gs-cta-disabled" aria-disabled="true">
-                Continue to payment →
-              </a>
-              <p class="gs-note">The Free Range plan · $149/mo + $299 one-time setup &nbsp;·&nbsp; Secure checkout via Stripe &nbsp;·&nbsp; Cancel anytime</p>
+            <p class="gs-note">No payment required · Apply in 60 seconds · No call needed</p>
+          </div>
+
+          <!-- ── STEP 2: Intake ────────────────────────────── -->
+          <div class="gs-step" id="step2">
+            <span class="tag-lbl">Almost there</span>
+            <h2 class="gs-title">Tell us about your business</h2>
+            <p class="gs-intro">A few quick details and we'll get building.</p>
+
+            <div class="gs-tc">
+              <input type="checkbox" id="gsAgree" />
+              <label for="gsAgree">I've read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a></label>
             </div>
 
-            <div class="faq-more">Not ready yet? <a href="book-a-call.html">Book a free call first →</a></div>
+            <div class="gs-embed locked" id="gsEmbed">
+              <!-- PENDING: replace form ID with the real intake Tally form (placeholder shown) -->
+              <iframe
+                data-tally-src="https://tally.so/embed/44O1zb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                loading="lazy"
+                width="100%"
+                height="700"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                title="Free Range Websites intake form">
+              </iframe>
+            </div>
+
+            <p class="gs-clock"><strong>The 5-day clock starts the moment you hit submit.</strong></p>
+            <button type="button" class="gs-back" id="gsBack">← Back</button>
+          </div>
+
+          <!-- ── WAITLIST (shown when build spots are full) ── -->
+          <div class="gs-waitlist" id="gsWaitlist">
+            <span class="tag-lbl">Spots full</span>
+            <h1 class="gs-title" id="gsWaitTitle">Build spots are full this month</h1>
+            <p class="gs-intro">We cap how many builds we take each month so nothing gets rushed. Join the waitlist and we'll hold you a spot when they reset.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Join the waitlist →</a>
           </div>
 
         </div>
@@ -308,24 +154,76 @@
     </section>
 
     <div id="site-footer"></div>
-    <script src="assets/js/includes.js"></script>
+    <script src="assets/js/includes.js?v=20260732"></script>
     <script>
-      // ── Stripe payment link — replace when ready ──────────────
-      const STRIPE_LINK = 'https://buy.stripe.com/7sYdR9bgXfUjd2B4MN0sU01';
+      (function () {
+        function ga(ev, params) { if (typeof window.gtag === 'function') window.gtag('event', ev, params || {}); }
 
-      function selectType(el) {
-        if (el.dataset.type === 'other') {
-          window.location.href = 'contact.html?ref=get-started';
-          return;
+        var qualifierStarted = false;
+        function markStarted() {
+          if (!qualifierStarted) { qualifierStarted = true; ga('qualifier_started', {}); }
         }
-        document.querySelectorAll('.gs-opt').forEach(o => o.classList.remove('gs-opt-selected'));
-        el.classList.add('gs-opt-selected');
-        const cta = document.getElementById('gs-cta');
-        cta.href = STRIPE_LINK;
-        cta.classList.remove('gs-cta-disabled');
-        cta.removeAttribute('aria-disabled');
-      }
 
+        // ── Build spots full → show waitlist instead of qualifier ──
+        try {
+          if (typeof BUILD_SPOTS !== 'undefined' && BUILD_SPOTS.taken >= BUILD_SPOTS.total) {
+            document.getElementById('step1').classList.remove('active');
+            document.getElementById('gsWaitlist').classList.add('active');
+            var monthName = new Date().toLocaleString('en-AU', { month: 'long' });
+            document.getElementById('gsWaitTitle').textContent = 'Build spots are full for ' + monthName;
+          }
+        } catch (e) {}
+
+        // ── Qualifier ──
+        function selectType(type) {
+          markStarted();
+          if (type === 'other') {
+            ga('qualifier_completed', { outcome: 'redirected' });
+            window.location.href = 'contact.html?ref=get-started';
+            return;
+          }
+          // tradie / smallbiz → straight into intake, same sitting
+          ga('qualifier_completed', { outcome: 'qualified' });
+          document.getElementById('step1').classList.remove('active');
+          document.getElementById('step2').classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.querySelectorAll('.gs-opt').forEach(function (opt) {
+          opt.addEventListener('mouseenter', markStarted);
+          opt.addEventListener('focus', markStarted);
+          opt.addEventListener('click', function () { selectType(opt.getAttribute('data-type')); });
+          opt.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectType(opt.getAttribute('data-type')); }
+          });
+        });
+
+        // ── T&C gate — intake unlocks only once agreed ──
+        var agree = document.getElementById('gsAgree');
+        var embed = document.getElementById('gsEmbed');
+        if (agree) {
+          agree.addEventListener('change', function () {
+            if (agree.checked) embed.classList.remove('locked');
+            else embed.classList.add('locked');
+          });
+        }
+
+        // ── Back ──
+        var back = document.getElementById('gsBack');
+        if (back) back.addEventListener('click', function () {
+          document.getElementById('step2').classList.remove('active');
+          document.getElementById('step1').classList.add('active');
+        });
+
+        // ── intake_submitted — fire on Tally submit where detectable ──
+        window.addEventListener('message', function (e) {
+          if (typeof e.data === 'string' && e.data.indexOf('Tally.FormSubmitted') !== -1) {
+            ga('intake_submitted', {});
+          } else if (e.data && e.data.event === 'Tally.FormSubmitted') {
+            ga('intake_submitted', {});
+          }
+        });
+      })();
     </script>
   </body>
 </html>
