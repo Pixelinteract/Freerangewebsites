@@ -517,7 +517,7 @@ ul{list-style:none}
 .fcta{background:var(--black);border-top:1px solid rgba(255,255,255,.05);padding:var(--space-6) 0;text-align:center;position:relative;overflow:hidden}
 .fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(255,112,70,.16) 0%,transparent 55%);pointer-events:none}
 .fcta-inner{position:relative;z-index:1 /* local stacking only */}
-.fcta-title-wide{max-width:1300px;color:#fff;font-size:var(--text-2xl)}
+.fcta-title-wide{color:#fff;font-size:var(--text-2xl)}
 
 @media(max-width:767px){
   .fcta-title-wide{margin:0 var(--space-2) var(--space-3);max-width:100%;font-size:var(--text-lg);line-height:1.2; color: white;}
