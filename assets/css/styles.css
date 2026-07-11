@@ -798,7 +798,8 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
   display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
 .show-card:hover{transform:translateY(-4px);box-shadow:var(--shl)}
 .show-shot{aspect-ratio:4/3;background:linear-gradient(135deg,#ececec,#f7f5f2);display:flex;
-  align-items:center;justify-content:center;border-bottom:1px solid var(--border)}
+  align-items:center;justify-content:center;border-bottom:1px solid var(--border);overflow:hidden}
+.show-shot img{width:100%;height:100%;object-fit:cover;display:block}
 .show-shot-ph{font-size:var(--text-xs);color:var(--soft);font-weight:600;letter-spacing:.03em}
 .show-body{padding:var(--space-2);display:flex;flex-direction:column;gap:7px;flex:1}
 .show-tag{display:inline-block;align-self:flex-start;font-size:var(--text-xxs);font-weight:700;text-transform:uppercase;
@@ -908,6 +909,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .contact-waitlist{margin-top:var(--space-4);background:var(--greenlt);border-radius:var(--radius-lg);padding:var(--space-3);border:1px solid rgba(144,183,102,.25)}
 .contact-waitlist-h{font-family:var(--fh);font-weight:700;font-size:var(--text-md);color:var(--text);margin-bottom:var(--space-1)}
 .contact-waitlist p{color:var(--mid);font-size:var(--text-sm);line-height:1.6}
+
+/* ── ABOUT PAGE ────────────────────────────── */
+.about-story-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--space-5);align-items:center}
+@media(max-width:900px){.about-story-grid{grid-template-columns:1fr}.about-story-img{order:-1}}
+.about-prose{max-width:var(--width-prose)}
+.about-prose p{font-size:var(--text-base);color:var(--mid);line-height:1.8;margin-bottom:var(--space-3)}
+.about-prose p:last-child{margin-bottom:0}
+.about-story-img{aspect-ratio:4/3;background:linear-gradient(135deg,#ececec,#f7f5f2);border:1px solid var(--border);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.about-story-img img{width:100%;height:100%;object-fit:cover;display:block}
+.about-story-img-ph{font-size:var(--text-xs);color:var(--soft);font-weight:600;letter-spacing:.03em}
 
 /* ── G4. STICKY MOBILE CTA BAR (index only) ── */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-float);background:#fff;
