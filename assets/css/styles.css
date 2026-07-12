@@ -182,7 +182,7 @@ ul{list-style:none}
 
 /* ── UTILS ──────────────────────────────── */
 .container{width:90vw;max-width:1504px;margin:0 auto}
-.sec{padding:var(--space-1) 0 var(--space-5) 0}
+.sec{padding:var(--space-6)}
 .sec-sm{padding:var(--space-5) 0}
 .tc{text-align:center}
 .tc .sec-sub{margin:0 auto}
