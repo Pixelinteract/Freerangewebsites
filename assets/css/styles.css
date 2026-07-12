@@ -182,7 +182,7 @@ ul{list-style:none}
 
 /* ── UTILS ──────────────────────────────── */
 .container{width:90vw;max-width:1504px;margin:0 auto}
-.sec{padding:var(--space-6) 0}
+.sec{padding:var(--space-1) 0 var(--space-5) 0}
 .sec-sm{padding:var(--space-5) 0}
 .tc{text-align:center}
 .tc .sec-sub{margin:0 auto}
@@ -209,9 +209,9 @@ ul{list-style:none}
 .btn-dark{background:var(--grape);color:#fff}
 .btn-dark:hover{background:var(--grape-dark);transform:scale(1.03)}
 .btn-full{width:100%;justify-content:center}
-.btn-linkedin{background:#0A66C2;color:#fff}
+.btn-linkedin{background:#0A66C2;color:#fff;padding:var(--space-2) var(--space-4);font-size:var(--text-base)}
 .btn-linkedin:hover{background:#004182;transform:scale(1.03)}
-.btn-linkedin svg{width:18px;height:18px;flex-shrink:0}
+.btn-linkedin svg{width:30px;height:30px;flex-shrink:0}
 .fcta .btn-primary:hover{background:transparent !important;color:#fff !important;box-shadow:var(--shadow-btn-brand-hover) !important;border:2px solid var(--orange)}
 
 /* ── NAV ────────────────────────────────── */
