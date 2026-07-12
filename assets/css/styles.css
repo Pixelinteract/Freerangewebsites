@@ -209,6 +209,9 @@ ul{list-style:none}
 .btn-dark{background:var(--grape);color:#fff}
 .btn-dark:hover{background:var(--grape-dark);transform:scale(1.03)}
 .btn-full{width:100%;justify-content:center}
+.btn-linkedin{background:#0A66C2;color:#fff}
+.btn-linkedin:hover{background:#004182;transform:scale(1.03)}
+.btn-linkedin svg{width:18px;height:18px;flex-shrink:0}
 .fcta .btn-primary:hover{background:transparent !important;color:#fff !important;box-shadow:var(--shadow-btn-brand-hover) !important;border:2px solid var(--orange)}
 
 /* ── NAV ────────────────────────────────── */
@@ -919,6 +922,8 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .about-story-img{aspect-ratio:4/3;background:linear-gradient(135deg,#ececec,#f7f5f2);border:1px solid var(--border);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;overflow:hidden}
 .about-story-img img{width:100%;height:100%;object-fit:cover;display:block}
 .about-story-img-ph{font-size:var(--text-xs);color:var(--soft);font-weight:600;letter-spacing:.03em}
+.about-quote{font-family:var(--fh);font-weight:600;font-size:var(--text-2xl);line-height:1.4;color:var(--text);
+  max-width:760px;margin:0 auto var(--space-3);font-style:normal}
 
 /* ── G4. STICKY MOBILE CTA BAR (index only) ── */
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-float);background:#fff;
