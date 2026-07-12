@@ -224,7 +224,7 @@ ul{list-style:none}
 .logo-rng{color:var(--orange)}
 .logo-dot{color:var(--green);font-size:var(--text-md);line-height:0;vertical-align:middle;margin:0 1px}
 .nav-links{display:flex;align-items:center;gap:clamp(16px,2vw,32px);margin:0 var(--space-2) 0 0}
-.nav-links a{display:block;font-family:var(--fb);font-size:var(--text-base);line-height:24px;color:rgb(30,35,48);font-weight:500;cursor:pointer;position:relative;border-radius:var(--radius-round);padding:var(--space-1) var(--space-2);transition:color .15s ease,background-color .15s ease}
+.nav-links a{display:block;font-family:var(--fb);font-size:var(--text-sm);line-height:24px;color:rgb(30,35,48);font-weight:500;cursor:pointer;position:relative;border-radius:var(--radius-round);padding:var(--space-1) var(--space-2);transition:color .15s ease,background-color .15s ease}
 .nav-links a:hover{color:var(--black);background-color:rgba(0,0,0,.04)}
 .nav-cta-pill{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;font-family:var(--fb);font-size:var(--text-sm);line-height:24px;font-weight:700;letter-spacing:.02em;color:#fff;background:var(--orange);border-radius:var(--radius-badge);white-space:nowrap;padding:clamp(12px,.9vw,18px) clamp(24px,2vw,38px);transition:var(--transition-spring)}
 .nav-cta-pill:hover{background:var(--grape);transform:scale(1.04)}
