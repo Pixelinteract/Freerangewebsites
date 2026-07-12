@@ -68,6 +68,34 @@
     rvEls.forEach(function (el) { rvObs.observe(el); });
   }
 
+  /* ── COUNT-UP ANIMATION (Intersection Observer) ── */
+  var countEls = document.querySelectorAll('[data-count-to]');
+  function runCount(el) {
+    var target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+    if (reduce) { el.textContent = target; return; }
+    var duration = parseInt(el.getAttribute('data-count-duration'), 10) || 900;
+    var start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(step);
+  }
+  if (reduce || !('IntersectionObserver' in window)) {
+    countEls.forEach(function (el) { el.textContent = el.getAttribute('data-count-to'); });
+  } else {
+    var countObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { runCount(e.target); countObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    countEls.forEach(function (el) { countObs.observe(el); });
+  }
+
   /* ── FAQ ACCORDION ────────────────────────── */
   window.toggleFaq = function (item) {
     var isOpen = item.classList.contains('open');

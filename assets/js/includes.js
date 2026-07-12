@@ -115,6 +115,16 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
         }
       });
     });
+
+    /* ── FIX HASH LANDING (header is injected async, so the browser's
+       native on-load scroll-to-hash fires before the header's height
+       exists — re-run it now that layout has settled) ── */
+    if (window.location.hash && window.location.hash.length > 1) {
+      requestAnimationFrame(function () {
+        var t = document.querySelector(window.location.hash);
+        if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 88, behavior: 'instant' });
+      });
+    }
   });
 
   load('site-footer', 'assets/includes/footer.html', function () {
