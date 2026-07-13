@@ -936,3 +936,42 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
   /* G3: keep WhatsApp float clear of the sticky bar */
   .wa-float{bottom:88px;right:20px}
 }
+
+/* ── INDUSTRY PAGE TEMPLATE — reused across trade pages ── */
+.elec-cost-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:var(--space-5);align-items:stretch;max-width:var(--width-content)}
+.elec-cost-imgs{display:flex;flex-direction:column;gap:var(--space-3)}
+.elec-cost-imgs img{width:100%;height:100%;flex:1 1 0;min-height:180px;object-fit:cover;border-radius:var(--radius-lg)}
+.elec-tagline{font-family:var(--fh);font-weight:700;font-size:var(--text-md);line-height:var(--leading-snug);color:var(--text);margin:var(--space-4) 0}
+@media(max-width:960px){.elec-cost-grid{grid-template-columns:1fr}.elec-cost-imgs{flex-direction:row;order:-1;margin-bottom:var(--space-3)}.elec-cost-imgs img{min-height:220px}}
+@media(max-width:640px){.elec-cost-imgs{flex-direction:column}}
+.elec-fact-rows{display:flex;flex-direction:column;border:var(--border-subtle);border-radius:var(--radius-card);overflow:hidden;margin:var(--space-4) 0}
+.elec-fact-row{display:flex;justify-content:space-between;gap:var(--space-3);padding:var(--space-2) var(--space-3);border-bottom:var(--border-subtle)}
+.elec-fact-row:last-child{border-bottom:none}
+.elec-fact-row span:first-child{font-weight:600;color:var(--text)}
+.elec-fact-row span:last-child{color:var(--mid);text-align:right}
+.elec-problem-grid{display:flex;flex-direction:column;gap:var(--space-3);margin-top:var(--space-5)}
+.elec-problem{display:grid;grid-template-columns:64px 1fr;gap:var(--space-4);align-items:start;background:var(--white);border:var(--border-subtle);border-radius:var(--radius-lg);padding:var(--space-4)}
+.elec-problem-ico{width:64px;height:64px;border-radius:var(--radius-round);background:var(--orange);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.elec-problem-title{color:var(--white)}
+.elec-problem-sub{color:var(--white);opacity:.8}
+.elec-tagline-white{color:var(--white)}
+.elec-problem-ico svg{width:30px;height:30px}
+.elec-problem-h{font-family:var(--fh);font-weight:700;font-size:var(--text-lg);line-height:var(--leading-snug);color:var(--text);margin-bottom:var(--space-3)}
+.elec-problem-p{font-size:var(--text-sm);color:var(--mid);line-height:var(--leading-normal);max-width:var(--width-wide);margin-bottom:var(--space-3)}
+.elec-problem-fix{font-size:var(--text-sm);color:var(--text);font-style:italic}
+@media(max-width:640px){.elec-problem{grid-template-columns:1fr;gap:var(--space-2)}.elec-problem-ico{width:48px;height:48px;margin-bottom:var(--space-1)}.elec-problem-ico svg{width:22px;height:22px}}
+.elec-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-5)}
+.elec-service{background:var(--cream);border-radius:var(--radius-lg);padding:var(--space-4)}
+.elec-service-ico{width:44px;height:44px;margin-bottom:var(--space-3)}
+.elec-service-ico svg{width:100%;height:100%}
+.elec-service-h{font-family:var(--fh);font-weight:700;font-size:var(--text-lg);color:var(--text);margin-bottom:var(--space-3)}
+.elec-service-p{font-size:var(--text-sm);color:var(--mid);line-height:var(--leading-normal)}
+@media(max-width:960px){.elec-service-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.elec-service-grid{grid-template-columns:1fr}}
+.elec-ev-hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);height:min(500px,60vh);min-height:320px;display:flex;align-items:flex-end;background-size:cover;background-position:center;overflow:hidden}
+.elec-ev-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,10,20,.88),rgba(15,10,20,.15) 65%,rgba(15,10,20,0))}
+.elec-ev-hero-inner{position:relative;z-index:1;text-align:left;padding:0 var(--space-3) var(--space-5) var(--space-3);width:100%}
+.elec-ev-hero-inner .tag-lbl{color:var(--orange)}
+.elec-ev-hero-title{color:var(--white);max-width:var(--width-prose)}
+.elec-ev-hero-sec>.container{margin-top:var(--space-5)}
+@media(max-width:640px){.elec-ev-hero{height:min(250px,40vh);min-height:160px}.elec-ev-hero-inner{padding:0 var(--space-3) var(--space-3) var(--space-3)}.elec-ev-hero-sec>.container{margin-top:var(--space-4)}}

@@ -39,7 +39,7 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
     if (BUILD_SPOTS.taken >= BUILD_SPOTS.total) {
       // Full — waitlist framing, link to contact
       inner.innerHTML = 'Build spots full for ' + monthName + ' — join the waitlist →';
-      bar.setAttribute('href', 'contact.html');
+      bar.setAttribute('href', '/contact.html');
       bar.classList.add('spots-bar-full');
     } else {
       // Zero-pad to two digits and render each digit as a counter tile.
@@ -50,26 +50,26 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
         '<span class="spots-days"><span class="spots-sep">·</span>' +
         '<span class="spots-counter">' + digits + '</span> day' + (daysLeft === 1 ? '' : 's') +
         ' until spots reset</span>';
-      bar.setAttribute('href', onIndex ? '#pricing' : 'index.html#pricing');
+      bar.setAttribute('href', onIndex ? '#pricing' : '/index.html#pricing');
     }
   }
 
   /* ── Rewrite cross-page anchors to same-page on index (smooth scroll) ── */
   function rewriteAnchors(root) {
     if (!onIndex) return;
-    (root || document).querySelectorAll('a[href^="index.html#"]').forEach(function (a) {
-      a.setAttribute('href', a.getAttribute('href').replace('index.html#', '#'));
+    (root || document).querySelectorAll('a[href^="/index.html#"]').forEach(function (a) {
+      a.setAttribute('href', a.getAttribute('href').replace('/index.html#', '#'));
     });
   }
 
-  load('site-header', 'assets/includes/header.html', function () {
+  load('site-header', '/assets/includes/header.html', function () {
 
     renderSpotsBar();
     rewriteAnchors(document.getElementById('site-header'));
 
     /* ── ACTIVE NAV LINK ───────────────────── */
     document.querySelectorAll('.nav-links a, .mob-nav a').forEach(function (a) {
-      var href = (a.getAttribute('href') || '').split('#')[0];
+      var href = (a.getAttribute('href') || '').split('#')[0].replace(/^\//, '');
       if (href === page || ((href === 'index.html' || href === '') && onIndex)) a.classList.add('active');
     });
 
@@ -127,7 +127,7 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
     }
   });
 
-  load('site-footer', 'assets/includes/footer.html', function () {
+  load('site-footer', '/assets/includes/footer.html', function () {
     var yr = document.getElementById('copyright-year');
     if (yr) yr.textContent = new Date().getFullYear();
     rewriteAnchors(document.getElementById('site-footer'));
