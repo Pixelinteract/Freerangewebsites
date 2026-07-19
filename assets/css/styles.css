@@ -937,6 +937,15 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
   .wa-float{bottom:88px;right:20px}
 }
 
+/* ── CROSS-LINK (industries + locations) ── */
+.xlink-sec { padding: var(--space-6) 0; background: var(--white, #fff); text-align: center; }
+.xlink-sec .sec-title { margin-bottom: var(--space-4); }
+.xlink-lbl-2 { display: inline-block; margin-top: var(--space-6); }
+.xlink-pills { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+.xlink-pills a { display: inline-flex; align-items: center; padding: 10px 18px; border: 1px solid var(--line, #e2e2e2); border-radius: 999px; font-size: var(--text-sm); font-weight: 600; color: var(--ink, #1a2b3c); text-decoration: none; transition: all .15s ease; }
+.xlink-pills a:hover { border-color: var(--orange); color: var(--orange); }
+.xlink-more { border-style: dashed !important; }
+
 /* ── INDUSTRY PAGE TEMPLATE — reused across trade pages ── */
 .elec-cost-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:var(--space-5);align-items:stretch;max-width:var(--width-content)}
 .elec-cost-imgs{display:flex;flex-direction:column;gap:var(--space-3)}
