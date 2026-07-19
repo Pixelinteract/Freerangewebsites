@@ -120,7 +120,7 @@
       rel="stylesheet" />
 
     <!-- ── STYLESHEET ────────────────────────────────────────── -->
-    <link rel="stylesheet" href="/assets/css/styles.css?v=20260751" />
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20260752" />
   </head>
 
   <body>
@@ -128,7 +128,7 @@
 
     <!-- ══ S1. HERO — UNIQUE ═══════════════════════════════════ -->
     <section class="sec elec-hero" style="padding-top:220px;padding-bottom:var(--space-5);">
-      <div class="container tc" style="max-width:760px;">
+      <div class="container tc">
         <span class="tag-lbl">We're an Australian family business, and we build websites for sparkies</span>
         <h1 class="sec-title">Websites for electricians. Built free, live in 5 days.</h1>
         <p class="sec-sub">We build it for free — you see the whole thing finished before you pay a cent. After that it's $199/month, all in. No lock-in, no exit fee. Don't like it? Walk away, owe nothing.</p>
@@ -265,7 +265,7 @@
       </div>
 
       <div class="container tc">
-        <p class="rv" style="max-width:var(--width-prose);margin:0 auto var(--space-4);font-size:var(--text-base);color:var(--mid);">Your free website includes five pages, so we'll build out the jobs that win you the most work — and you can add more later whenever you like.</p>
+        <p class="rv" style="max-width:var(--width-prose);margin:var(--space-4) auto;font-size:var(--text-base);color:var(--mid);">Your free website includes five pages, so we'll build out the jobs that win you the most work — and you can add more later whenever you like.</p>
         <a href="/get-started.html" class="btn btn-primary btn-lg rv" data-ga-cta="services">See if you qualify →</a>
       </div>
     </section>
@@ -731,7 +731,7 @@
     <!-- FRW:END pricing -->
 
     <!-- ══ S10. EV CHARGERS — UNIQUE ═════════════════════════════ -->
-    <section class="sec elec-ev-hero-sec" id="ev-chargers" style="background:var(--cream);padding-top:0;">
+    <section class="sec elec-ev-hero-sec" id="ev-chargers" style="background:#fff;padding-top:0;">
       <div class="elec-ev-hero" style="background-image:url('https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?auto=format&fit=crop&w=1600&q=80');">
         <div class="elec-ev-hero-overlay"></div>
         <div class="container elec-ev-hero-inner">
@@ -898,6 +898,35 @@
     <script src="/assets/js/includes.js?v=20260733"></script>
     <script>
       function toggleFaq(el){el.classList.toggle('open');}
+      (function () {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var countEls = document.querySelectorAll('[data-count-to]');
+        function runCount(el) {
+          var target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+          if (reduce) { el.textContent = target; return; }
+          var duration = parseInt(el.getAttribute('data-count-duration'), 10) || 900;
+          var start = null;
+          function step(ts) {
+            if (start === null) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target);
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = target;
+          }
+          requestAnimationFrame(step);
+        }
+        if (reduce || !('IntersectionObserver' in window)) {
+          countEls.forEach(function (el) { el.textContent = el.getAttribute('data-count-to'); });
+        } else {
+          var countObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { runCount(e.target); countObs.unobserve(e.target); }
+            });
+          }, { threshold: 0.5 });
+          countEls.forEach(function (el) { countObs.observe(el); });
+        }
+      })();
       const reveals = document.querySelectorAll('.rv');
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
