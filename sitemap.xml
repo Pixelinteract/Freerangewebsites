@@ -3,50 +3,86 @@
 
   <url>
     <loc>https://www.freerangewebsites.com.au/</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.freerangewebsites.com.au/get-started.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.freerangewebsites.com.au/industries/websites-for-electricians.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.freerangewebsites.com.au/contact.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.freerangewebsites.com.au/about.html</loc>
+    <loc>https://www.freerangewebsites.com.au/about</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://www.freerangewebsites.com.au/book-a-call.html</loc>
+    <loc>https://www.freerangewebsites.com.au/contact</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freerangewebsites.com.au/book-a-call</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.freerangewebsites.com.au/terms.html</loc>
+    <loc>https://www.freerangewebsites.com.au/terms</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://www.freerangewebsites.com.au/privacy.html</loc>
+    <loc>https://www.freerangewebsites.com.au/privacy</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freerangewebsites.com.au/industries</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freerangewebsites.com.au/industries/websites-for-electricians</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freerangewebsites.com.au/industries/websites-for-plumbers</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freerangewebsites.com.au/industries/websites-for-builders</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freerangewebsites.com.au/industries/websites-for-painters</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.freerangewebsites.com.au/industries/websites-for-landscapers</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 
 </urlset>
