@@ -181,7 +181,7 @@ a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
 /* ── UTILS ──────────────────────────────── */
-.container{width:90vw;max-width:1500x;margin:0 auto}
+.container{width:90vw;max-width:1504px;margin:0 auto}
 .sec{padding:var(--space-6)}
 .sec-sm{padding:var(--space-5) 0}
 .tc{text-align:center}
