@@ -7,7 +7,6 @@
 <!-- ── NAV (G2) ─────────────────────────────── -->
 <!--
   PHASE 4 GROWTH PLAN — map for future edits:
-  • Industries dropdown: add once 3+ trade landing pages exist (nest under nav-links).
   • Case studies link: add when the first real case study publishes.
 -->
 <div class="nav-wrap">
@@ -18,6 +17,7 @@
     <div class="nav-links">
       <a href="/index.html#how-it-works">How it works</a>
       <a href="/index.html#examples">Examples</a>
+      <a href="/industries" id="navIndustriesLink">Industries</a>
       <a href="/about.html">About</a>
       <a href="/index.html#pricing">Pricing</a>
       <a href="/index.html#faq">FAQ</a>
@@ -29,10 +29,25 @@
     </div>
     <div class="nav-progress"><div class="nav-progress-fill" id="npFill"></div></div>
   </nav>
+  <!-- Rendered outside .nav-pill (which clips overflow for its pill shape) and positioned via JS
+       in includes.js — a pure-CSS dropdown nested inside the pill gets silently clipped. -->
+  <div class="nav-drop-menu" id="navIndustriesDropdown">
+    <a href="/industries/websites-for-electricians">Electricians →</a>
+    <a href="/industries/websites-for-plumbers">Plumbers →</a>
+    <a href="/industries/websites-for-builders">Builders →</a>
+    <a href="/industries/websites-for-painters">Painters →</a>
+    <a href="/industries/websites-for-landscapers">Landscapers →</a>
+  </div>
 </div>
 <div class="mob-nav" id="mobNav">
   <a href="/index.html#how-it-works">How it works</a>
   <a href="/index.html#examples">Examples</a>
+  <a href="/industries">Industries</a>
+  <a href="/industries/websites-for-electricians" class="mob-nav-sub">Electricians</a>
+  <a href="/industries/websites-for-plumbers" class="mob-nav-sub">Plumbers</a>
+  <a href="/industries/websites-for-builders" class="mob-nav-sub">Builders</a>
+  <a href="/industries/websites-for-painters" class="mob-nav-sub">Painters</a>
+  <a href="/industries/websites-for-landscapers" class="mob-nav-sub">Landscapers</a>
   <a href="/about.html">About</a>
   <a href="/index.html#pricing">Pricing</a>
   <a href="/index.html#faq">FAQ</a>
