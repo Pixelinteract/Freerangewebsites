@@ -117,5 +117,13 @@
 
     <div id="site-footer"></div>
     <script src="assets/js/includes.js?v=20260734"></script>
+    <script>
+      (function () {
+        var ref = new URLSearchParams(window.location.search).get('ref');
+        if (ref && typeof window.gtag === 'function') {
+          window.gtag('event', 'contact_page_view', { ref: ref });
+        }
+      })();
+    </script>
   </body>
 </html>

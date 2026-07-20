@@ -20,7 +20,21 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-VQDVWQN86F');
-      gtag('event', 'conversion', { 'event_category': 'contact', 'event_label': 'form_submitted' });
+
+      var params = new URLSearchParams(window.location.search);
+      var type = params.get('type');
+
+      if (type === 'purchase') {
+        gtag('event', 'purchase', {
+          currency: 'AUD',
+          value: Number(params.get('value')) || 199,
+          transaction_id: params.get('tx') || String(Date.now())
+        });
+      } else if (type === 'intake') {
+        gtag('event', 'intake_submitted');
+      } else {
+        gtag('event', 'conversion', { 'event_category': 'contact', 'event_label': 'form_submitted' });
+      }
     </script>
 
     <!-- ── REDIRECT AFTER 6 SECONDS ──────────────────────────── -->
@@ -48,7 +62,7 @@
         <h1 class="sec-title">We'll be in touch soon.</h1>
         <p class="sec-sub">Thanks for reaching out. We'll get back to you at your email address within one business day.</p>
         <p style="margin-top:32px;font-size:14px;color:var(--muted);">Redirecting you to the home page in a few seconds...</p>
-        <a href="index.html" style="display:inline-block;margin-top:24px;" class="btn btn-primary">Back to home</a>
+        <a href="index.html" style="display:inline-block;margin-top:24px;" class="btn btn-primary" data-ga-cta="thankyou-back-home">Back to home</a>
       </div>
     </section>
 
