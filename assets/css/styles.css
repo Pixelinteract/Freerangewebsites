@@ -230,12 +230,21 @@ ul{list-style:none}
 .nav-cta-pill:hover{background:var(--grape);transform:scale(1.04)}
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:var(--space-1);margin-left:var(--space-1)}
 .ham span{display:block;width:20px;height:2px;background:var(--black);border-radius:2px /* intentional — below token scale */;transition:var(--transition-fast)}
-.mob-nav{display:none;flex-direction:column;position:fixed;top:74px;left:16px;right:16px;background:#fff;border-radius:var(--radius-lg);padding:var(--space-2) var(--space-3);gap:4px;z-index:var(--z-sticky-under);box-shadow:var(--shl);border:1px solid var(--border)}
+.mob-nav{display:none;flex-direction:column;position:fixed;top:74px;left:16px;right:16px;max-height:calc(100vh - 90px);overflow-y:auto;background:#fff;border-radius:var(--radius-lg);padding:var(--space-2) var(--space-3);gap:4px;z-index:var(--z-sticky-under);box-shadow:var(--shl);border:1px solid var(--border)}
 .mob-nav.open{display:flex}
 .mob-nav a{font-size:var(--text-sm);font-weight:500;color:var(--mid);padding:var(--space-2) 0;border-bottom:1px solid var(--border)}
 .mob-nav a:last-child{border:none}
 .mob-nav .btn-primary{color:#fff !important;justify-content:center;border-radius:var(--radius-badge);margin-top:var(--space-1)}
 .mob-nav .btn-primary:hover{color:#fff !important}
+.mob-nav-acc{border-bottom:1px solid var(--border)}
+.mob-nav-acc-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;font-family:var(--fb);font-size:var(--text-sm);font-weight:500;color:var(--mid);padding:var(--space-2) 0;cursor:pointer}
+.mob-nav-acc-chev{width:16px;height:16px;flex-shrink:0;transition:transform .2s ease}
+.mob-nav-acc.open .mob-nav-acc-chev{transform:rotate(180deg)}
+.mob-nav-acc-panel{display:flex;flex-direction:column;max-height:0;overflow:hidden;transition:max-height .25s ease}
+.mob-nav-acc.open .mob-nav-acc-panel{max-height:400px}
+.mob-nav-acc-panel a{border-bottom:none !important}
+.mob-nav-acc-panel a:first-child{padding-top:0 !important}
+.mob-nav-sub-all{color:var(--orange) !important;font-weight:600 !important}
 .nav-progress{position:absolute;bottom:0;left:0;right:0;height:2px;background:rgba(0,0,0,.06)}
 .nav-progress-fill{height:100%;background:var(--orange);width:0%;border-radius:0;transition:width .06s linear}
 

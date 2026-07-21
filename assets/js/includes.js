@@ -3,6 +3,11 @@
 /* ── BUILD SPOTS CONFIG (G1) ──────────────── */
 const BUILD_SPOTS = { total: 4, taken: 1 };
 
+/* ── CACHE-BUST for header/footer partial fetches — bump whenever
+   header.html or footer.html changes, so returning visitors don't get
+   served a stale nav from the browser's HTTP cache ── */
+const INCLUDES_ASSET_VERSION = '20260761';
+
 (function () {
 
   /* ── GA4 HELPER (G5) ─────────────────────── */
@@ -62,7 +67,7 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
     });
   }
 
-  load('site-header', '/assets/includes/header.html', function () {
+  load('site-header', '/assets/includes/header.html?v=' + INCLUDES_ASSET_VERSION, function () {
 
     renderSpotsBar();
     rewriteAnchors(document.getElementById('site-header'));
@@ -99,9 +104,25 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
     }, { passive: true });
 
     /* ── MOBILE NAV TOGGLE ─────────────────── */
+    var mobNav = document.getElementById('mobNav');
     document.getElementById('ham').addEventListener('click', function () {
-      document.getElementById('mobNav').classList.toggle('open');
+      var opening = !mobNav.classList.contains('open');
+      if (opening) {
+        var wrapRect = document.querySelector('.nav-wrap').getBoundingClientRect();
+        mobNav.style.top = (wrapRect.bottom + 8) + 'px';
+      }
+      mobNav.classList.toggle('open');
     });
+
+    /* ── MOBILE INDUSTRIES ACCORDION ─────────── */
+    var mobIndToggle = document.getElementById('mobIndustriesToggle');
+    if (mobIndToggle) {
+      mobIndToggle.addEventListener('click', function () {
+        var acc = document.getElementById('mobIndustriesAcc');
+        var open = acc.classList.toggle('open');
+        mobIndToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
 
     /* ── INDUSTRIES DROPDOWN (fixed-position, escapes .nav-pill's overflow:hidden) ── */
     var indLink = document.getElementById('navIndustriesLink');
@@ -162,7 +183,7 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
     }
   });
 
-  load('site-footer', '/assets/includes/footer.html', function () {
+  load('site-footer', '/assets/includes/footer.html?v=' + INCLUDES_ASSET_VERSION, function () {
     var yr = document.getElementById('copyright-year');
     if (yr) yr.textContent = new Date().getFullYear();
     rewriteAnchors(document.getElementById('site-footer'));
