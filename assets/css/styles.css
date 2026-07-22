@@ -894,8 +894,8 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .fcta-accent .btn-dark:hover{background:var(--grape-dark);transform:scale(1.03)}
 @media(max-width:767px){.fcta-accent .fcta-title-wide{color:#fff}}
 
-/* ── G6. FOOTER — six-column layout (brand/explore/contact/deal + suburb/trade link columns) ── */
-.foot-cols{display:grid;grid-template-columns:1.3fr 0.9fr 1.1fr 0.9fr 1.3fr 1fr;gap:32px}
+/* ── G6. FOOTER — four-column layout (brand+contact/explore + suburb/trade link columns) ── */
+.foot-cols{display:grid;grid-template-columns:1.2fr 0.8fr 1.2fr 1.4fr;gap:32px}
 .foot-col-h{font-family:var(--fh);font-weight:700;font-size:var(--text-sm);color:#fff;margin-bottom:var(--space-2);letter-spacing:.02em}
 .foot-tag{color:rgba(255,255,255,1);font-family:var(--fh);font-weight:700;font-size:var(--text-base);margin:var(--space-2) 0 var(--space-1)}
 .foot-cols .foot-links{display:flex;flex-direction:column;gap:10px}
@@ -903,19 +903,17 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .foot-links-cols{column-count:2;column-gap:16px;display:block !important}
 .foot-links-cols a{display:block;margin-bottom:10px;break-inside:avoid}
 .foot-muted{color:rgba(255,255,255,.4);font-weight:400}
-.foot-deal{display:flex;flex-direction:column;gap:8px;margin-bottom:var(--space-3);font-size:var(--text-sm);color:rgba(255,255,255,.72)}
-.fcol-4 .btn-primary{color:#fff !important}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding:var(--space-3) 0}
 .foot-bottom-txt{font-size:var(--text-xs);color:rgba(255,255,255,.42);text-align:center;line-height:1.7}
 .foot-bottom-txt a{color:rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.2)}
 .foot-bottom-txt a:hover{color:#fff}
 @media(max-width:1100px){
-  .foot-cols{grid-template-columns:1fr 1fr 1fr;gap:28px}
-  .fcol-1{order:1}.fcol-2{order:2}.fcol-3{order:3}.fcol-4{order:4}.fcol-5{order:5}.fcol-6{order:6}
+  .foot-cols{grid-template-columns:1fr 1fr;gap:28px}
+  .fcol-1{order:1}.fcol-2{order:2}.fcol-5{order:3}.fcol-6{order:4}
 }
 @media(max-width:768px){
   .foot-cols{grid-template-columns:1fr;gap:28px}
-  .fcol-1{order:6}.fcol-2{order:2}.fcol-3{order:3}.fcol-4{order:1}.fcol-5{order:4}.fcol-6{order:5}
+  .fcol-1{order:1}.fcol-2{order:2}.fcol-5{order:3}.fcol-6{order:4}
   .foot-links-cols{column-count:2}
 }
 
