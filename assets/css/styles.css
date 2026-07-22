@@ -1277,6 +1277,9 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .nav-drop-menu.show{opacity:1;visibility:visible;pointer-events:all;transform:translateY(0)}
 .nav-drop-menu a{display:block;padding:var(--space-1) var(--space-2);border-radius:var(--radius-round);font-family:var(--fb);font-size:var(--text-sm);font-weight:500;color:rgb(30,35,48);white-space:nowrap}
 .nav-drop-menu a:hover{background-color:rgba(0,0,0,.04);color:var(--black)}
+.nav-drop-menu-cols{min-width:380px}
+.nav-drop-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(9,auto);gap:0 var(--space-2)}
+.nav-drop-all{display:block;border-top:1px solid rgba(0,0,0,.08);margin-top:var(--space-1);padding:var(--space-2) var(--space-2) var(--space-1);font-weight:700}
 .mob-nav-sub{padding-left:var(--space-4) !important;font-size:var(--text-xs) !important;color:var(--mid)}
 
 /* ── LOCATIONS PAGE TYPE (Melbourne hub + suburb pages) — shared hero-image layout ── */
