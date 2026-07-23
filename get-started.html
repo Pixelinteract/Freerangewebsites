@@ -44,6 +44,8 @@
       .gs-title { font-family: var(--fh); font-size: var(--text-2xl); font-weight: 700; color: var(--text); margin: 0.5rem 0 0.4rem; line-height: 1.1; }
       .gs-intro { color: var(--mid); margin-bottom: 2rem; font-size: var(--text-base); }
 
+      .gs-card { background: #fff; border-radius: 20px; box-shadow: var(--shl); padding: 2rem; }
+
       .gs-options { display: flex; flex-direction: column; gap: 0.75rem; text-align: left; }
       .gs-opt { display: flex; align-items: center; gap: 1.1rem; padding: 1.25rem 1.4rem; border: 2px solid #e8e8e8; border-radius: 12px; cursor: pointer; transition: border-color .2s, background .2s; background: #fff; }
       .gs-opt:hover, .gs-opt:focus-visible { border-color: var(--orange); background: #fffaf4; outline: none; }
@@ -51,10 +53,11 @@
       .gs-opt-label { font-family: var(--fh); font-weight: 700; font-size: 1.2rem; color: var(--text); }
       .gs-opt-desc { font-size: 0.95rem; color: var(--soft); margin-top: 0.2rem; }
 
-      .gs-tc { display: flex; align-items: flex-start; gap: 0.6rem; text-align: left; background: #fff; border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.15rem; margin: 0 auto 1.25rem; max-width: 560px; }
+      .gs-tc { display: flex; align-items: flex-start; gap: 0.6rem; text-align: left; background: var(--tint, #fff8f5); border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.15rem; margin: 0 0 1.25rem; max-width: 560px; overflow: hidden; max-height: 200px; opacity: 1; transition: max-height .35s ease, opacity .25s ease, margin .35s ease, padding .35s ease; }
       .gs-tc input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; accent-color: var(--orange); cursor: pointer; }
       .gs-tc label { font-size: 0.95rem; color: var(--mid); line-height: 1.5; cursor: pointer; }
       .gs-tc a { color: var(--orange2); border-bottom: 1px solid rgba(255,112,70,.35); }
+      .gs-tc.gs-tc-agreed { max-height: 0; opacity: 0; margin: 0; padding-top: 0; padding-bottom: 0; border-width: 0; pointer-events: none; }
 
       .gs-embed { margin-top: 1rem; }
       .gs-embed.locked { opacity: 0.4; pointer-events: none; filter: grayscale(0.3); }
@@ -86,30 +89,32 @@
             <h1 class="gs-title">See if you qualify</h1>
             <p class="gs-intro">Claim your free website spot — 60 seconds, no payment required.</p>
 
-            <div class="gs-options" id="gsOptions">
-              <div class="gs-opt" data-type="tradie" role="button" tabindex="0">
-                <div class="gs-opt-icon">🔧</div>
-                <div>
-                  <div class="gs-opt-label">Tradie</div>
-                  <div class="gs-opt-desc">Electrician, plumber, builder — any trade</div>
+            <div class="gs-card">
+              <div class="gs-options" id="gsOptions">
+                <div class="gs-opt" data-type="tradie" role="button" tabindex="0">
+                  <div class="gs-opt-icon">🔧</div>
+                  <div>
+                    <div class="gs-opt-label">Tradie</div>
+                    <div class="gs-opt-desc">Electrician, plumber, builder — any trade</div>
+                  </div>
+                </div>
+                <div class="gs-opt" data-type="smallbiz" role="button" tabindex="0">
+                  <div class="gs-opt-icon">🏪</div>
+                  <div>
+                    <div class="gs-opt-label">Local small business</div>
+                    <div class="gs-opt-desc">Salon, café, consultant — any local service</div>
+                  </div>
+                </div>
+                <div class="gs-opt" data-type="other" role="button" tabindex="0">
+                  <div class="gs-opt-icon">💼</div>
+                  <div>
+                    <div class="gs-opt-label">Corporate / other</div>
+                    <div class="gs-opt-desc">Larger organisations, or something more complex</div>
+                  </div>
                 </div>
               </div>
-              <div class="gs-opt" data-type="smallbiz" role="button" tabindex="0">
-                <div class="gs-opt-icon">🏪</div>
-                <div>
-                  <div class="gs-opt-label">Local small business</div>
-                  <div class="gs-opt-desc">Salon, café, consultant — any local service</div>
-                </div>
-              </div>
-              <div class="gs-opt" data-type="other" role="button" tabindex="0">
-                <div class="gs-opt-icon">💼</div>
-                <div>
-                  <div class="gs-opt-label">Corporate / other</div>
-                  <div class="gs-opt-desc">Larger organisations, or something more complex</div>
-                </div>
-              </div>
+              <p class="gs-note">No payment required · Apply in 60 seconds · No call needed</p>
             </div>
-            <p class="gs-note">No payment required · Apply in 60 seconds · No call needed</p>
           </div>
 
           <!-- ── STEP 2: Intake ────────────────────────────── -->
@@ -118,26 +123,28 @@
             <h2 class="gs-title">Tell us about your business</h2>
             <p class="gs-intro">A few quick details and we'll get building.</p>
 
-            <div class="gs-tc">
-              <input type="checkbox" id="gsAgree" />
-              <label for="gsAgree">I've read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a></label>
-            </div>
+            <div class="gs-card">
+              <div class="gs-tc" id="gsTc">
+                <input type="checkbox" id="gsAgree" />
+                <label for="gsAgree">I've read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a></label>
+              </div>
 
-            <div class="gs-embed locked" id="gsEmbed">
-              <!-- PENDING: replace form ID with the real intake Tally form (placeholder shown) -->
-              <iframe
-                data-tally-src="https://tally.so/embed/68PBXN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                loading="lazy"
-                width="100%"
-                height="700"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
-                title="Free Range Websites intake form">
-              </iframe>
-            </div>
+              <div class="gs-embed locked" id="gsEmbed">
+                <!-- PENDING: replace form ID with the real intake Tally form (placeholder shown) -->
+                <iframe
+                  data-tally-src="https://tally.so/embed/68PBXN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
+                  width="100%"
+                  height="700"
+                  frameborder="0"
+                  marginheight="0"
+                  marginwidth="0"
+                  title="Free Range Websites intake form">
+                </iframe>
+              </div>
 
-            <p class="gs-clock"><strong>The 5-day clock starts the moment you submit this form.</strong></p>
+              <p class="gs-clock"><strong>The 5-day clock starts the moment you submit this form.</strong></p>
+            </div>
             <button type="button" class="gs-back" id="gsBack">← Back</button>
           </div>
 
@@ -198,13 +205,19 @@
           });
         });
 
-        // ── T&C gate — intake unlocks only once agreed ──
+        // ── T&C gate — intake unlocks only once agreed, then the T&C box collapses out of the way ──
         var agree = document.getElementById('gsAgree');
         var embed = document.getElementById('gsEmbed');
+        var tc = document.getElementById('gsTc');
         if (agree) {
           agree.addEventListener('change', function () {
-            if (agree.checked) embed.classList.remove('locked');
-            else embed.classList.add('locked');
+            if (agree.checked) {
+              embed.classList.remove('locked');
+              if (tc) tc.classList.add('gs-tc-agreed');
+            } else {
+              embed.classList.add('locked');
+              if (tc) tc.classList.remove('gs-tc-agreed');
+            }
           });
         }
 
