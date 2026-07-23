@@ -6,7 +6,7 @@
 
     <!-- ── PRIMARY SEO ───────────────────────────────────────── -->
     <title>See if you qualify | Free Range Websites</title>
-    <meta name="description" content="Claim your free website spot. A 60-second qualifier, then a short form — no payment required, no lock-in. Free Range Websites." />
+    <meta name="description" content="Claim your free website spot. A 60-second form — no payment required, no lock-in. Free Range Websites." />
     <meta name="robots" content="noindex, follow" />
     <link rel="canonical" href="https://www.freerangewebsites.com.au/get-started.html" />
     <link rel="sitemap" type="application/xml" href="sitemap.xml" />
@@ -46,20 +46,9 @@
 
       .gs-card { background: #fff; border-radius: 20px; box-shadow: var(--shl); padding: 2rem; }
 
-      .gs-options { display: flex; flex-direction: column; gap: 0.75rem; text-align: left; }
-      .gs-opt { display: flex; align-items: center; gap: 1.1rem; padding: 1.25rem 1.4rem; border: 2px solid #e8e8e8; border-radius: 12px; cursor: pointer; transition: border-color .2s, background .2s; background: #fff; }
-      .gs-opt:hover, .gs-opt:focus-visible { border-color: var(--orange); background: #fffaf4; outline: none; }
-      .gs-opt-icon { font-size: 1.8rem; flex-shrink: 0; }
-      .gs-opt-label { font-family: var(--fh); font-weight: 700; font-size: 1.2rem; color: var(--text); }
-      .gs-opt-desc { font-size: 0.95rem; color: var(--soft); margin-top: 0.2rem; }
-
       .gs-embed { margin-top: 1rem; }
       .gs-clock { font-size: 0.9rem; color: var(--soft); margin-top: 1rem; }
       .gs-clock strong { color: var(--text); font-weight: 700; }
-
-      .gs-back { background: none; border: none; color: var(--soft); cursor: pointer; font-size: 0.85rem; margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--fb); }
-      .gs-back:hover { color: var(--text); }
-      .gs-note { font-size: 0.82rem; color: var(--soft); margin-top: 1rem; }
 
       /* Waitlist */
       .gs-waitlist { display: none; }
@@ -76,45 +65,11 @@
       <div class="container">
         <div class="gs-wrap">
 
-          <!-- ── STEP 1: Qualifier ─────────────────────────── -->
+          <!-- ── INTAKE (Tally handles the qualifier question itself) ── -->
           <div class="gs-step active" id="step1">
             <span class="tag-lbl">Get started</span>
             <h1 class="gs-title">See if you qualify</h1>
-            <p class="gs-intro">Claim your free website spot — 60 seconds, no payment required.</p>
-
-            <div class="gs-card">
-              <div class="gs-options" id="gsOptions">
-                <div class="gs-opt" data-type="tradie" role="button" tabindex="0">
-                  <div class="gs-opt-icon">🔧</div>
-                  <div>
-                    <div class="gs-opt-label">Tradie</div>
-                    <div class="gs-opt-desc">Electrician, plumber, builder — any trade</div>
-                  </div>
-                </div>
-                <div class="gs-opt" data-type="smallbiz" role="button" tabindex="0">
-                  <div class="gs-opt-icon">🏪</div>
-                  <div>
-                    <div class="gs-opt-label">Local small business</div>
-                    <div class="gs-opt-desc">Salon, café, consultant — any local service</div>
-                  </div>
-                </div>
-                <div class="gs-opt" data-type="other" role="button" tabindex="0">
-                  <div class="gs-opt-icon">💼</div>
-                  <div>
-                    <div class="gs-opt-label">Corporate / other</div>
-                    <div class="gs-opt-desc">Larger organisations, or something more complex</div>
-                  </div>
-                </div>
-              </div>
-              <p class="gs-note">No payment required · Apply in 60 seconds · No call needed</p>
-            </div>
-          </div>
-
-          <!-- ── STEP 2: Intake ────────────────────────────── -->
-          <div class="gs-step" id="step2">
-            <span class="tag-lbl">Almost there</span>
-            <h2 class="gs-title">Tell us about your business</h2>
-            <p class="gs-intro">A few quick details and we'll get building.</p>
+            <p class="gs-intro">60 seconds, no payment required — tell us about your business and we'll get building.</p>
 
             <div class="gs-card">
               <div class="gs-embed" id="gsEmbed">
@@ -133,7 +88,6 @@
 
               <p class="gs-clock"><strong>The 5-day clock starts the moment you submit this form.</strong></p>
             </div>
-            <button type="button" class="gs-back" id="gsBack">← Back</button>
           </div>
 
           <!-- ── WAITLIST (shown when build spots are full) ── -->
@@ -154,12 +108,7 @@
       (function () {
         function ga(ev, params) { if (typeof window.gtag === 'function') window.gtag('event', ev, params || {}); }
 
-        var qualifierStarted = false;
-        function markStarted() {
-          if (!qualifierStarted) { qualifierStarted = true; ga('qualifier_started', {}); }
-        }
-
-        // ── Build spots full → show waitlist instead of qualifier ──
+        // ── Build spots full → show waitlist instead of the intake form ──
         try {
           if (typeof BUILD_SPOTS !== 'undefined' && BUILD_SPOTS.taken >= BUILD_SPOTS.total) {
             document.getElementById('step1').classList.remove('active');
@@ -168,37 +117,6 @@
             document.getElementById('gsWaitTitle').textContent = 'Build spots are full for ' + monthName;
           }
         } catch (e) {}
-
-        // ── Qualifier ──
-        function selectType(type) {
-          markStarted();
-          if (type === 'other') {
-            ga('qualifier_completed', { outcome: 'redirected' });
-            window.location.href = 'contact.html?ref=get-started';
-            return;
-          }
-          // tradie / smallbiz → straight into intake, same sitting
-          ga('qualifier_completed', { outcome: 'qualified' });
-          document.getElementById('step1').classList.remove('active');
-          document.getElementById('step2').classList.add('active');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        document.querySelectorAll('.gs-opt').forEach(function (opt) {
-          opt.addEventListener('mouseenter', markStarted);
-          opt.addEventListener('focus', markStarted);
-          opt.addEventListener('click', function () { selectType(opt.getAttribute('data-type')); });
-          opt.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectType(opt.getAttribute('data-type')); }
-          });
-        });
-
-        // ── Back ──
-        var back = document.getElementById('gsBack');
-        if (back) back.addEventListener('click', function () {
-          document.getElementById('step2').classList.remove('active');
-          document.getElementById('step1').classList.add('active');
-        });
 
         // ── intake_submitted — fire on Tally submit where detectable ──
         window.addEventListener('message', function (e) {
