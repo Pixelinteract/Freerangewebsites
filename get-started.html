@@ -53,14 +53,7 @@
       .gs-opt-label { font-family: var(--fh); font-weight: 700; font-size: 1.2rem; color: var(--text); }
       .gs-opt-desc { font-size: 0.95rem; color: var(--soft); margin-top: 0.2rem; }
 
-      .gs-tc { display: flex; align-items: flex-start; gap: 0.6rem; text-align: left; background: var(--tint, #fff8f5); border: 1.5px solid var(--border); border-radius: 12px; padding: 1rem 1.15rem; margin: 0 0 1.25rem; max-width: 560px; overflow: hidden; max-height: 200px; opacity: 1; transition: max-height .35s ease, opacity .25s ease, margin .35s ease, padding .35s ease; }
-      .gs-tc input { width: 20px; height: 20px; margin-top: 2px; flex-shrink: 0; accent-color: var(--orange); cursor: pointer; }
-      .gs-tc label { font-size: 0.95rem; color: var(--mid); line-height: 1.5; cursor: pointer; }
-      .gs-tc a { color: var(--orange2); border-bottom: 1px solid rgba(255,112,70,.35); }
-      .gs-tc.gs-tc-agreed { max-height: 0; opacity: 0; margin: 0; padding-top: 0; padding-bottom: 0; border-width: 0; pointer-events: none; }
-
       .gs-embed { margin-top: 1rem; }
-      .gs-embed.locked { opacity: 0.4; pointer-events: none; filter: grayscale(0.3); }
       .gs-clock { font-size: 0.9rem; color: var(--soft); margin-top: 1rem; }
       .gs-clock strong { color: var(--text); font-weight: 700; }
 
@@ -124,12 +117,7 @@
             <p class="gs-intro">A few quick details and we'll get building.</p>
 
             <div class="gs-card">
-              <div class="gs-tc" id="gsTc">
-                <input type="checkbox" id="gsAgree" />
-                <label for="gsAgree">I've read and agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a></label>
-              </div>
-
-              <div class="gs-embed locked" id="gsEmbed">
+              <div class="gs-embed" id="gsEmbed">
                 <!-- PENDING: replace form ID with the real intake Tally form (placeholder shown) -->
                 <iframe
                   data-tally-src="https://tally.so/embed/68PBXN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
@@ -204,22 +192,6 @@
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectType(opt.getAttribute('data-type')); }
           });
         });
-
-        // ── T&C gate — intake unlocks only once agreed, then the T&C box collapses out of the way ──
-        var agree = document.getElementById('gsAgree');
-        var embed = document.getElementById('gsEmbed');
-        var tc = document.getElementById('gsTc');
-        if (agree) {
-          agree.addEventListener('change', function () {
-            if (agree.checked) {
-              embed.classList.remove('locked');
-              if (tc) tc.classList.add('gs-tc-agreed');
-            } else {
-              embed.classList.add('locked');
-              if (tc) tc.classList.remove('gs-tc-agreed');
-            }
-          });
-        }
 
         // ── Back ──
         var back = document.getElementById('gsBack');
