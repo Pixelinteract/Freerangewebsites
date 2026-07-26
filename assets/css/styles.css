@@ -52,6 +52,8 @@
   --space-6:    clamp(64px, 8vw, 100px);
   --space-7:    clamp(80px, 10vw, 140px);
   --space-8:    clamp(120px, 14vw, 260px);
+  --space-9:    140px;
+  --space-10:   160px;
 
   /* ── MAX WIDTHS ── */
   --width-content: 1160px;
@@ -199,6 +201,20 @@ ul{list-style:none}
 .container{width:90vw;max-width:1504px;margin:0 auto}
 .sec{padding:var(--space-6)}
 .sec-sm{padding:var(--space-5) 0}
+
+/* First-section padding — every page's opening section EXCEPT the
+   homepage (which uses its own bespoke .hero component) shares this
+   top/bottom padding, so it's a class instead of repeated inline
+   styles. Desktop uses the fluid space tokens; mobile pins to the
+   fixed --space-10/--space-9 pair instead of letting the fluid
+   tokens shrink further. Selector is doubled (.pg-hero-pad.pg-hero-pad)
+   to force higher specificity than .sec's shorthand `padding` — .sec
+   also gets a `padding:var(--space-5) 0` reset inside an unrelated
+   @media(max-width:940px) block further down the file, which would
+   otherwise win the source-order tiebreak against a plain single-class
+   selector at both tablet and mobile widths. */
+.pg-hero-pad.pg-hero-pad{padding-top:var(--space-8);padding-bottom:var(--space-7)}
+@media(max-width:640px){.pg-hero-pad.pg-hero-pad{padding-top:var(--space-10);padding-bottom:var(--space-9)}}
 .tc{text-align:center}
 .tc .sec-sub{margin:0 auto}
 .tag-lbl{display:inline-flex;align-items:center;gap:6px;font-family:var(--fb);font-weight:600;font-size:var(--text-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:var(--space-2)}
