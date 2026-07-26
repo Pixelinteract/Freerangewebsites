@@ -214,7 +214,7 @@ ul{list-style:none}
    otherwise win the source-order tiebreak against a plain single-class
    selector at both tablet and mobile widths. */
 .pg-hero-pad.pg-hero-pad{padding-top:var(--space-8);padding-bottom:var(--space-7)}
-@media(max-width:640px){.pg-hero-pad.pg-hero-pad{padding-top:var(--space-10);padding-bottom:var(--space-9)}}
+@media(max-width:640px){.pg-hero-pad.pg-hero-pad{padding-top:var(--space-10);padding-bottom:var(--space-7)}}
 .tc{text-align:center}
 .tc .sec-sub{margin:0 auto}
 .tag-lbl{display:inline-flex;align-items:center;gap:6px;font-family:var(--fb);font-weight:600;font-size:var(--text-xs);letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin-bottom:var(--space-2)}
@@ -789,7 +789,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
   .grtee-annotate{gap:2px}
   .grtee-arrow2{width:56px;margin-top:.35em}
 }
-.grtee-band{position:relative;z-index:1;background:var(--grape);width:100vw;left:50%;margin-left:-50vw;
+.grtee-band{position:relative;z-index:1;background:#fff;width:100vw;left:50%;margin-left:-50vw;
   margin-top:-38px;padding:70px 0 var(--space-6)}
 @media(max-width:560px){.grtee-band{margin-top:-20px;padding-top:44px}}
 .grtee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
