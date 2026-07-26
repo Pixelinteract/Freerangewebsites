@@ -1705,6 +1705,32 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .guide-card.g-purple:hover{border-color:rgba(124,92,191,.15)}
 @media(max-width:640px){.guide-card{flex:1 1 100%;max-width:100%}}
 
+/* ── INDUSTRIES HUB — same card-grid pattern as .guides-grid/.guide-card,
+   renamed for the industries context per the established convention. ── */
+.industries-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-4);margin-top:0}
+.industry-card{background:var(--white);border-radius:var(--radius-lg);padding:var(--space-4);display:flex;flex-direction:column;transition:transform .2s,border-color .2s;flex:0 1 calc((100% - 2*var(--space-4))/3);max-width:calc((100% - 2*var(--space-4))/3);min-width:260px;border:1px solid transparent}
+.industry-card:hover{transform:translateY(-2px)}
+.industry-tag{display:inline-block;font-family:var(--fb);font-weight:600;font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:var(--space-2)}
+.industry-card h2{font-family:var(--fh);font-weight:700;font-size:var(--text-lg);line-height:1.3;margin-bottom:var(--space-2)}
+.industry-card h2 a{color:var(--text);text-decoration:none}
+.industry-card h2 a:hover{color:var(--orange)}
+.industry-card p{font-size:var(--text-sm);color:var(--mid);line-height:var(--leading-normal);flex:1}
+.industry-link{display:inline-block;margin-top:var(--space-2);font-weight:600;color:var(--orange);text-decoration:none}
+.industry-link:hover{text-decoration:underline}
+.industry-card.g-orange{background-color:#fff3ec}
+.industry-card.g-pink{background-color:#fdf2f2}
+.industry-card.g-green{background-color:#f2f9f0}
+.industry-card.g-yellow{background-color:#fffdeb}
+.industry-card.g-blue{background-color:#f0f6ff}
+.industry-card.g-purple{background-color:#f6f2fc}
+.industry-card.g-orange:hover{border-color:rgba(255,112,70,.15)}
+.industry-card.g-pink:hover{border-color:rgba(217,119,119,.15)}
+.industry-card.g-green:hover{border-color:rgba(90,138,53,.15)}
+.industry-card.g-yellow:hover{border-color:rgba(217,163,0,.15)}
+.industry-card.g-blue:hover{border-color:rgba(26,115,232,.15)}
+.industry-card.g-purple:hover{border-color:rgba(124,92,191,.15)}
+@media(max-width:640px){.industry-card{flex:1 1 100%;max-width:100%}}
+
 /* ── Guide article template — reusable across guides 2–5 ──
    Width: site's wide container (--width-wide, 1440px) minus 40px (20px/side).
    Alignment: left throughout, except the hero (which keeps the sitewide
