@@ -1659,7 +1659,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .guide-prose{max-width:var(--width-prose);margin:0 auto}
 .guide-prose p{font-size:var(--text-base);color:var(--mid);line-height:1.8;margin-bottom:var(--space-3)}
 .guide-prose p:last-child{margin-bottom:0}
-.guide-prose a{color:var(--orange);text-decoration:underline;text-underline-offset:2px}
+.guide-prose a:not(.btn){color:var(--orange);text-decoration:underline;text-underline-offset:2px}
 
 /* Pricing tier comparison cards — the "short answer" made visual */
 .guide-price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3);max-width:var(--width-content);margin:0 auto}
