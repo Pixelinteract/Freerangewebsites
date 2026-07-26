@@ -180,6 +180,15 @@ img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
+/* ── FIRST-SECTION GRADIENT — sitewide ──────────────────────────
+   Every page's opening section (the element immediately after the
+   injected #site-header) gets the same soft fade the homepage hero
+   uses, so the page-open treatment is consistent everywhere. Adjacent-
+   sibling selector means no per-page markup changes are needed — new
+   pages get it automatically as long as their first element after the
+   header is a <section>. Matches .hero's own background below 1:1. */
+#site-header + section{background:linear-gradient(to bottom, #fffef9 0%, #fff 620px) no-repeat;}
+
 /* ── UTILS ──────────────────────────────── */
 .container{width:90vw;max-width:1504px;margin:0 auto}
 .sec{padding:var(--space-6)}

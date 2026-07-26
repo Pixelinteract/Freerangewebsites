@@ -6,7 +6,7 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
 /* ── CACHE-BUST for header/footer partial fetches — bump whenever
    header.html or footer.html changes, so returning visitors don't get
    served a stale nav from the browser's HTTP cache ── */
-const INCLUDES_ASSET_VERSION = '20260771';
+const INCLUDES_ASSET_VERSION = '20260773';
 
 (function () {
 
@@ -26,8 +26,16 @@ const INCLUDES_ASSET_VERSION = '20260771';
       });
   }
 
-  var page = (window.location.pathname.split('/').pop() || 'index.html');
-  if (page === '') page = 'index.html';
+  var pathname = window.location.pathname;
+  /* Trailing-slash directory URLs (e.g. /guides/, /guides/foo/) used to
+     collapse to page='' → 'index.html' via split('/').pop(), which falsely
+     flagged them as the homepage: onIndex went true, rewriteAnchors then
+     stripped "/index.html#" down to "#", and #how-it-works / #examples /
+     #pricing / #faq all pointed at sections that don't exist on that page.
+     Normalize on the full trimmed path instead so only "/" or "/index.html"
+     count as home. */
+  var trimmedPath = pathname.replace(/^\/+|\/+$/g, '');
+  var page = trimmedPath === '' ? 'index.html' : trimmedPath;
   var onIndex = (page === 'index.html');
 
   /* ── SPOTS BAR (G1) ──────────────────────── */
