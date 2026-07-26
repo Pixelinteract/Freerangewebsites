@@ -72,35 +72,65 @@
       rel="stylesheet" />
 
     <!-- ── STYLESHEET ────────────────────────────────────────── -->
-    <link rel="stylesheet" href="/assets/css/styles.css?v=20260768" />
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20260769" />
   </head>
 
   <body>
     <div id="site-header"></div>
 
-    <!-- ══ S1. HERO ═══════════════════════════════════ -->
-    <section class="sec" style="padding-top:220px;padding-bottom:var(--space-4);">
-      <div class="container guides-hero">
-        <h1>Straight answers to the questions tradies actually ask about getting a website.</h1>
-        <p>No platform bias, no sales pitch dressed up as advice. These are the same explanations we'd give you on the phone — written down so you can read them at your own pace.</p>
+    <!-- ══ S1. HERO — UNIQUE, NO PHOTO ═══════════════════════════ -->
+    <section class="sec" style="padding-top:220px;padding-bottom:var(--space-5);">
+      <div class="container tc">
+        <span class="tag-lbl">We're an Australian family business, and we like straight answers</span>
+        <h1 class="sec-title">Straight answers to the questions tradies actually ask about getting a website</h1>
+        <p class="sec-sub" style="max-width:var(--width-prose);margin-left:auto;margin-right:auto;">No platform bias, no sales pitch dressed up as advice. These are the same explanations we'd give you on the phone — written down so you can read them at your own pace.</p>
       </div>
     </section>
 
     <!-- ══ S2. GUIDE GRID ═══════════════════════════════════ -->
-    <section class="sec" style="background:var(--white);padding-top:0;">
-      <div class="container guides-grid">
+    <section class="sec" id="guides" style="background:var(--cream);">
+      <div class="container tc">
+        <span class="tag-lbl rv">Read at your own pace</span>
+        <h2 class="sec-title rv">Pick a topic</h2>
+      </div>
 
-        <article class="guide-card">
+      <div class="container guides-grid">
+        <article class="guide-card rv">
           <span class="guide-tag">Pricing explainer</span>
           <h2><a href="/guides/website-cost-for-tradies">How much does a website actually cost for a tradie business in Australia?</a></h2>
           <p>Real numbers for DIY builders, freelancers, agencies, and subscription models — so you know what you're comparing.</p>
           <a class="guide-link" href="/guides/website-cost-for-tradies">Read the guide →</a>
         </article>
+      </div>
 
+      <div class="container">
+        <p class="tc rv" style="font-size:var(--text-sm);color:var(--mid);margin-top:var(--space-5);">More guides land here soon. Got a question you'd like answered? <a href="/contact.html">Get in touch</a>.</p>
+      </div>
+    </section>
+
+    <!-- ══ S3. FINAL CTA BAND ═══════════════════════════════════════ -->
+    <section class="fcta fcta-accent" id="final-cta">
+      <div class="container">
+        <div class="fcta-inner">
+          <h2 class="fcta-title fcta-title-wide rv">Ready to see what we'd build for you?</h2>
+          <p class="fcta-sub rv">Free to build, $199/month once it's live, no lock-in.</p>
+          <div class="fcta-btns rv">
+            <a href="/get-started.html" class="btn btn-dark btn-lg" data-ga-cta="guides_hub_final">See if you qualify →</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <div id="site-footer"></div>
-    <script src="/assets/js/includes.js?v=20260768"></script>
+    <script src="/assets/js/includes.js?v=20260769"></script>
+    <script>
+      const reveals = document.querySelectorAll('.rv');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {threshold: 0.1});
+      reveals.forEach(el => io.observe(el));
+    </script>
   </body>
 </html>
