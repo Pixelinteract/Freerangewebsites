@@ -1720,7 +1720,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 
 /* Bounded callout box — used for "Key takeaways" and cross-link call-outs.
    Background is the site's muted surface token (--cream). */
-.guide-callout-box{background:var(--cream);border-radius:var(--radius-card);padding:var(--space-4);margin-top:var(--space-3)}
+.guide-callout-box{background:var(--lilac-tint);border-radius:var(--radius-card);padding:var(--space-4);margin-top:var(--space-3)}
 
 /* Cross-link callout to another guide */
 .guide-callout{background:var(--cream);border-radius:var(--radius-card);padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--mid);line-height:1.7}
