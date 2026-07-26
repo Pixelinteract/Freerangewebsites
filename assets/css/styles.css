@@ -1678,7 +1678,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
    row, 2 left over — centers itself automatically via justify-content,
    which CSS grid can't do without extra markup. 3 cards fit per row at
    the --width-content-ish container width; wraps to 2 then 1 below that. */
-.guides-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-4);margin-top:var(--space-5)}
+.guides-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-4);margin-top:0}
 .guide-card{background:var(--white);border-radius:var(--radius-lg);padding:var(--space-4);display:flex;flex-direction:column;transition:transform .2s,border-color .2s;flex:0 1 calc((100% - 2*var(--space-4))/3);max-width:calc((100% - 2*var(--space-4))/3);min-width:260px;border:1px solid transparent}
 .guide-card:hover{transform:translateY(-2px)}
 .guide-tag{display:inline-block;font-family:var(--fb);font-weight:600;font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:var(--space-2)}
