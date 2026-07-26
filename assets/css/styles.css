@@ -1655,25 +1655,38 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .guide-link:hover{text-decoration:underline}
 @media(max-width:640px){.guides-grid{grid-template-columns:1fr}}
 
+/* ── Guide article template — reusable across guides 2–5 ──
+   Width: site's wide container (--width-wide, 1440px) minus 40px (20px/side).
+   Alignment: left throughout, except the hero (which keeps the sitewide
+   centered hero treatment used on every other page). ── */
+.guide-content{max-width:calc(var(--width-wide) - 40px);margin:0 auto;text-align:left}
+.guide-content .tag-lbl,.guide-content .sec-title,.guide-content .sec-sub{text-align:left}
+.guide-content .sec-sub{margin-left:0;margin-right:0}
+
 /* Guide article prose (mirrors .about-prose sizing/spacing) */
-.guide-prose{max-width:var(--width-prose);margin:0 auto}
 .guide-prose p{font-size:var(--text-base);color:var(--mid);line-height:1.8;margin-bottom:var(--space-3)}
 .guide-prose p:last-child{margin-bottom:0}
 .guide-prose a:not(.btn){color:var(--orange);text-decoration:underline;text-underline-offset:2px}
 
-/* Pricing tier comparison cards — the "short answer" made visual */
-.guide-price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-3);max-width:var(--width-content);margin:0 auto}
-.guide-price-card{background:var(--white);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-3);text-align:center;box-shadow:var(--shadow-card)}
-.guide-price-card.featured{background:var(--grape);box-shadow:var(--shadow-card-hover)}
-.guide-price-label{font-family:var(--fb);font-weight:600;font-size:var(--text-xs);letter-spacing:.06em;text-transform:uppercase;color:var(--mid);margin-bottom:var(--space-2);display:block}
-.guide-price-card.featured .guide-price-label{color:rgba(255,255,255,.65)}
-.guide-price-amount{font-family:var(--fh);font-weight:700;font-size:var(--text-xl);color:var(--text);line-height:1.1;margin-bottom:var(--space-2);display:block}
-.guide-price-card.featured .guide-price-amount{color:#fff}
-.guide-price-card p{font-size:var(--text-xs);color:var(--mid);line-height:1.6;margin:0}
-.guide-price-card.featured p{color:rgba(255,255,255,.8)}
-@media(max-width:768px){.guide-price-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.guide-price-grid{grid-template-columns:1fr}}
+/* Bounded callout box — used for "Key takeaways" and cross-link call-outs.
+   Background is the site's muted surface token (--cream). */
+.guide-callout-box{background:var(--cream);border-radius:var(--radius-card);padding:var(--space-4);margin-top:var(--space-3)}
 
 /* Cross-link callout to another guide */
-.guide-callout{max-width:var(--width-prose);margin:var(--space-4) auto 0;background:var(--cream);border-radius:var(--radius-card);padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--mid);line-height:1.7}
+.guide-callout{background:var(--cream);border-radius:var(--radius-card);padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--mid);line-height:1.7}
 .guide-callout a{color:var(--orange);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+
+/* Inline checkmark list — same bullet+check pattern as the key-takeaways
+   box (.usp-tick), used inline in body copy rather than in a bounded box */
+.takeaways{list-style:none;margin:0 0 var(--space-3);padding:0;display:flex;flex-direction:column;gap:14px}
+.takeaways li{position:relative;padding-left:33px;font-size:var(--text-base);color:var(--mid);line-height:1.8}
+.takeaways li::before{content:'✓';position:absolute;left:0;top:2px;width:21px;height:21px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:#fff;font-weight:700}
+
+/* Cost-comparison table */
+.guide-table-wrap{overflow-x:auto;margin-top:var(--space-3);border-radius:var(--radius-card);border:var(--border-subtle)}
+.guide-table{width:100%;border-collapse:collapse;background:var(--white)}
+.guide-table th,.guide-table td{padding:var(--space-2) var(--space-3);text-align:left;border-bottom:var(--border-subtle)}
+.guide-table thead th{font-family:var(--fh);font-weight:700;font-size:var(--text-sm);color:var(--text);background:var(--cream)}
+.guide-table tbody td{font-size:var(--text-sm);color:var(--mid)}
+.guide-table tbody td:first-child{font-weight:600;color:var(--text)}
+.guide-table tbody tr:last-child td{border-bottom:none}
