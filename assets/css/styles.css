@@ -151,6 +151,12 @@
   --lilac-tint:    #ECE9F1;   /* grape @ ~8% on white — cool sections */
   --lilac-tint-md: #D9D3E3;   /* grape @ ~16% — stronger cool accent/border */
 
+  /* ── GRADIENTS — page-open fades ── */
+  --grad-tint:         linear-gradient(to bottom, #fffef9 0%, #fff 620px);         /* warm tint → white, top to bottom (homepage hero / sitewide first-section) */
+  --grad-tint-reverse: linear-gradient(to bottom, #fff 0%, #fffef9 620px);         /* white → warm tint, top to bottom */
+  --grad-lilac:         linear-gradient(to bottom, #fff 0%, var(--lilac-tint) 620px); /* white → lilac tint, top to bottom */
+  --grad-lilac-reverse: linear-gradient(to bottom, var(--lilac-tint) 0%, #fff 620px); /* lilac tint → white, top to bottom */
+
   --fh:      'Encode Sans Condensed',sans-serif;
   --fb:      'Encode Sans',sans-serif;
   --r:       10px;
@@ -187,7 +193,7 @@ ul{list-style:none}
    sibling selector means no per-page markup changes are needed — new
    pages get it automatically as long as their first element after the
    header is a <section>. Matches .hero's own background below 1:1. */
-#site-header + section{background:linear-gradient(to bottom, #fffef9 0%, #fff 620px) no-repeat;}
+#site-header + section{background:var(--grad-tint) no-repeat;}
 
 /* ── UTILS ──────────────────────────────── */
 .container{width:90vw;max-width:1504px;margin:0 auto}
@@ -266,7 +272,7 @@ ul{list-style:none}
 }
 
 /* ── HERO ───────────────────────────────── background:var(--dark2); or  #e8f3f0*/
-.hero{max-height:none;display:flex;align-items:center;position:relative;overflow:hidden;background: linear-gradient(to bottom, #fffef9 0%, #fff 620px) no-repeat;}
+.hero{max-height:none;display:flex;align-items:center;position:relative;overflow:hidden;background: var(--grad-tint) no-repeat;}
 .hero-top{padding:var(--space-8) 0 var(--space-5)}
 .hero-inner{position:relative;z-index:1 /* local stacking only */;display:grid;grid-template-columns:1fr;gap:80px;align-items:center;width:100%;text-align:center;max-width:100%;margin:0 auto}
 .hero-copy{display:flex;flex-direction:column;align-items:center;width:100%;max-width:1504px;margin:0 auto;padding:0 var(--space-3)}
