@@ -54,12 +54,14 @@
     </script>
 
     <!-- ── JSON-LD STRUCTURED DATA ──────────────────────────── -->
+    <!-- FRW: populate the Organization "sameAs" array below with GBP + directory listing URLs -->
+    <!-- (JSON has no comment syntax, so this note lives here rather than inline in the block) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": ["Organization", "ProfessionalService"],
             "@id": "https://www.freerangewebsites.com.au/#organization",
             "name": "Free Range Websites",
             "legalName": "PixelInteract",
@@ -69,6 +71,16 @@
               "url": "https://www.freerangewebsites.com.au/assets/images/logo.png"
             },
             "description": "Free website builds for Australian tradies and local small businesses. Pay nothing until live, then one simple Care Plan at $199/month with hosting, unlimited updates and upkeep.",
+            "telephone": "+61412843733",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Clarinda",
+              "addressRegion": "VIC",
+              "postalCode": "3169",
+              "addressCountry": "AU"
+            },
+            "priceRange": "$199/month",
+            "sameAs": [],
             "areaServed": { "@type": "Country", "name": "Australia" },
             "serviceType": ["Web Design", "Web Hosting", "Local SEO", "Google Business Profile Setup"]
           },
@@ -282,7 +294,7 @@
                 <span class="faq-qt">Built to get you found</span>
                 <span class="faq-ico">+</span>
               </div>
-              <div class="faq-ans">Suburb-targeted pages, LocalBusiness schema, the local SEO foundation done properly.</div>
+              <div class="faq-ans">Suburb-targeted pages, LocalBusiness schema, the local SEO foundation done properly. Most local jobs still start with someone typing &ldquo;plumber near me&rdquo; into their phone, and that&rsquo;s the search your site is built to turn up in.</div>
             </div>
             <div class="faq-item wyg2-item" onclick="toggleFaq(this)">
               <div class="faq-q">
