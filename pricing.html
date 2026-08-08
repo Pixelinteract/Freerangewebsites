@@ -147,58 +147,64 @@
       </div>
     </section>
 
-    <!-- ══ WHAT IT COSTS ════════════════════════════════════════ -->
-    <section class="sec" id="cost" style="padding-top:var(--space-2);">
+    <!-- FRW:BEGIN pricing v1
+         DO NOT EDIT HERE — this block is synced across all pages.
+         Edit /blocks/pricing.html then run: node scripts/sync-blocks.js -->
+    <section class="sec pricing" id="pricing">
       <div class="container">
-        <div class="tc">
-          <span class="tag-lbl rv">What it costs</span>
-          <h2 class="sec-title rv">There are three numbers, and there are no others.</h2>
-          <p class="sec-sub rv" style="max-width:760px;margin-left:auto;margin-right:auto;">There is no setup fee, no deposit, no onboarding charge and no annual contract sitting behind these figures. What you see below is the whole arrangement, start to finish.</p>
+        <div class="pricing2-grid">
+          <!-- Left column — sticky pitch -->
+          <div class="pricing2-left rv">
+            <span class="tag-lbl">Pricing</span>
+            <h2 class="sec-title">One plan, <span class="strike-word">simple<svg viewBox="0 0 100 16" preserveAspectRatio="none" class="strike-underline-svg" aria-hidden="true"><g fill="none" stroke="var(--orange)" stroke-linecap="round" stroke-linejoin="round"><path d="M 2,5 C 32,6.2 68,4.5 98,3.5" stroke-width="4.8" opacity="0.95"/><path d="M 4,12 C 36,13.5 70,11.8 96,10.2" stroke-width="3.6" opacity="0.85"/></g></svg></span> pricing. <br>Everything included.</h2>
+
+            <div class="price2-hero-amt"><span class="price2-hero-sym">$</span><span class="price2-hero-num" data-count-to="199">199</span><span class="price2-hero-per">/mo</span></div>
+
+            <p class="price2-total">Total across 12 months: $199 × 12 = <strong>$2,388</strong> for the whole package — affordable web design for small businesses, with no surprises along the way. <span class="grtee-script price2-script">Now that's amazing!</span></p>
+
+            <a href="/get-started" class="btn btn-primary btn-lg" data-ga-cta="pricing">See if you qualify →</a>
+
+            <div class="price2-terms">
+              <span>✓ First payment after launch only</span>
+              <span>✓ Cancel anytime</span>
+              <span>✓ 30 days notice</span>
+              <span>✓ No lock-in</span>
+            </div>
+          </div>
+
+          <!-- Right column — two stacked feature cards -->
+          <div class="pricing2-right rv">
+            <div class="price2-card">
+              <div class="price2-amt"><span class="price2-sym">$</span><span class="price2-num">0</span></div>
+              <div class="price2-card-h">Your free website build</div>
+              <div class="plan-split-list">
+                <div class="pf"><span class="pf-ck">✓</span>5-page website, custom designed</div>
+                <div class="pf"><span class="pf-ck">✓</span>All copy written for you</div>
+                <div class="pf"><span class="pf-ck">✓</span>Local SEO (suburb targeting, schema)</div>
+                <div class="pf"><span class="pf-ck">✓</span>Google Business Profile setup</div>
+                <div class="pf"><span class="pf-ck">✓</span>Google Analytics + Search Console</div>
+                <div class="pf"><span class="pf-ck">✓</span>Contact form, click-to-call, WhatsApp</div>
+                <div class="pf"><span class="pf-ck">✓</span>Social share tags</div>
+                <div class="pf"><span class="pf-ck">✓</span>Mobile-first design</div>
+              </div>
+            </div>
+
+            <div class="price2-plus" aria-hidden="true">+</div>
+
+            <div class="price2-card price2-card-tint">
+              <div class="price2-amt"><span class="price2-sym">$</span><span class="price2-num">199</span><span class="plan-per">/mo</span></div>
+              <div class="price2-card-h">The Free Range Care Plan</div>
+              <div class="plan-split-list">
+                <div class="pf"><span class="pf-ck">✓</span>Fast, secure hosting + SSL</div>
+                <div class="pf"><span class="pf-ck">✓</span>Unlimited content updates — turned around in 3–5 business days</div>
+                <div class="pf"><span class="pf-ck">✓</span>Security &amp; full website backups</div>
+                <div class="pf"><span class="pf-ck">✓</span>Ongoing upkeep &amp; monitoring</div>
+                <div class="pf"><span class="pf-ck">✓</span>Domain pointing &amp; management</div>
+                <div class="pf"><span class="pf-ck">✓</span>A real person when you need one</div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="price-grid">
-          <div class="price2-card rv">
-            <div class="price2-amt"><span class="price2-sym">$</span><span class="price2-num">0</span></div>
-            <div class="price2-card-h">Your free website build</div>
-            <div class="plan-split-list">
-              <div class="pf"><span class="pf-ck">✓</span>5-page website, custom designed</div>
-              <div class="pf"><span class="pf-ck">✓</span>All copy written for you</div>
-              <div class="pf"><span class="pf-ck">✓</span>Local SEO (suburb targeting, schema)</div>
-              <div class="pf"><span class="pf-ck">✓</span>Google Business Profile setup</div>
-              <div class="pf"><span class="pf-ck">✓</span>Google Analytics + Search Console</div>
-              <div class="pf"><span class="pf-ck">✓</span>Contact form, click-to-call, WhatsApp</div>
-              <div class="pf"><span class="pf-ck">✓</span>Social share tags</div>
-              <div class="pf"><span class="pf-ck">✓</span>Mobile-first design</div>
-            </div>
-          </div>
-
-          <div class="price2-card price2-card-tint rv d1">
-            <div class="price2-amt"><span class="price2-sym">$</span><span class="price2-num">199</span><span class="plan-per">/mo</span></div>
-            <div class="price2-card-h">The Free Range Care Plan</div>
-            <div class="plan-split-list">
-              <div class="pf"><span class="pf-ck">✓</span>Fast, secure hosting + SSL</div>
-              <div class="pf"><span class="pf-ck">✓</span>Unlimited content updates — turned around in 3–5 business days</div>
-              <div class="pf"><span class="pf-ck">✓</span>Security &amp; full website backups</div>
-              <div class="pf"><span class="pf-ck">✓</span>Ongoing upkeep &amp; monitoring</div>
-              <div class="pf"><span class="pf-ck">✓</span>Domain pointing &amp; management</div>
-              <div class="pf"><span class="pf-ck">✓</span>A real person when you need one</div>
-            </div>
-          </div>
-
-          <div class="price2-card rv d2">
-            <div class="price2-amt"><span class="price2-sym">$</span><span class="price2-num">1,800</span></div>
-            <div class="price2-card-h">Owning the code outright</div>
-            <div class="plan-split-list">
-              <div class="pf"><span class="pf-ck">✓</span>One flat price, the same on day one as it is in year three</div>
-              <div class="pf"><span class="pf-ck">✓</span>Available from the moment you go live — there is no minimum tenure</div>
-              <div class="pf"><span class="pf-ck">✓</span>Ownership of the codebase transfers to you</div>
-              <div class="pf"><span class="pf-ck">✓</span>Self-host it or hand it to another developer</div>
-              <div class="pf"><span class="pf-ck">✓</span>Entirely optional — most people never take it up</div>
-            </div>
-          </div>
-        </div>
-
-        <p class="price2-total rv" style="max-width:760px;margin:var(--space-4) auto 0;text-align:center;">Total across 12 months: $199 × 12 = <strong>$2,388</strong> for the whole package — affordable web design for small businesses, with no surprises along the way. <span class="grtee-script price2-script">Now that's amazing!</span></p>
 
         <!-- Made to Order strip -->
         <div class="mto-strip rv">
@@ -212,6 +218,7 @@
         </div>
       </div>
     </section>
+    <!-- FRW:END pricing -->
 
     <!-- ══ WHAT THE CARE PLAN COVERS ════════════════════════════ -->
     <section class="sec who" id="included">
