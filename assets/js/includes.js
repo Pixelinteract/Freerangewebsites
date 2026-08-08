@@ -6,7 +6,7 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
 /* ── CACHE-BUST for header/footer partial fetches — bump whenever
    header.html or footer.html changes, so returning visitors don't get
    served a stale nav from the browser's HTTP cache ── */
-const INCLUDES_ASSET_VERSION = '20260787';
+const INCLUDES_ASSET_VERSION = '20260808';
 
 (function () {
 
@@ -52,7 +52,7 @@ const INCLUDES_ASSET_VERSION = '20260787';
     if (BUILD_SPOTS.taken >= BUILD_SPOTS.total) {
       // Full — waitlist framing, link to contact
       inner.innerHTML = 'Build spots full for ' + monthName + ' — join the waitlist →';
-      bar.setAttribute('href', '/contact.html');
+      bar.setAttribute('href', '/contact');
       bar.classList.add('spots-bar-full');
     } else {
       // Zero-pad to two digits and render each digit as a counter tile.
@@ -63,7 +63,7 @@ const INCLUDES_ASSET_VERSION = '20260787';
         '<span class="spots-days"><span class="spots-sep">·</span>' +
         '<span class="spots-counter">' + digits + '</span> day' + (daysLeft === 1 ? '' : 's') +
         ' until spots reset</span>';
-      bar.setAttribute('href', onIndex ? '#pricing' : '/index.html#pricing');
+      bar.setAttribute('href', onIndex ? '#pricing' : '/pricing');
     }
   }
 
