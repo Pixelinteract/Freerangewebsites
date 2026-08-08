@@ -133,6 +133,16 @@
 
     <!-- ── STYLESHEET ────────────────────────────────────────── -->
     <link rel="stylesheet" href="/assets/css/styles.css?v=20260785" />
+
+    <!-- Page-only spacing tightening: the hero sits directly above the
+         synced pricing block here, so the block's usual top rhythm
+         (built for following a full section) is too generous. Scoped by
+         ID so it doesn't touch the shared block CSS on other pages. -->
+    <style>
+      #pricing-hero { padding-bottom: 0; }
+      #pricing.pricing { padding-top: var(--space-3); }
+      #pricing .pricing2-grid { margin-top: 0; }
+    </style>
   </head>
 
   <body>
