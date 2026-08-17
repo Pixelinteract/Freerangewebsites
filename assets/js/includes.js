@@ -6,7 +6,7 @@ const BUILD_SPOTS = { total: 4, taken: 1 };
 /* ── CACHE-BUST for header/footer partial fetches — bump whenever
    header.html or footer.html changes, so returning visitors don't get
    served a stale nav from the browser's HTTP cache ── */
-const INCLUDES_ASSET_VERSION = '20260808';
+const INCLUDES_ASSET_VERSION = '20260817';
 
 (function () {
 
@@ -82,7 +82,7 @@ const INCLUDES_ASSET_VERSION = '20260808';
 
     /* ── ACTIVE NAV LINK ───────────────────── */
     document.querySelectorAll('.nav-links a, .mob-nav a').forEach(function (a) {
-      var href = (a.getAttribute('href') || '').split('#')[0].replace(/^\//, '');
+      var href = (a.getAttribute('href') || '').split('#')[0].replace(/^\//, '').replace(/\/$/, '');
       if (href === page || ((href === 'index.html' || href === '') && onIndex)) a.classList.add('active');
     });
 
