@@ -992,6 +992,19 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .xlink-pills a:hover { border-color: var(--orange); color: var(--orange); }
 .xlink-more { border-style: dashed !important; }
 
+/* ── BREADCRUMB (visible, crawlable) ── */
+/* Clears the fixed header using the same top padding pg-hero-pad uses,
+   then the following hero drops to a normal gap so spacing stays tidy. */
+.crumbs { padding: var(--space-8) 0 0; font-family: var(--fb); }
+@media (max-width: 640px) { .crumbs { padding-top: var(--space-10); } }
+.crumbs + section.pg-hero-pad.pg-hero-pad { padding-top: var(--space-3); }
+.crumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 0; font-size: var(--text-xs); }
+.crumbs li { display: flex; align-items: center; gap: 8px; color: var(--soft); }
+.crumbs li + li::before { content: "\203A"; color: var(--soft); opacity: .55; }
+.crumbs a { color: var(--soft); text-decoration: none; transition: color .15s ease; }
+.crumbs a:hover { color: var(--orange); }
+.crumbs [aria-current="page"] { color: var(--text); font-weight: 600; }
+
 /* ── INDUSTRY PAGE TEMPLATE — reused across trade pages ── */
 .elec-cost-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:var(--space-5);align-items:stretch;max-width:var(--width-content); padding-top:var(--space-5);}
 .elec-cost-imgs{display:flex;flex-direction:column;gap:var(--space-3)}
