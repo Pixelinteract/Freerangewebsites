@@ -134,11 +134,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500;600;700;800;900&family=Encode+Sans:wght@300;400;500;600&family=Shadows+Into+Light+Two&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;500;600;700;800;900&family=Encode+Sans:wght@300;400;500;600;700&family=Shadows+Into+Light+Two&family=Winky+Sans:wght@400;500;600&display=swap"
       rel="stylesheet" />
 
     <!-- ── STYLESHEET ────────────────────────────────────────── -->
-    <link rel="stylesheet" href="/assets/css/styles.css?v=20260820" />
+    <link rel="stylesheet" href="/assets/css/styles.css?v=20260821" />
   </head>
 
   <body>
@@ -368,74 +368,86 @@
     </section>
 
     <!-- ══ S7. PRICING — CHROME ═══════════════════════════════════ -->
-    <!-- FRW:BEGIN pricing v1
+    <!-- FRW:BEGIN pricing v2
          DO NOT EDIT HERE — this block is synced across all pages.
          Edit /blocks/pricing.html then run: node scripts/sync-blocks.js -->
     <section class="sec pricing" id="pricing">
       <div class="container">
-        <div class="pricing2-grid">
-          <!-- Left column — sticky pitch -->
-          <div class="pricing2-left rv">
-            <span class="tag-lbl">Pricing</span>
-            <h2 class="sec-title">One plan, <span class="strike-word">simple<svg viewBox="0 0 100 16" preserveAspectRatio="none" class="strike-underline-svg" aria-hidden="true"><g fill="none" stroke="var(--orange)" stroke-linecap="round" stroke-linejoin="round"><path d="M 2,5 C 32,6.2 68,4.5 98,3.5" stroke-width="4.8" opacity="0.95"/><path d="M 4,12 C 36,13.5 70,11.8 96,10.2" stroke-width="3.6" opacity="0.85"/></g></svg></span> pricing. <br>Everything included.</h2>
+        <div class="px-card rv">
+          <div class="px-grid">
 
-            <div class="price2-hero-amt"><span class="price2-hero-sym">$</span><span class="price2-hero-num" data-count-to="199">199</span><span class="price2-hero-per">/mo</span></div>
-
-            <p class="price2-total">Total across 12 months: $199 × 12 = <strong>$2,388</strong> for the whole package — affordable web design for small businesses, with no surprises along the way. <span class="grtee-script price2-script">Now that's amazing!</span></p>
-
-            <a href="/get-started" class="btn btn-primary btn-lg" data-ga-cta="pricing">See if you qualify →</a>
-
-            <div class="price2-terms">
-              <span>✓ First payment after launch only</span>
-              <span>✓ Cancel anytime</span>
-              <span>✓ 30 days notice</span>
-              <span>✓ No lock-in</span>
+            <!-- Left — pitch on the orange card -->
+            <div class="px-pitch">
+              <h2 class="px-pitch-h"><span class="px-pitch-thin">One plan</span><br><span class="px-pitch-strong">Everything included</span></h2>
+              <p class="px-pitch-sub">No complications, no bs. One custom made feature-filled website and an affordable care plan.</p>
+              <span class="px-pitch-arrow" aria-hidden="true">→</span>
+              <img class="px-couple" src="/assets/images/pricing-couple.png" alt="Local small-business owners holding a “Yes we're open” sign" width="500" height="450" loading="lazy" decoding="async">
             </div>
-          </div>
 
-          <!-- Right column — two stacked feature cards -->
-          <div class="pricing2-right rv">
-            <div class="price2-card">
-              <div class="price2-amt"><span class="price2-sym">$</span><span class="price2-num">0</span></div>
-              <div class="price2-card-h">Your free website build</div>
-              <div class="plan-split-list">
-                <div class="pf"><span class="pf-ck">✓</span>5-page website, custom designed</div>
-                <div class="pf"><span class="pf-ck">✓</span>All copy written for you</div>
-                <div class="pf"><span class="pf-ck">✓</span>Local SEO (suburb targeting, schema)</div>
-                <div class="pf"><span class="pf-ck">✓</span>Google Business Profile setup</div>
-                <div class="pf"><span class="pf-ck">✓</span>Google Analytics + Search Console</div>
-                <div class="pf"><span class="pf-ck">✓</span>Contact form, click-to-call, WhatsApp</div>
-                <div class="pf"><span class="pf-ck">✓</span>Social share tags</div>
-                <div class="pf"><span class="pf-ck">✓</span>Mobile-first design</div>
+            <!-- Middle — free website build + review -->
+            <div class="px-col">
+              <div class="px-plan">
+                <div class="px-plan-head">
+                  <div class="px-plan-price"><span class="px-free">FREE</span> <span class="px-plan-title">Website Build</span></div>
+                  <div class="px-plan-tag">Yes! All this included for free</div>
+                </div>
+                <hr class="px-divider">
+                <ul class="px-feats">
+                  <li class="is-key"><span class="px-ck" aria-hidden="true"></span>5-page website, custom designed</li>
+                  <li class="is-key"><span class="px-ck" aria-hidden="true"></span>All copy written for you</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>SEO &amp; AEO fundamentals baked in</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>Google Business Profile setup</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>Google Analytics setup</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>Google Search Console setup</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>Contact forms</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>Click-to-call your phone</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>WhatsApp chat to your phone</li>
+                  <li><span class="px-ck" aria-hidden="true"></span>Social share tags</li>
+                </ul>
+              </div>
+              <div class="px-review">
+                <div class="px-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <div class="px-review-body">
+                  <img class="px-review-av" src="/assets/images/pricing-review-mark.jpg" alt="Mark" width="48" height="48" loading="lazy" decoding="async">
+                  <p class="px-review-q">I signed up on Monday. Got a great looking website on Wednesday. These are good!!! ~ <em>Mark</em></p>
+                </div>
               </div>
             </div>
 
-            <div class="price2-plus" aria-hidden="true">+</div>
-
-            <div class="price2-card price2-card-tint">
-              <div class="price2-amt"><span class="price2-sym">$</span><span class="price2-num">199</span><span class="plan-per">/mo</span></div>
-              <div class="price2-card-h">The Free Range Care Plan</div>
-              <div class="plan-split-list">
-                <div class="pf"><span class="pf-ck">✓</span>Fast, secure hosting + SSL</div>
-                <div class="pf"><span class="pf-ck">✓</span>Unlimited content updates — turned around in 3–5 business days</div>
-                <div class="pf"><span class="pf-ck">✓</span>Security &amp; full website backups</div>
-                <div class="pf"><span class="pf-ck">✓</span>Ongoing upkeep &amp; monitoring</div>
-                <div class="pf"><span class="pf-ck">✓</span>Domain pointing &amp; management</div>
-                <div class="pf"><span class="pf-ck">✓</span>A real person when you need one</div>
+            <!-- Right — the Free Range Care Plan -->
+            <div class="px-plan px-plan-care">
+              <div class="px-plan-head">
+                <div class="px-plan-price"><span class="px-old"><span class="px-old-sym">$</span>249</span><span class="px-new"><span class="px-new-sym">$</span>199</span><span class="px-per">/month</span></div>
+                <div class="px-plan-tag">The Free Range Care Plan</div>
               </div>
+              <hr class="px-divider">
+              <ul class="px-feats">
+                <li class="is-key"><span class="px-ck" aria-hidden="true"></span>Unlimited content updates</li>
+                <li class="is-key"><span class="px-ck" aria-hidden="true"></span>Updates done in 3–5 business days</li>
+                <li><span class="px-ck" aria-hidden="true"></span>Fast, secure hosting + SSL</li>
+                <li><span class="px-ck" aria-hidden="true"></span>Security &amp; full website backups</li>
+                <li><span class="px-ck" aria-hidden="true"></span>Ongoing upkeep &amp; monitoring</li>
+                <li><span class="px-ck" aria-hidden="true"></span>Domain pointing &amp; management</li>
+                <li><span class="px-ck" aria-hidden="true"></span>Talk to a real local person for support</li>
+              </ul>
+              <a href="/get-started" class="btn px-cta" data-ga-cta="pricing">See if you qualify</a>
+              <ul class="px-terms">
+                <li>First payment after we launch your website</li>
+                <li>Don't like the website. Walk away — no questions</li>
+                <li>Cancel anytime with a 30 days notice</li>
+                <li>No lock-in contract ever</li>
+              </ul>
             </div>
+
           </div>
         </div>
 
-        <!-- Made to Order strip -->
-        <div class="mto-strip rv">
-          <div>
-            <div class="price-tier" style="font-size:18px;margin-bottom:4px;font-weight:600">Need bookings, e-commerce or something custom?</div>
-            <div class="price-tag" style="margin-bottom:0;font-size:16px">Made to Order — let's talk.</div>
-          </div>
-          <div class="mts-r">
-            <a href="/contact" class="btn btn-outline" data-ga-cta="made-to-order">Let's talk →</a>
-          </div>
+        <!-- Footer value lines -->
+        <div class="px-foot rv">
+          <p class="px-foot-1">Total across 12 months: $199 × 12 = <strong>$2,388</strong></p>
+          <p class="px-foot-2">That's way less than what an agency would charge upfront. i-e $5,000–$25,000+</p>
+          <p class="px-foot-3"><strong>$199.</strong> That's probably less than a single call out fee</p>
+          <p class="px-amazing">Now that's amazing!</p>
         </div>
       </div>
     </section>

@@ -878,38 +878,83 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
   border-bottom:2px solid rgba(255,112,70,.3);padding-bottom:2px}
 .hiw-cta-line a:hover{border-color:var(--orange)}
 
-/* ── S7. PRICING — sticky left pitch + stacked feature cards ──── */
-.pricing2-grid{display:grid;grid-template-columns:minmax(280px,1.5fr) minmax(300px,1fr);gap:56px;
-  max-width:1160px;margin:var(--space-5) auto 0;align-items:start}
-.pricing2-left{position:sticky;top:160px;text-align:left}
-.pricing2-left .sec-title{margin-top:var(--space-1)}
-.strike-word{font-style:normal;color:var(--text);position:relative;display:inline-block;padding-bottom:.12em}
-.strike-underline-svg{position:absolute;left:-2%;bottom:-.05em;width:104%;height:.4em;pointer-events:none;overflow:visible;z-index:-1}
-.price2-hero-amt{display:flex;align-items:baseline;gap:2px;margin-top:var(--space-3)}
-.price2-hero-sym{font-family:var(--fh);font-weight:700;font-size:var(--text-xl);color:var(--orange)}
-.price2-hero-num{font-family:var(--fh);font-weight:900;font-size:var(--text-display);line-height:1;color:var(--orange)}
-.price2-hero-per{font-size:var(--text-lg);color:var(--orange2)}
-.price2-total{font-size:var(--text-sm);color:var(--mid);margin-top:var(--space-2);line-height:1.6}
-.price2-total strong{color:var(--text)}
-.price2-script{font-size:1.3em;margin-left:4px}
-.pricing2-left .btn{margin-top:var(--space-3)}
-.price2-terms{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:var(--space-2);font-size:var(--text-xs);color:var(--mid)}
-.price2-terms span{white-space:nowrap}
+/* ── S7. PRICING — orange card, free build + care plan ──── */
+.pricing{overflow:hidden}
+.px-card{position:relative;background:var(--orange);border-radius:var(--radius-lg);
+  padding:clamp(24px,3vw,40px);overflow:hidden;margin-top:var(--space-4)}
+.px-grid{display:grid;grid-template-columns:1.05fr 1fr 1fr;gap:clamp(18px,2.2vw,36px);align-items:stretch}
 
-.pricing2-right{display:flex;flex-direction:column}
-.price2-card{background:white;border:1px solid var(--lilac-tint-md);border-radius:var(--radius-lg);padding:var(--space-3)}
-.price2-card-tint{background:white;border:1px solid var(--lilac-tint-md);}
-.price2-amt{display:flex;align-items:baseline;gap:2px}
-.price2-sym{font-family:var(--fh);font-weight:700;font-size:var(--text-lg);color:var(--orange)}
-.price2-num{font-family:var(--fh);font-weight:900;font-size:var(--text-3xl);line-height:1;color:var(--orange)}
-.price2-card-h{font-family:var(--fh);font-weight:700;font-size:var(--text-base);color:var(--orange2);
-  margin:var(--space-1) 0 var(--space-3)}
-.price2-plus{text-align:center;font-size:var(--text-xl);font-weight:700;color:var(--orange);margin:14px 0}
-.plan-split-list{display:flex;flex-direction:column;gap:11px}
+/* Left pitch (sits directly on the orange card) */
+.px-pitch{position:relative;display:flex;flex-direction:column;color:#fff;min-height:420px}
+.px-pitch-h{font-family:var(--fb);color:#fff;line-height:1.2;margin:0}
+.px-pitch-thin{font-weight:400;font-size:var(--text-xl)}
+.px-pitch-strong{font-weight:700;font-size:var(--text-xl)}
+.px-pitch-sub{color:#fff;margin-top:16px;font-size:var(--text-base);line-height:1.5;max-width:32ch}
+.px-pitch-arrow{display:inline-block;color:#fff;font-size:28px;line-height:1;margin-top:20px}
+.px-couple{margin-top:auto;width:min(100%,380px);height:auto;margin-left:clamp(-40px,-2vw,-16px)}
 
-@media(max-width:900px){
-  .pricing2-grid{grid-template-columns:1fr;gap:32px}
-  .pricing2-left{position:static}
+/* Plan cards */
+.px-col{display:flex;flex-direction:column;gap:clamp(14px,1.6vw,24px)}
+.px-plan{background:#fff;border-radius:var(--radius-lg);padding:clamp(20px,1.9vw,32px);
+  display:flex;flex-direction:column}
+.px-plan-price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;line-height:1}
+.px-free{color:var(--green2);font-family:var(--fb);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.125rem)}
+.px-plan-title{color:var(--text);font-family:var(--fb);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.125rem)}
+.px-old{color:#bcbcbc;font-family:var(--fb);font-weight:400;text-decoration:line-through;
+  font-size:clamp(2.1rem,3.4vw,3rem)}
+.px-new{color:var(--green2);font-family:var(--fb);font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);margin-left:8px}
+.px-old-sym,.px-new-sym{font-size:.4em;font-weight:inherit;vertical-align:.7em}
+.px-per{color:var(--text);font-family:var(--fb);font-weight:700;font-size:var(--text-lg)}
+.px-plan-tag{font-family:'Winky Sans',var(--fb);color:var(--orange);font-size:var(--text-lg);margin-top:10px}
+.px-divider{border:0;border-top:1px solid #a9a9aa;margin:16px 0 4px}
+
+.px-feats{display:flex;flex-direction:column;gap:clamp(9px,1vw,14px);margin-top:16px}
+.px-feats li{display:flex;align-items:flex-start;gap:12px;color:var(--text);
+  font-family:var(--fb);font-weight:400;font-size:var(--text-base);line-height:1.35}
+.px-feats li.is-key{font-weight:600}
+.px-ck{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--green2);position:relative;margin-top:1px}
+.px-ck::after{content:"";position:absolute;left:8px;top:4px;width:5px;height:10px;
+  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+/* Review card */
+.px-review{background:#fff;border-radius:var(--radius-lg);padding:clamp(18px,1.6vw,26px)}
+.px-stars{color:#f5a623;font-size:19px;letter-spacing:3px;line-height:1}
+.px-review-body{display:flex;align-items:center;gap:14px;margin-top:12px}
+.px-review-av{flex:0 0 auto;width:48px;height:48px;border-radius:50%;object-fit:cover}
+.px-review-q{color:var(--mid);font-family:var(--fb);font-size:var(--text-sm);line-height:1.45;margin:0}
+.px-review-q em{color:var(--text);font-style:italic}
+
+/* Care CTA + terms */
+.px-cta{margin-top:auto;align-self:stretch;justify-content:center;background:var(--green2);color:#fff;
+  font-family:var(--fb);font-weight:600;font-size:var(--text-md);padding:16px 24px;border-radius:var(--radius-badge);
+  box-shadow:0 4px 16px rgba(90,138,53,.28)}
+.px-cta:hover{background:#4c7a2b;box-shadow:0 8px 24px rgba(90,138,53,.34);transform:translateY(-1px)}
+.px-terms{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.px-terms li{color:var(--mid);font-family:var(--fb);font-size:var(--text-sm);line-height:1.4;padding-left:22px;position:relative}
+.px-terms li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green2);font-weight:700}
+
+/* Footer value lines */
+.px-foot{text-align:center;margin-top:var(--space-4)}
+.px-foot p{font-family:var(--fb);font-size:var(--text-base);color:var(--mid);line-height:1.5}
+.px-foot strong{color:var(--text);font-weight:600}
+.px-foot-2{margin-top:2px}
+.px-foot-3{margin-top:16px}
+.px-foot p.px-amazing{font-family:'Shadows Into Light Two',cursive;color:var(--orange);
+  font-size:clamp(1.5rem,3vw,1.9rem);margin-top:6px}
+
+@media(max-width:980px){
+  .px-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .px-pitch{grid-column:1 / -1;min-height:0;flex-direction:row;flex-wrap:wrap;align-items:flex-end;
+    justify-content:space-between;gap:16px}
+  .px-pitch-h,.px-pitch-sub,.px-pitch-arrow{flex:1 1 260px}
+  .px-couple{margin-top:0;margin-left:0;width:min(46%,320px);align-self:flex-end}
+}
+@media(max-width:680px){
+  .px-grid{grid-template-columns:1fr}
+  .px-pitch{flex-direction:column;align-items:flex-start;justify-content:flex-start;min-height:0}
+  .px-pitch-h,.px-pitch-sub{flex:0 0 auto}
+  .px-pitch-arrow{display:none}
+  .px-couple{width:min(70%,300px);margin:8px auto 0}
 }
 
 /* ── S8. FAQ — two-column ───────────────── */
