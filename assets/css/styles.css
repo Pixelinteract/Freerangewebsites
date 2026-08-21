@@ -900,13 +900,14 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .px-col{display:flex;flex-direction:column;gap:clamp(14px,1.6vw,24px)}
 .px-plan{background:#fff;border-radius:var(--radius-lg);padding:clamp(20px,1.9vw,32px);
   display:flex;flex-direction:column}
+.px-plan-care{align-self:start}
 .px-plan-price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;line-height:1}
 .px-free{color:var(--green2);font-family:var(--fb);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.125rem)}
 .px-plan-title{color:var(--text);font-family:var(--fb);font-weight:700;font-size:clamp(1.7rem,2.6vw,2.125rem)}
 .px-old{color:#bcbcbc;font-family:var(--fb);font-weight:400;text-decoration:line-through;
   font-size:clamp(2.1rem,3.4vw,3rem)}
 .px-new{color:var(--green2);font-family:var(--fb);font-weight:700;font-size:clamp(2.1rem,3.4vw,3rem);margin-left:8px}
-.px-old-sym,.px-new-sym{font-size:.42em;font-weight:inherit;vertical-align:baseline}
+.px-old-sym,.px-new-sym{display:inline-block;font-size:.42em;font-weight:inherit;vertical-align:baseline;text-decoration:none}
 .px-per{color:var(--text);font-family:var(--fb);font-weight:700;font-size:var(--text-lg)}
 .px-plan-tag{font-family:'Winky Sans',var(--fb);color:var(--orange);font-size:var(--text-lg);margin-top:10px}
 .px-divider{border:0;border-top:1px solid #a9a9aa;margin:16px 0 4px}
@@ -928,7 +929,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .px-review-q em{color:var(--text);font-style:italic}
 
 /* Care CTA + terms */
-.px-cta{margin-top:auto;align-self:stretch;justify-content:center;background:var(--green2);color:#fff;
+.px-cta{margin-top:clamp(18px,2.2vw,30px);align-self:stretch;justify-content:center;background:var(--green2);color:#fff;
   font-family:var(--fb);font-weight:600;font-size:var(--text-md);padding:16px 24px;border-radius:var(--radius-badge);
   box-shadow:0 4px 16px rgba(90,138,53,.28)}
 .px-cta:hover{background:#4c7a2b;box-shadow:0 8px 24px rgba(90,138,53,.34);transform:translateY(-1px)}
