@@ -929,11 +929,11 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.sc-filter:focus-visible
 .px-review-q em{color:var(--text);font-style:italic}
 
 /* Care CTA + terms */
-.px-cta{margin-top:clamp(18px,2.2vw,30px);align-self:stretch;justify-content:center;background:var(--green2);color:#fff;
+.px-cta{margin-top:clamp(18px,2.2vw,48px);align-self:stretch;justify-content:center;background:var(--green2);color:#fff;
   font-family:var(--fb);font-weight:600;font-size:var(--text-md);padding:16px 24px;border-radius:var(--radius-badge);
   box-shadow:0 4px 16px rgba(90,138,53,.28)}
 .px-cta:hover{background:#4c7a2b;box-shadow:0 8px 24px rgba(90,138,53,.34);transform:translateY(-1px)}
-.px-terms{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.px-terms{display:flex;flex-direction:column;gap:8px;margin-top:48px}
 .px-terms li{color:var(--mid);font-family:var(--fb);font-size:var(--text-sm);line-height:1.4;padding-left:22px;position:relative}
 .px-terms li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green2);font-weight:700}
 
