@@ -303,7 +303,7 @@ ul{list-style:none}
 .hero-hl-g{position:relative;z-index:3 /* local stacking only */}
 .hero-kw{font-family:var(--fh);font-weight:600;font-size:var(--text-lg);line-height:1.25;letter-spacing:-.01em;color:var(--text);margin:var(--space-1) auto 0;max-width:none;text-align:center;white-space:nowrap}
 @media(max-width:767px){.hero-kw{white-space:normal;max-width:28ch}}
-.hero-underline-svg{position:absolute;left:-1%;bottom:4px;width:103%;height:1rem;pointer-events:none;z-index:2 /* local stacking only */;overflow:visible}
+.hero-underline-svg{position:absolute;left:-1%;bottom:-.18em;width:103%;height:1rem;pointer-events:none;z-index:2 /* local stacking only */;overflow:visible}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,112,70,.14);border:1px solid rgba(255,112,70,.28);border-radius:var(--radius-badge);padding:var(--space-1) var(--space-2);margin-bottom:var(--space-3);animation:fadeUp .6s ease .8s both}
 .badge-pulse{width:7px;height:7px;background:var(--orange);border-radius:50%;animation:pulse 2.2s infinite;flex-shrink:0}
 .badge-text{font-family:var(--fb);font-size:var(--text-xs);font-weight:500;color:var(--orange)}
