@@ -209,6 +209,16 @@
         margin-right: 0;
       }
       #top.hero-photo .hero-ctas{ justify-content: flex-start; }
+      /* Keep the headline on a single line on desktop only (font scales with vw);
+         tablet and below wrap normally. */
+      @media (min-width: 1025px){
+        #top.hero-photo .hero-hl{ white-space: nowrap; max-width: none; }
+      }
+      /* Tablet: narrow the copy so the headline wraps to two lines and stays on
+         the left over the gradient instead of running across the subject. */
+      @media (min-width: 768px) and (max-width: 1024px){
+        #top.hero-photo .hero-copy{ max-width: 520px; }
+      }
 
       /* Breathing room between the photo hero and the guarantees section. */
       #guarantee{ padding-top: clamp(56px, 6vw, 96px); }
@@ -235,6 +245,8 @@
           margin-left: auto;
           margin-right: auto;
         }
+        /* Allow the headline to wrap again on phones. */
+        #top.hero-photo .hero-hl{ white-space: normal; }
         #top.hero-photo .hero-ctas{ justify-content: center; }
       }
     </style>
