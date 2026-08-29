@@ -156,20 +156,102 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <!-- No-JS safety: reveal the GSAP-hidden hero if scripts are disabled -->
     <noscript><style>.hero-anim{opacity:1 !important}#sketchLine1,#sketchLine2{stroke-dashoffset:0 !important}</style></noscript>
+
+    <!-- Homepage hero: photographic background, pinned bottom-right, width-scaled -->
+    <style>
+      /* #top raises specificity above the sitewide
+         `#site-header + section` background rule. */
+      #top.hero-photo{
+        /* The photo fills the whole hero (`cover`), anchored bottom-right so the
+           subject is always kept in frame. The base tint only shows if cover ever
+           leaves a gap (it won't). */
+        background:
+          url("assets/images/hero-bg.webp?v=20260829d") no-repeat right bottom / cover,
+          var(--grad-tint) no-repeat;
+        min-height: clamp(600px, 52vw, 820px);
+        position: relative;
+      }
+      /* Left-to-centre warm gradient: strong at the left edge (behind the copy),
+         fading out around the middle of the hero so the subject on the right
+         reads cleanly. Sits above the photo, below the copy. */
+      #top.hero-photo::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: linear-gradient(90deg,
+          rgba(247,245,242,.97) 0%,
+          rgba(247,245,242,.95) 30%,
+          rgba(247,245,242,.84) 48%,
+          rgba(247,245,242,.52) 60%,
+          rgba(247,245,242,0)   74%);
+      }
+      /* Keep the copy above the gradient overlay. */
+      #top.hero-photo > .container{ position: relative; z-index: 1; }
+
+      /* ── Left-align all hero copy, flush to the nav logo's left edge (x=63,
+            = the container's left content edge; the copy's own 24px pad is removed
+            on desktop so the text — not just its box — lines up with the logo). */
+      #top.hero-photo .hero-copy{
+        align-items: flex-start;
+        text-align: left;
+        max-width: 760px;
+        margin: 0;
+        padding-left: 0;
+        text-shadow: 0 1px 2px rgba(247,245,242,.85);
+      }
+      #top.hero-photo .hero-hl,
+      #top.hero-photo .hero-kw,
+      #top.hero-photo .hero-sub{
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      #top.hero-photo .hero-ctas{ justify-content: flex-start; }
+
+      /* Breathing room between the photo hero and the guarantees section. */
+      #guarantee{ padding-top: clamp(56px, 6vw, 96px); }
+
+      @media (max-width: 767px){
+        /* Phones: drop the photo entirely and fall back to the original centred
+           hero on the cream top gradient. */
+        #top.hero-photo{
+          background: var(--grad-tint) no-repeat;
+          min-height: 0;
+        }
+        #top.hero-photo::before{ content: none; }
+        #top.hero-photo .hero-copy{
+          align-items: center;
+          text-align: center;
+          max-width: 1504px;
+          margin: 0 auto;
+          padding-left: var(--space-3);
+        }
+        #top.hero-photo .hero-hl,
+        #top.hero-photo .hero-kw,
+        #top.hero-photo .hero-sub{
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #top.hero-photo .hero-ctas{ justify-content: center; }
+      }
+    </style>
   </head>
 
   <body>
     <div id="site-header"></div>
 
     <!-- ══ S1. HERO ══════════════════════════════════════════════ -->
-    <section class="hero hero-top" id="top">
+    <section class="hero hero-top hero-photo" id="top">
 
       <div class="container">
         <div class="hero-copy">
           <span class="pill-badge hero-anim">🇦🇺 Family-owned<span class="pill-rest"> <span class="pill-dot">·</span> Helping small businesses get found</span></span>
 
           <p class="hero-hl hero-anim">
-            We make you look <em class="hl-scribble">real good<svg viewBox="0 0 100 16" preserveAspectRatio="none" class="hero-underline-svg" aria-hidden="true"><g fill="none" stroke="var(--orange)" stroke-linecap="round" stroke-linejoin="round"><path d="M 2,5 C 32,6.2 68,4.5 98,3.5" stroke-width="4.8" opacity="0.95" id="sketchLine1"/><path d="M 4,12 C 36,13.5 70,11.8 96,10.2" stroke-width="3.6" opacity="0.85" id="sketchLine2"/></g></svg></em>
+            We make you look <em class="hl-scribble">good<svg viewBox="0 0 100 16" preserveAspectRatio="none" class="hero-underline-svg" aria-hidden="true"><g fill="none" stroke="var(--orange)" stroke-linecap="round" stroke-linejoin="round"><path d="M 2,5 C 32,6.2 68,4.5 98,3.5" stroke-width="4.8" opacity="0.95" id="sketchLine1"/><path d="M 4,12 C 36,13.5 70,11.8 96,10.2" stroke-width="3.6" opacity="0.85" id="sketchLine2"/></g></svg></em>
           </p>
           <h1 class="hero-kw hero-anim">Free small business websites, built and managed across Melbourne</h1>
 
